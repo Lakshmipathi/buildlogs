@@ -1,0 +1,11 @@
+Script started on Wed 20 Dec 2017 11:53:49 AM UTC
++ echo 'Installing dependencies..'
+Installing dependencies..
++ echo 'Installing dependencies..done'
+Installing dependencies..done
++ sudo modprobe btrfs
++ cp -v /home/fedora/btrfsqe/kernel.config /home/fedora/kernel/.config
+'/home/fedora/btrfsqe/kernel.config' -> '/home/fedora/kernel/.config'
+cp: cannot create regular file '/home/fedora/kernel/.config': No such file or directory
+
+Script done on Wed 20 Dec 2017 11:53:49 AM UTC
