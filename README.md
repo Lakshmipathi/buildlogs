@@ -1,2 +1,2 @@
 # buildlogs
-Build logs from www.btrfs.in
+This repo will host build logs from www.btrfs.in
