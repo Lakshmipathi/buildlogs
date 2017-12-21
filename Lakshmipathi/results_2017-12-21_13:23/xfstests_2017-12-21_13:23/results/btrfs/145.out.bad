@@ -1,0 +1,19 @@
+QA output created by 145
+At subvol SCRATCH_MNT/mysnap1
+At subvol SCRATCH_MNT/mysnap2
+At subvol mysnap1
+ERROR: unlink dir1/dir3/file22 failed. Not a directory
+OK
+only in local fs: /dir1/dir2/file3
+data mismatch in /dir1/dir2/
+metadata mismatch in /dir1/dir3
+only in remote fs: /dir1/file3/dir4/file11
+only in remote fs: /dir1/file3/dir4/file33
+only in remote fs: /dir1/file3/dir4/
+only in remote fs: /dir1/file3/
+data mismatch in /dir1/
+only in local fs: /o262-8-0/dir4/file11
+only in local fs: /o262-8-0/dir4/
+only in local fs: /o262-8-0/file22
+only in local fs: /o262-8-0/
+FAIL
