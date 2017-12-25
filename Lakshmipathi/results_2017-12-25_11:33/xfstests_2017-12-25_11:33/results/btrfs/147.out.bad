@@ -1,0 +1,17 @@
+QA output created by 147
+At subvol SCRATCH_MNT/mysnap1
+At subvol SCRATCH_MNT/mysnap2
+At subvol mysnap1
+ERROR: link dir1/dir2/dir3/dir4/file11 -> dir1/dir2/dir3/file1 failed: Not a directory
+OK
+only in local fs: /dir1/dir2/dir3/file1
+data mismatch in /dir1/dir2/dir3/
+data mismatch in /dir1/dir2/
+only in remote fs: /dir1/dir6/dir44/dir55/
+only in remote fs: /dir1/dir6/dir44/file11
+only in remote fs: /dir1/dir6/dir44/
+only in remote fs: /dir1/dir6/
+data mismatch in /dir1/
+only in local fs: /dir5/
+only in local fs: /o262-8-0/
+FAIL

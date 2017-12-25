@@ -1,0 +1,11 @@
+QA output created by 144
+At subvol SCRATCH_MNT/mysnap1
+At subvol SCRATCH_MNT/mysnap2
+At subvol mysnap1
+ERROR: link f3 -> o258-8-0 failed: No such file or directory
+OK
+only in remote fs: /f3
+only in remote fs: /f4
+metadata mismatch in /f5
+only in local fs: /o259-8-0
+FAIL

@@ -1,0 +1,28 @@
+QA output created by 155
+At subvol SCRATCH_MNT/mysnap1
+At subvol SCRATCH_MNT/mysnap2
+At subvol mysnap1
+ERROR: link d/f2l2_2 -> a/f2l1 failed: Not a directory
+OK
+only in local fs: /a/f2l1
+only in remote fs: /a/f2l1/b2/c/d3/f1_2
+only in remote fs: /a/f2l1/b2/c/d3/f1l1_2
+only in remote fs: /a/f2l1/b2/c/d3/f2l2_2
+only in remote fs: /a/f2l1/b2/c/d3/
+only in remote fs: /a/f2l1/b2/c/
+only in remote fs: /a/f2l1/b2/f1l2
+only in remote fs: /a/f2l1/b2/f2
+only in remote fs: /a/f2l1/b2/
+only in remote fs: /a/f2l1/
+data mismatch in /a/
+metadata mismatch in /d
+only in local fs: /o262-8-0/f1_2
+only in local fs: /o262-8-0/f1l1_2
+only in local fs: /o262-8-0/f2l2
+only in local fs: /o262-8-0/
+only in local fs: /o263-9-0/b2/c/
+only in local fs: /o263-9-0/b2/f1l2
+only in local fs: /o263-9-0/b2/f2
+only in local fs: /o263-9-0/b2/
+only in local fs: /o263-9-0/
+FAIL
