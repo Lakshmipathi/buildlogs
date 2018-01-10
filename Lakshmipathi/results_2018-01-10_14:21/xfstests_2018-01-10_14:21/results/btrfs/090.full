@@ -1,0 +1,9 @@
+# /bin/btrfs filesystem show /dev/xvdc
+Label: none  uuid: 28f2f391-a29a-4740-b3e0-1120f1a49b85
+	Total devices 5 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 1.00GiB path /dev/xvdc
+	devid    2 size 20.00GiB used 2.00GiB path /dev/xvdd
+	devid    3 size 20.00GiB used 2.00GiB path /dev/xvde
+	devid    4 size 20.00GiB used 1.01GiB path /dev/xvdf
+	devid    5 size 20.00GiB used 1.01GiB path /dev/xvdg
+
