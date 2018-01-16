@@ -1,0 +1,44 @@
+Test -m raid1 -d raid1
+1+0 records in
+1+0 records out
+2+0 records in
+2+0 records out
+4+0 records in
+4+0 records out
+/dev/xvdd: 8 bytes were erased at offset 0x00010040 (btrfs): 5f 42 48 52 66 53 5f 4d
+scrub done for 60caa286-b323-4749-902e-3de99ae814c6
+	scrub started at Tue Jan 16 13:52:08 2018 and finished after 00:00:00
+	total bytes scrubbed: 15.75MiB with 0 errors
+Test -m raid10 -d raid10
+1+0 records in
+1+0 records out
+2+0 records in
+2+0 records out
+4+0 records in
+4+0 records out
+/dev/xvdd: 8 bytes were erased at offset 0x00010040 (btrfs): 5f 42 48 52 66 53 5f 4d
+scrub done for afa77c21-1e49-40ee-a0bf-de76fff78b9e
+	scrub started at Tue Jan 16 13:52:09 2018 and finished after 00:00:00
+	total bytes scrubbed: 16.25MiB with 0 errors
+Test -m raid5 -d raid5
+1+0 records in
+1+0 records out
+2+0 records in
+2+0 records out
+4+0 records in
+4+0 records out
+/dev/xvdd: 8 bytes were erased at offset 0x00010040 (btrfs): 5f 42 48 52 66 53 5f 4d
+scrub done for feb39dd2-1629-4afa-9073-21b70e79a303
+	scrub started at Tue Jan 16 13:52:11 2018 and finished after 00:00:00
+	total bytes scrubbed: 8.62MiB with 0 errors
+Test -m raid6 -d raid6
+1+0 records in
+1+0 records out
+2+0 records in
+2+0 records out
+4+0 records in
+4+0 records out
+/dev/xvdd: 8 bytes were erased at offset 0x00010040 (btrfs): 5f 42 48 52 66 53 5f 4d
+scrub done for 0fca3df8-e60b-40ba-89bf-9eb7362c4d2a
+	scrub started at Tue Jan 16 13:52:14 2018 and finished after 00:00:01
+	total bytes scrubbed: 8.12MiB with 0 errors

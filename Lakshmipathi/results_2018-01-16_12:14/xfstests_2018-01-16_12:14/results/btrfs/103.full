@@ -1,0 +1,40 @@
+btrfs-progs v4.14.1-24-g4675af99
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               7df2f4fc-b1c6-40a8-9270-f82b013725e3
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+btrfs-progs v4.14.1-24-g4675af99
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               7a7a3c23-6c9b-455b-ae32-4358014b1a87
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+

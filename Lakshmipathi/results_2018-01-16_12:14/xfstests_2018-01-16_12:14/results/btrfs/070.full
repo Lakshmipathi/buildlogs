@@ -1,0 +1,171 @@
+Test -m single -d single with nocompress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 18599
+Start defrag worker: 18600
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Replacing /dev/xvde with /dev/xvdd
+Scrub the filesystem
+scrub done for 7e71c877-7424-40db-8776-f4348869bb48
+	scrub started at Tue Jan 16 14:10:32 2018 and finished after 00:00:00
+	total bytes scrubbed: 32.32MiB with 0 errors
+Test -m single -d single with compress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 19054
+Start defrag worker: 19055
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Replacing /dev/xvde with /dev/xvdd
+Scrub the filesystem
+scrub done for 0f422651-1b60-4de8-a05e-df6afb28d4d9
+	scrub started at Tue Jan 16 14:10:34 2018 and finished after 00:00:00
+	total bytes scrubbed: 22.03MiB with 0 errors
+Test -m raid0 -d raid0 with nocompress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 19351
+Start defrag worker: 19352
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 0736ac1d-e6cf-4d8d-ba67-4a6d2dd853de
+	scrub started at Tue Jan 16 14:10:37 2018 and finished after 00:00:00
+	total bytes scrubbed: 41.51MiB with 0 errors
+Test -m raid0 -d raid0 with compress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 19654
+Start defrag worker: 19655
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 19be91ca-5f76-4952-993a-385c513580d0
+	scrub started at Tue Jan 16 14:10:42 2018 and finished after 00:00:00
+	total bytes scrubbed: 13.35MiB with 0 errors
+Test -m raid1 -d raid0 with nocompress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 19955
+Start defrag worker: 19956
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 7b3f9f04-8c71-41ff-a9a4-350ac9d7d23a
+	scrub started at Tue Jan 16 14:10:45 2018 and finished after 00:00:00
+	total bytes scrubbed: 46.73MiB with 0 errors
+Test -m raid1 -d raid0 with compress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 20366
+Start defrag worker: 20367
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 61c43b2a-fcc0-4c35-8b2d-3e1b0033c78b
+	scrub started at Tue Jan 16 14:10:48 2018 and finished after 00:00:00
+	total bytes scrubbed: 15.76MiB with 0 errors
+Test -m raid1 -d raid1 with nocompress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 20631
+Start defrag worker: 20632
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Replacing /dev/xvde with /dev/xvdd
+Scrub the filesystem
+scrub done for 7887f660-902e-4f6f-8822-a055d148ec51
+	scrub started at Tue Jan 16 14:10:54 2018 and finished after 00:00:01
+	total bytes scrubbed: 74.85MiB with 0 errors
+Test -m raid1 -d raid1 with compress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 21131
+Start defrag worker: 21132
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 1e62e75c-60c6-43a3-9441-b43656ef9063
+	scrub started at Tue Jan 16 14:10:57 2018 and finished after 00:00:00
+	total bytes scrubbed: 33.33MiB with 0 errors
+Test -m raid10 -d raid10 with nocompress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 21399
+Start defrag worker: 21400
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 6a6dca3d-7d96-4441-815d-51eebdbdb9a6
+	scrub started at Tue Jan 16 14:11:03 2018 and finished after 00:00:01
+	total bytes scrubbed: 67.58MiB with 0 errors
+Test -m raid10 -d raid10 with compress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 22069
+Start defrag worker: 22070
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 2c20b838-c5bb-4f1c-a22a-99614e4486ec
+	scrub started at Tue Jan 16 14:11:13 2018 and finished after 00:00:01
+	total bytes scrubbed: 36.28MiB with 0 errors
+Test -m raid5 -d raid5 with nocompress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 22374
+Start defrag worker: 22375
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 09146a1d-e6de-4047-8065-4ac5c7213061
+	scrub started at Tue Jan 16 14:11:19 2018 and finished after 00:00:00
+	total bytes scrubbed: 31.43MiB with 0 errors
+Test -m raid5 -d raid5 with compress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 22882
+Start defrag worker: 22883
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 9762a943-319c-4f21-93ae-30dfd376273a
+	scrub started at Tue Jan 16 14:11:22 2018 and finished after 00:00:00
+	total bytes scrubbed: 18.09MiB with 0 errors
+Test -m raid6 -d raid6 with nocompress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 23142
+Start defrag worker: 23143
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for ded02696-8f4f-4f38-82e8-510b50fc491c
+	scrub started at Tue Jan 16 14:11:28 2018 and finished after 00:00:01
+	total bytes scrubbed: 30.49MiB with 0 errors
+Test -m raid6 -d raid6 with compress
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 23966
+Start defrag worker: 23967
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 42313050-af46-4c48-8728-dd26d75751cd
+	scrub started at Tue Jan 16 14:11:35 2018 and finished after 00:00:00
+	total bytes scrubbed: 9.86MiB with 0 errors
