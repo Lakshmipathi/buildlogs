@@ -1,0 +1,5 @@
+Attribute "user.xfstests" set to a 4 byte value for /mnt/test/syscalltest:
+attr
+Create subvolume '/mnt/scratch/parent'
+Create subvolume '/mnt/scratch/parent/child'
+Create a snapshot of '/mnt/scratch/parent' in '/mnt/scratch/snapshot'

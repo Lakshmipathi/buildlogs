@@ -1,0 +1,78 @@
+Test -m single -d single
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 19275
+Start scrub worker: 19276
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for f27de8a7-208e-4b57-95ef-39b0fb6a582c
+	scrub started at Wed Jan 17 15:13:07 2018 and finished after 00:00:00
+	total bytes scrubbed: 32.35MiB with 0 errors
+Test -m raid0 -d raid0
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 19408
+Start scrub worker: 19409
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for ed87d618-29d3-4a0b-bcc0-2cd8f891e189
+	scrub started at Wed Jan 17 15:13:13 2018 and finished after 00:00:00
+	total bytes scrubbed: 36.81MiB with 0 errors
+Test -m raid1 -d raid0
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 19754
+Start scrub worker: 19755
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 2a877d7c-d175-4c78-b7c1-bfbe1bbfd995
+	scrub started at Wed Jan 17 15:13:20 2018 and finished after 00:00:00
+	total bytes scrubbed: 38.03MiB with 0 errors
+Test -m raid1 -d raid1
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 19891
+Start scrub worker: 19892
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for bf592531-d8be-419a-8970-67232e513b01
+	scrub started at Wed Jan 17 15:13:26 2018 and finished after 00:00:00
+	total bytes scrubbed: 65.12MiB with 0 errors
+Test -m raid10 -d raid10
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 20040
+Start scrub worker: 20041
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 8a6cb266-6d34-43c5-a1b5-61916def9384
+	scrub started at Wed Jan 17 15:13:33 2018 and finished after 00:00:00
+	total bytes scrubbed: 70.93MiB with 0 errors
+Test -m raid5 -d raid5
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 20822
+Start scrub worker: 20823
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
