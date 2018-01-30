@@ -1,0 +1,58 @@
+btrfs-progs v4.14.1
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               50eb3d54-d6b3-4ad3-ba11-663e3b9b4343
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# /bin/btrfs subvolume snapshot -r /mnt/scratch /mnt/scratch/snap1
+Create a readonly snapshot of '/mnt/scratch' in '/mnt/scratch/snap1'
+# /bin/btrfs subvolume snapshot -r /mnt/scratch /mnt/scratch/clones_snap
+Create a readonly snapshot of '/mnt/scratch' in '/mnt/scratch/clones_snap'
+# /bin/btrfs subvolume snapshot -r /mnt/scratch /mnt/scratch/snap2
+Create a readonly snapshot of '/mnt/scratch' in '/mnt/scratch/snap2'
+# /bin/btrfs send -f /tmp/tmp.MzT8fEbBuD/1.snap /mnt/scratch/snap1
+At subvol /mnt/scratch/snap1
+# /bin/btrfs send -f /tmp/tmp.MzT8fEbBuD/clones.snap /mnt/scratch/clones_snap
+At subvol /mnt/scratch/clones_snap
+# /bin/btrfs send -p /mnt/scratch/snap1 -c /mnt/scratch/clones_snap -f /tmp/tmp.MzT8fEbBuD/2.snap /mnt/scratch/snap2
+At subvol /mnt/scratch/snap2
+btrfs-progs v4.14.1
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               c53f317c-5c4a-421d-948c-083108e63d4a
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# /bin/btrfs receive -f /tmp/tmp.MzT8fEbBuD/1.snap /mnt/scratch
+At subvol snap1
+# /bin/btrfs receive -f /tmp/tmp.MzT8fEbBuD/clones.snap /mnt/scratch
+At subvol clones_snap
+# /bin/btrfs receive -f /tmp/tmp.MzT8fEbBuD/2.snap /mnt/scratch
+At snapshot snap2
