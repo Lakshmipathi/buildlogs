@@ -1,0 +1,98 @@
+Test -m single -d single
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 23665
+Start scrub worker: 23666
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Replacing /dev/xvde with /dev/xvdd
+Replacing /dev/xvdf with /dev/xvde
+Replacing /dev/xvdg with /dev/xvdf
+Scrub the filesystem
+scrub done for c66f6c3c-2c09-4457-8d1c-688ca887eff0
+	scrub started at Thu Feb  1 21:15:14 2018 and finished after 00:00:00
+	total bytes scrubbed: 29.24MiB with 0 errors
+Test -m raid0 -d raid0
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 24972
+Start scrub worker: 24973
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for c8bd44a2-661e-4ef4-92fd-4aab6cfb56e6
+	scrub started at Thu Feb  1 21:15:21 2018 and finished after 00:00:00
+	total bytes scrubbed: 35.04MiB with 0 errors
+Test -m raid1 -d raid0
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 25450
+Start scrub worker: 25451
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for e90027c6-f572-4d05-b1b1-c5c928bfb0d8
+	scrub started at Thu Feb  1 21:15:41 2018 and finished after 00:00:00
+	total bytes scrubbed: 27.73MiB with 0 errors
+Test -m raid1 -d raid1
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 25660
+Start scrub worker: 25661
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 949d072f-0d8d-4334-96e5-4762ddc582f8
+	scrub started at Thu Feb  1 21:15:47 2018 and finished after 00:00:00
+	total bytes scrubbed: 60.34MiB with 0 errors
+Test -m raid10 -d raid10
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 26142
+Start scrub worker: 26143
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 66fd6867-3d65-4f54-9660-cdff75204bfa
+	scrub started at Thu Feb  1 21:15:58 2018 and finished after 00:00:00
+	total bytes scrubbed: 68.00MiB with 0 errors
+Test -m raid5 -d raid5
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 26519
+Start scrub worker: 26520
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for feefa86c-2a49-42b2-b5bc-50211cf0d5ea
+	scrub started at Thu Feb  1 21:16:03 2018 and finished after 00:00:00
+	total bytes scrubbed: 31.09MiB with 0 errors
+Test -m raid6 -d raid6
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 26794
+Start scrub worker: 26795
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Scrub the filesystem
+scrub done for e5ebe2f4-f9c7-48fa-af88-e48584322555
+	scrub started at Thu Feb  1 21:16:14 2018 and finished after 00:00:04
+	total bytes scrubbed: 34.56MiB with 0 errors

@@ -1,0 +1,5 @@
+QA output created by 007
+*** test send / receive
+failed: '/home/fedora/xfstests/src/fssum -r /tmp/tmp.mPsBfQVUZK/incr.fssum /mnt/scratch/incr'
+(see /home/fedora/xfstests/results//btrfs/007.full for details)
+*** unmount

@@ -1,0 +1,1212 @@
+Script started on 2018-02-01 20:36:29+0000
++ echo 'Installing dependencies..'
+Installing dependencies..
++ sudo yum -y install acl attr automake bc dbench dump e2fsprogs fio gawk gcc indent libtool lvm2 make psmisc quota sed xfsdump xfsprogs libacl-devel libattr-devel libaio-devel libuuid-devel xfsprogs-devel
+Last metadata expiration check: 1:28:03 ago on Thu 01 Feb 2018 07:08:30 PM UTC.
+Package acl-2.2.52-15.fc26.x86_64 is already installed, skipping.
+Package attr-2.4.47-18.fc26.x86_64 is already installed, skipping.
+Package automake-1.15-9.fc26.noarch is already installed, skipping.
+Package bc-1.06.95-18.fc26.x86_64 is already installed, skipping.
+Package e2fsprogs-1.43.4-2.fc26.x86_64 is already installed, skipping.
+Package gawk-4.1.4-3.fc26.x86_64 is already installed, skipping.
+Package gcc-7.2.1-2.fc26.x86_64 is already installed, skipping.
+Package libtool-2.4.6-17.fc26.x86_64 is already installed, skipping.
+Package make-1:4.2.1-2.fc26.x86_64 is already installed, skipping.
+Package sed-4.4-1.fc26.x86_64 is already installed, skipping.
+Package xfsprogs-4.10.0-1.fc26.x86_64 is already installed, skipping.
+Package libuuid-devel-2.30.2-1.fc26.x86_64 is already installed, skipping.
+Dependencies resolved.
+================================================================================
+ Package                         Arch     Version               Repository
+                                                                           Size
+================================================================================
+Installing:
+ dbench                          x86_64   4.0-14.fc26           fedora    1.0 M
+ fio                             x86_64   2.18-1.fc26           fedora    434 k
+ indent                          x86_64   2.2.11-21.fc26        fedora    156 k
+ lvm2                            x86_64   2.02.168-6.fc26       fedora    1.2 M
+ psmisc                          x86_64   22.21-9.fc26          fedora    147 k
+ xfsdump                         x86_64   3.1.6-4.fc26          fedora    325 k
+Upgrading:
+ gawk                            x86_64   4.1.4-6.fc26          updates   1.1 M
+ sed                             x86_64   4.4-2.fc26            updates   287 k
+Installing dependencies:
+ boost-iostreams                 x86_64   1.63.0-10.fc26        updates    72 k
+ boost-random                    x86_64   1.63.0-10.fc26        updates    55 k
+ boost-system                    x86_64   1.63.0-10.fc26        updates    52 k
+ boost-thread                    x86_64   1.63.0-10.fc26        updates    91 k
+ device-mapper-event             x86_64   1.02.137-6.fc26       fedora    241 k
+ device-mapper-event-libs        x86_64   1.02.137-6.fc26       fedora    242 k
+ device-mapper-persistent-data   x86_64   0.6.3-5.fc26          fedora    434 k
+ dump                            x86_64   1:0.4-0.32.b46.fc26   fedora    159 k
+ libacl-devel                    x86_64   2.2.52-15.fc26        fedora     76 k
+ libaio                          x86_64   0.3.110-7.fc26        fedora     28 k
+ libaio-devel                    x86_64   0.3.110-7.fc26        fedora     16 k
+ libattr-devel                   x86_64   2.4.47-18.fc26        fedora     32 k
+ libibverbs                      x86_64   1.2.1-4.fc26          fedora     60 k
+ librados2                       x86_64   1:10.2.7-2.fc26       fedora    1.9 M
+ librbd1                         x86_64   1:10.2.7-2.fc26       fedora    2.5 M
+ librdmacm                       x86_64   1.1.0-4.fc26          fedora     69 k
+ lttng-ust                       x86_64   2.9.0-2.fc26          fedora    251 k
+ lvm2-libs                       x86_64   2.02.168-6.fc26       fedora    1.0 M
+ quota                           x86_64   1:4.03-9.fc26         updates   197 k
+ quota-nls                       noarch   1:4.03-9.fc26         updates    93 k
+ rmt                             x86_64   2:1.5.3-8.fc26        fedora     48 k
+ tcp_wrappers                    x86_64   7.6-85.fc26           fedora     82 k
+ userspace-rcu                   x86_64   0.9.3-2.fc26          fedora     91 k
+ xfsprogs-devel                  x86_64   4.10.0-1.fc26         fedora     70 k
+Installing weak dependencies:
+ man-pages                       noarch   4.09-4.fc26           updates   5.8 M
+
+Transaction Summary
+================================================================================
+Install  31 Packages
+Upgrade   2 Packages
+
+Total download size: 18 M
+Downloading Packages:
+(1/33): dbench-4.0-1  0% [                    ] ---  B/s |   0  B     --:-- ETA(1-3/33): fio-2.18-1  0% [                    ] ---  B/s |   0  B     --:-- ETA(1-3/33): fio-2.18-1  0% [                    ] 133 kB/s |  43 kB     02:20 ETA(1/33): indent-2.2.11-21.fc26.x86_64.rpm        173 kB/s | 156 kB     00:00    
+(2-3/33): fio-2.18-1  2% [                    ] 195 kB/s | 390 kB     01:33 ETA(2/33): fio-2.18-1.fc26.x86_64.rpm              383 kB/s | 434 kB     00:01    
+(3-4/33): lvm2-2.02.  5% [=                   ] 317 kB/s | 1.0 MB     00:55 ETA(3/33): psmisc-22.21-9.fc26.x86_64.rpm          884 kB/s | 147 kB     00:00    
+(4-5/33): dbench-4.0  9% [=-                  ] 466 kB/s | 1.8 MB     00:36 ETA(4/33): dbench-4.0-14.fc26.x86_64.rpm           710 kB/s | 1.0 MB     00:01    
+(5-6/33): lvm2-2.02. 14% [==-                 ] 627 kB/s | 2.6 MB     00:25 ETA(5/33): xfsdump-3.1.6-4.fc26.x86_64.rpm         1.4 MB/s | 325 kB     00:00    
+(6-7/33): lvm2-2.02. 16% [===                 ] 704 kB/s | 3.1 MB     00:22 ETA(6/33): lvm2-2.02.168-6.fc26.x86_64.rpm         1.8 MB/s | 1.2 MB     00:00    
+(7-8/33): dump-0.4-0 18% [===-                ] 752 kB/s | 3.3 MB     00:20 ETA(7/33): dump-0.4-0.32.b46.fc26.x86_64.rpm       1.0 MB/s | 159 kB     00:00    
+(8-9/33): quota-4.03 18% [===-                ] 755 kB/s | 3.4 MB     00:20 ETA(8/33): libacl-devel-2.2.52-15.fc26.x86_64.rpm  656 kB/s |  76 kB     00:00    
+(9-10/33): quota-4.0 19% [===-                ] 764 kB/s | 3.5 MB     00:19 ETA(9/33): libattr-devel-2.4.47-18.fc26.x86_64.rpm 326 kB/s |  32 kB     00:00    
+(10-11/33): quota-4. 19% [===-                ] 769 kB/s | 3.5 MB     00:19 ETA(10/33): quota-4.03-9.fc26.x86_64.rpm           841 kB/s | 197 kB     00:00    
+(11-12/33): libaio-d 20% [====                ] 790 kB/s | 3.7 MB     00:18 ETA(11/33): libaio-devel-0.3.110-7.fc26.x86_64.rpm 176 kB/s |  16 kB     00:00    
+(12-13/33): xfsprogs 20% [====                ] 792 kB/s | 3.7 MB     00:18 ETA(12/33): xfsprogs-devel-4.10.0-1.fc26.x86_64.rp 424 kB/s |  70 kB     00:00    
+(13-14/33): libaio-0 20% [====                ] 793 kB/s | 3.8 MB     00:18 ETA(13/33): libaio-0.3.110-7.fc26.x86_64.rpm       274 kB/s |  28 kB     00:00    
+(14-15/33): libibver 20% [====                ] 803 kB/s | 3.8 MB     00:18 ETA(14/33): libibverbs-1.2.1-4.fc26.x86_64.rpm     304 kB/s |  60 kB     00:00    
+(15-16/33): librados 21% [====                ] 791 kB/s | 3.8 MB     00:18 ETA(15/33): librdmacm-1.1.0-4.fc26.x86_64.rpm      179 kB/s |  69 kB     00:00    
+(16-17/33): librbd1- 26% [=====               ] 921 kB/s | 4.8 MB     00:14 ETA(16-18/33): librados 35% [=======             ] 1.2 MB/s | 6.4 MB     00:10 ETA(16/33): device-mapper-event-libs-1.02.137-6.fc 793 kB/s | 242 kB     00:00    
+(17-18/33): librbd1- 35% [=======             ] 1.2 MB/s | 6.5 MB     00:09 ETA(17/33): librados2-10.2.7-2.fc26.x86_64.rpm     2.1 MB/s | 1.9 MB     00:00    
+(18-19/33): device-m 39% [=======-            ] 1.3 MB/s | 7.2 MB     00:08 ETA(18-20/33): librbd1- 49% [=========-          ] 1.6 MB/s | 9.0 MB     00:05 ETA(18/33): device-mapper-persistent-data-0.6.3-5. 792 kB/s | 434 kB     00:00    
+(19-20/33): librbd1- 52% [==========          ] 1.7 MB/s | 9.5 MB     00:05 ETA(19/33): lvm2-libs-2.02.168-6.fc26.x86_64.rpm   2.3 MB/s | 1.0 MB     00:00    
+(20/33): librbd1-10. 52% [==========          ] 1.7 MB/s | 9.5 MB     00:05 ETA(20/33): librbd1-10.2.7-2.fc26.x86_64.rpm       1.7 MB/s | 2.5 MB     00:01    
+(21-22/33): rmt-1.5. 55% [===========         ] 1.7 MB/s |  10 MB     00:04 ETA(21/33): rmt-1.5.3-8.fc26.x86_64.rpm            306 kB/s |  48 kB     00:00    
+(22-23/33): quota-nl 55% [===========         ] 1.7 MB/s |  10 MB     00:04 ETA(22/33): quota-nls-4.03-9.fc26.noarch.rpm       463 kB/s |  93 kB     00:00    
+(23-24/33): tcp_wrap 55% [===========         ] 1.7 MB/s |  10 MB     00:04 ETA(23/33): tcp_wrappers-7.6-85.fc26.x86_64.rpm    467 kB/s |  82 kB     00:00    
+(24-25/33): lttng-us 58% [===========-        ] 1.8 MB/s |  11 MB     00:04 ETA(24/33): lttng-ust-2.9.0-2.fc26.x86_64.rpm      1.6 MB/s | 251 kB     00:00    
+(25-26/33): device-m 58% [===========-        ] 1.8 MB/s |  11 MB     00:04 ETA(25/33): device-mapper-event-1.02.137-6.fc26.x8 1.7 MB/s | 241 kB     00:00    
+(26-27/33): userspac 58% [===========-        ] 1.8 MB/s |  11 MB     00:04 ETA(26/33): userspace-rcu-0.9.3-2.fc26.x86_64.rpm  877 kB/s |  91 kB     00:00    
+(27-28/33): boost-io 59% [===========-        ] 1.8 MB/s |  11 MB     00:04 ETA(27/33): boost-iostreams-1.63.0-10.fc26.x86_64. 577 kB/s |  72 kB     00:00    
+(28-29/33): boost-ra 59% [===========-        ] 1.8 MB/s |  11 MB     00:04 ETA(28/33): boost-random-1.63.0-10.fc26.x86_64.rpm 555 kB/s |  55 kB     00:00    
+(29-30/33): boost-sy 60% [============        ] 1.8 MB/s |  11 MB     00:04 ETA(29/33): boost-system-1.63.0-10.fc26.x86_64.rpm 511 kB/s |  52 kB     00:00    
+(30-31/33): boost-th 60% [============        ] 1.8 MB/s |  11 MB     00:04 ETA(30/33): boost-thread-1.63.0-10.fc26.x86_64.rpm 696 kB/s |  91 kB     00:00    
+(31-32/33): man-page 61% [============        ] 1.8 MB/s |  11 MB     00:03 ETA(31/33): sed-4.4-2.fc26.x86_64.rpm              1.4 MB/s | 287 kB     00:00    
+(32-33/33): man-page 70% [==============      ] 2.0 MB/s |  13 MB     00:02 ETA(32/33): gawk-4.1.4-6.fc26.x86_64.rpm           3.8 MB/s | 1.1 MB     00:00    
+(33/33): man-pages-4 70% [==============      ] 2.0 MB/s |  13 MB     00:02 ETA(33/33): man-pages-4 77% [===============-    ] 2.2 MB/s |  14 MB     00:01 ETA(33/33): man-pages-4 93% [==================- ] 2.6 MB/s |  17 MB     00:00 ETA(33/33): man-pages-4.09-4.fc26.noarch.rpm       5.3 MB/s | 5.8 MB     00:01    
+--------------------------------------------------------------------------------
+Total                                           3.0 MB/s |  18 MB     00:06     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :  [=                                                  ] 1/1  Preparing        :  [==                                                 ] 1/1  Preparing        :  [====                                               ] 1/1  Preparing        :  [=====                                              ] 1/1  Preparing        :  [=======                                            ] 1/1  Preparing        :  [========                                           ] 1/1  Preparing        :  [==========                                         ] 1/1  Preparing        :  [===========                                        ] 1/1  Preparing        :  [============                                       ] 1/1  Preparing        :  [==============                                     ] 1/1  Preparing        :  [===============                                    ] 1/1  Preparing        :  [=================                                  ] 1/1  Preparing        :  [==================                                 ] 1/1  Preparing        :  [====================                               ] 1/1  Preparing        :  [=====================                              ] 1/1  Preparing        :  [======================                             ] 1/1  Preparing        :  [========================                           ] 1/1  Preparing        :  [==========================                         ] 1/1  Preparing        :  [===========================                        ] 1/1  Preparing        :  [=============================                      ] 1/1  Preparing        :  [==============================                     ] 1/1  Preparing        :  [===============================                    ] 1/1  Preparing        :  [=================================                  ] 1/1  Preparing        :  [==================================                 ] 1/1  Preparing        :  [====================================               ] 1/1  Preparing        :  [=====================================              ] 1/1  Preparing        :  [=======================================            ] 1/1  Preparing        :  [========================================           ] 1/1  Preparing        :  [=========================================          ] 1/1  Preparing        :  [===========================================        ] 1/1  Preparing        :  [============================================       ] 1/1  Preparing        :  [==============================================     ] 1/1  Preparing        :  [===============================================    ] 1/1  Preparing        :  [=================================================  ] 1/1  Preparing        :                                                        1/1 
+  Installing       : boost-system-1.63.0-10.f [                         ]  1/35  Installing       : boost-system-1.63.0-10.f [======================   ]  1/35  Installing       : boost-system-1.63.0-10.f [======================== ]  1/35  Installing       : boost-system-1.63.0-10.fc26.x86_64                    1/35 
+  Running scriptlet: boost-system-1.63.0-10.fc26.x86_64                    1/35 
+  Installing       : device-mapper-event-libs [                         ]  2/35  Installing       : device-mapper-event-libs [============             ]  2/35  Installing       : device-mapper-event-libs [======================== ]  2/35  Installing       : device-mapper-event-libs-1.02.137-6.fc26.x86_64       2/35 
+  Running scriptlet: device-mapper-event-libs-1.02.137-6.fc26.x86_64       2/35 
+  Installing       : libaio-0.3.110-7.fc26.x8 [                         ]  3/35  Installing       : libaio-0.3.110-7.fc26.x8 [====                     ]  3/35  Installing       : libaio-0.3.110-7.fc26.x8 [========                 ]  3/35  Installing       : libaio-0.3.110-7.fc26.x8 [======================== ]  3/35  Installing       : libaio-0.3.110-7.fc26.x86_64                          3/35 
+  Running scriptlet: libaio-0.3.110-7.fc26.x86_64                          3/35 
+  Installing       : boost-random-1.63.0-10.f [                         ]  4/35  Installing       : boost-random-1.63.0-10.f [=======================  ]  4/35  Installing       : boost-random-1.63.0-10.f [======================== ]  4/35  Installing       : boost-random-1.63.0-10.fc26.x86_64                    4/35 
+  Running scriptlet: boost-random-1.63.0-10.fc26.x86_64                    4/35 
+  Installing       : boost-thread-1.63.0-10.f [                         ]  5/35  Installing       : boost-thread-1.63.0-10.f [====                     ]  5/35  Installing       : boost-thread-1.63.0-10.f [=========                ]  5/35  Installing       : boost-thread-1.63.0-10.f [==============           ]  5/35  Installing       : boost-thread-1.63.0-10.f [===================      ]  5/35  Installing       : boost-thread-1.63.0-10.f [======================== ]  5/35  Installing       : boost-thread-1.63.0-10.fc26.x86_64                    5/35 
+  Running scriptlet: boost-thread-1.63.0-10.fc26.x86_64                    5/35 
+  Installing       : boost-iostreams-1.63.0-1 [                         ]  6/35  Installing       : boost-iostreams-1.63.0-1 [=======                  ]  6/35  Installing       : boost-iostreams-1.63.0-1 [===============          ]  6/35  Installing       : boost-iostreams-1.63.0-1 [======================   ]  6/35  Installing       : boost-iostreams-1.63.0-1 [======================== ]  6/35  Installing       : boost-iostreams-1.63.0-10.fc26.x86_64                 6/35 
+  Running scriptlet: boost-iostreams-1.63.0-10.fc26.x86_64                 6/35 
+  Installing       : libibverbs-1.2.1-4.fc26. [                         ]  7/35  Installing       : libibverbs-1.2.1-4.fc26. [======                   ]  7/35  Installing       : libibverbs-1.2.1-4.fc26. [============             ]  7/35  Installing       : libibverbs-1.2.1-4.fc26. [===============          ]  7/35  Installing       : libibverbs-1.2.1-4.fc26. [===================      ]  7/35  Installing       : libibverbs-1.2.1-4.fc26. [=====================    ]  7/35  Installing       : libibverbs-1.2.1-4.fc26. [======================== ]  7/35  Installing       : libibverbs-1.2.1-4.fc26.x86_64                        7/35 
+  Running scriptlet: libibverbs-1.2.1-4.fc26.x86_64                        7/35 
+  Installing       : librdmacm-1.1.0-4.fc26.x [                         ]  8/35  Installing       : librdmacm-1.1.0-4.fc26.x [=====                    ]  8/35  Installing       : librdmacm-1.1.0-4.fc26.x [===========              ]  8/35  Installing       : librdmacm-1.1.0-4.fc26.x [================         ]  8/35  Installing       : librdmacm-1.1.0-4.fc26.x [=====================    ]  8/35  Installing       : librdmacm-1.1.0-4.fc26.x [======================== ]  8/35  Installing       : librdmacm-1.1.0-4.fc26.x86_64                         8/35 
+  Running scriptlet: librdmacm-1.1.0-4.fc26.x86_64                         8/35 
+  Installing       : device-mapper-persistent [                         ]  9/35  Installing       : device-mapper-persistent [=                        ]  9/35  Installing       : device-mapper-persistent [==                       ]  9/35  Installing       : device-mapper-persistent [===                      ]  9/35  Installing       : device-mapper-persistent [====                     ]  9/35  Installing       : device-mapper-persistent [=====                    ]  9/35  Installing       : device-mapper-persistent [======                   ]  9/35  Installing       : device-mapper-persistent [=======                  ]  9/35  Installing       : device-mapper-persistent [========                 ]  9/35  Installing       : device-mapper-persistent [=========                ]  9/35  Installing       : device-mapper-persistent [==========               ]  9/35  Installing       : device-mapper-persistent [===========              ]  9/35  Installing       : device-mapper-persistent [============             ]  9/35  Installing       : device-mapper-persistent [=============            ]  9/35  Installing       : device-mapper-persistent [==============           ]  9/35  Installing       : device-mapper-persistent [===============          ]  9/35  Installing       : device-mapper-persistent [================         ]  9/35  Installing       : device-mapper-persistent [=================        ]  9/35  Installing       : device-mapper-persistent [==================       ]  9/35  Installing       : device-mapper-persistent [===================      ]  9/35  Installing       : device-mapper-persistent [====================     ]  9/35  Installing       : device-mapper-persistent [=====================    ]  9/35  Installing       : device-mapper-persistent [======================   ]  9/35  Installing       : device-mapper-persistent [=======================  ]  9/35  Installing       : device-mapper-persistent [======================== ]  9/35  Installing       : device-mapper-persistent-data-0.6.3-5.fc26.x86_64     9/35 
+  Installing       : device-mapper-event-1.02 [                         ] 10/35  Installing       : device-mapper-event-1.02 [===================      ] 10/35  Installing       : device-mapper-event-1.02 [======================== ] 10/35  Installing       : device-mapper-event-1.02.137-6.fc26.x86_64           10/35 
+  Running scriptlet: device-mapper-event-1.02.137-6.fc26.x86_64           10/35 
+  Installing       : lvm2-libs-2.02.168-6.fc2 [                         ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [=                        ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [==                       ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [===                      ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [====                     ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [=====                    ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [======                   ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [=======                  ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [========                 ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [=========                ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [==========               ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [===========              ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [============             ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [=============            ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [==============           ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [===============          ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [================         ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [=================        ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [==================       ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [===================      ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [====================     ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [=====================    ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [======================   ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [=======================  ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc2 [======================== ] 11/35  Installing       : lvm2-libs-2.02.168-6.fc26.x86_64                     11/35 
+  Running scriptlet: lvm2-libs-2.02.168-6.fc26.x86_64                     11/35 
+  Installing       : userspace-rcu-0.9.3-2.fc [                         ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [==                       ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [=====                    ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [======                   ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [=========                ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [===========              ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [==============           ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [=================        ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [===================      ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [====================     ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [=====================    ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [======================   ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc [======================== ] 12/35  Installing       : userspace-rcu-0.9.3-2.fc26.x86_64                    12/35 
+  Running scriptlet: userspace-rcu-0.9.3-2.fc26.x86_64                    12/35 
+  Installing       : lttng-ust-2.9.0-2.fc26.x [                         ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [=                        ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [==                       ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [===                      ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [====                     ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [=====                    ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [======                   ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [=======                  ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [========                 ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [=========                ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [==========               ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [===========              ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [============             ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [=============            ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [==============           ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [===============          ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [================         ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [=================        ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [==================       ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [===================      ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [====================     ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [=====================    ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [======================   ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [=======================  ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x [======================== ] 13/35  Installing       : lttng-ust-2.9.0-2.fc26.x86_64                        13/35 
+  Running scriptlet: lttng-ust-2.9.0-2.fc26.x86_64                        13/35 
+  Installing       : librados2-1:10.2.7-2.fc2 [                         ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [=                        ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [==                       ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [===                      ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [====                     ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [=====                    ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [======                   ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [=======                  ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [========                 ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [=========                ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [==========               ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [===========              ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [============             ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [=============            ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [==============           ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [===============          ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [================         ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [=================        ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [==================       ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [===================      ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [====================     ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [=====================    ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [======================   ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [=======================  ] 14/35  Installing       : librados2-1:10.2.7-2.fc2 [======================== ] 14/35  Installing       : librados2-1:10.2.7-2.fc26.x86_64                     14/35 
+  Running scriptlet: librados2-1:10.2.7-2.fc26.x86_64                     14/35 
+  Installing       : librbd1-1:10.2.7-2.fc26. [                         ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [=                        ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [==                       ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [===                      ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [====                     ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [=====                    ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [======                   ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [=======                  ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [========                 ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [=========                ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [==========               ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [===========              ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [============             ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [=============            ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [==============           ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [===============          ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [================         ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [=================        ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [==================       ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [===================      ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [====================     ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [=====================    ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [======================   ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [=======================  ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26. [======================== ] 15/35  Installing       : librbd1-1:10.2.7-2.fc26.x86_64                       15/35 
+  Running scriptlet: librbd1-1:10.2.7-2.fc26.x86_64                       15/35 
+  Installing       : tcp_wrappers-7.6-85.fc26 [                         ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [=                        ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [=====                    ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [=========                ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [===========              ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [=============            ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [==============           ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [================         ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [====================     ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [======================   ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [=======================  ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26 [======================== ] 16/35  Installing       : tcp_wrappers-7.6-85.fc26.x86_64                      16/35 
+  Installing       : quota-nls-1:4.03-9.fc26. [                         ] 17/35  Installing       : quota-nls-1:4.03-9.fc26. [==                       ] 17/35  Installing       : quota-nls-1:4.03-9.fc26. [====                     ] 17/35  Installing       : quota-nls-1:4.03-9.fc26. [=====                    ] 17/35  Installing       : quota-nls-1:4.03-9.fc26. [===========              ] 17/35  Installing       : quota-nls-1:4.03-9.fc26. [================         ] 17/35  Installing       : quota-nls-1:4.03-9.fc26. [==================       ] 17/35  Installing       : quota-nls-1:4.03-9.fc26.noarch                       17/35 
+  Installing       : rmt-2:1.5.3-8.fc26.x86_6 [                         ] 18/35  Installing       : rmt-2:1.5.3-8.fc26.x86_6 [===========              ] 18/35  Installing       : rmt-2:1.5.3-8.fc26.x86_6 [================         ] 18/35  Installing       : rmt-2:1.5.3-8.fc26.x86_6 [======================   ] 18/35  Installing       : rmt-2:1.5.3-8.fc26.x86_6 [=======================  ] 18/35  Installing       : rmt-2:1.5.3-8.fc26.x86_6 [======================== ] 18/35  Installing       : rmt-2:1.5.3-8.fc26.x86_64                            18/35 
+  Installing       : libattr-devel-2.4.47-18. [                         ] 19/35  Installing       : libattr-devel-2.4.47-18. [=======                  ] 19/35  Installing       : libattr-devel-2.4.47-18. [========                 ] 19/35  Installing       : libattr-devel-2.4.47-18. [==========               ] 19/35  Installing       : libattr-devel-2.4.47-18. [============             ] 19/35  Installing       : libattr-devel-2.4.47-18. [==============           ] 19/35  Installing       : libattr-devel-2.4.47-18. [=================        ] 19/35  Installing       : libattr-devel-2.4.47-18. [====================     ] 19/35  Installing       : libattr-devel-2.4.47-18. [======================   ] 19/35  Installing       : libattr-devel-2.4.47-18. [======================== ] 19/35  Installing       : libattr-devel-2.4.47-18.fc26.x86_64                  19/35 
+  Installing       : libacl-devel-2.2.52-15.f [                         ] 20/35  Installing       : libacl-devel-2.2.52-15.f [=                        ] 20/35  Installing       : libacl-devel-2.2.52-15.f [==                       ] 20/35  Installing       : libacl-devel-2.2.52-15.f [===                      ] 20/35  Installing       : libacl-devel-2.2.52-15.f [====                     ] 20/35  Installing       : libacl-devel-2.2.52-15.f [=====                    ] 20/35  Installing       : libacl-devel-2.2.52-15.f [======                   ] 20/35  Installing       : libacl-devel-2.2.52-15.f [=======                  ] 20/35  Installing       : libacl-devel-2.2.52-15.f [========                 ] 20/35  Installing       : libacl-devel-2.2.52-15.f [=========                ] 20/35  Installing       : libacl-devel-2.2.52-15.f [==========               ] 20/35  Installing       : libacl-devel-2.2.52-15.f [===========              ] 20/35  Installing       : libacl-devel-2.2.52-15.f [============             ] 20/35  Installing       : libacl-devel-2.2.52-15.f [=============            ] 20/35  Installing       : libacl-devel-2.2.52-15.f [==============           ] 20/35  Installing       : libacl-devel-2.2.52-15.f [===============          ] 20/35  Installing       : libacl-devel-2.2.52-15.f [================         ] 20/35  Installing       : libacl-devel-2.2.52-15.f [=================        ] 20/35  Installing       : libacl-devel-2.2.52-15.f [==================       ] 20/35  Installing       : libacl-devel-2.2.52-15.f [===================      ] 20/35  Installing       : libacl-devel-2.2.52-15.f [====================     ] 20/35  Installing       : libacl-devel-2.2.52-15.f [=====================    ] 20/35  Installing       : libacl-devel-2.2.52-15.f [======================   ] 20/35  Installing       : libacl-devel-2.2.52-15.f [=======================  ] 20/35  Installing       : libacl-devel-2.2.52-15.f [======================== ] 20/35  Installing       : libacl-devel-2.2.52-15.fc26.x86_64                   20/35 
+  Installing       : dump-1:0.4-0.32.b46.fc26 [                         ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [==                       ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [=====                    ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [======                   ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [========                 ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [===========              ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [=============            ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [===============          ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [================         ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [=================        ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [====================     ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [======================   ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [=======================  ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26 [======================== ] 21/35  Installing       : dump-1:0.4-0.32.b46.fc26.x86_64                      21/35 
+  Installing       : quota-1:4.03-9.fc26.x86_ [                         ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [=                        ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [==                       ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [===                      ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [====                     ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [=====                    ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [======                   ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [=======                  ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [========                 ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [=========                ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [==========               ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [===========              ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [============             ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [=============            ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [==============           ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [===============          ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [================         ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [=================        ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [==================       ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [===================      ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [====================     ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [=====================    ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [======================   ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [=======================  ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_ [======================== ] 22/35  Installing       : quota-1:4.03-9.fc26.x86_64                           22/35 
+  Installing       : fio-2.18-1.fc26.x86_64 [                           ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [=                          ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [==                         ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [===                        ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [====                       ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [=====                      ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [======                     ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [=======                    ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [========                   ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [=========                  ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [==========                 ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [===========                ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [============               ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [=============              ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [==============             ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [===============            ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [================           ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [=================          ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [==================         ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [===================        ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [====================       ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [=====================      ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [======================     ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [=======================    ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [========================   ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [=========================  ] 23/35  Installing       : fio-2.18-1.fc26.x86_64 [========================== ] 23/35  Installing       : fio-2.18-1.fc26.x86_64                               23/35 
+  Installing       : lvm2-2.02.168-6.fc26.x86 [                         ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [=                        ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [==                       ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [===                      ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [====                     ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [=====                    ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [======                   ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [=======                  ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [========                 ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [=========                ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [==========               ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [===========              ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [============             ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [=============            ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [==============           ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [===============          ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [================         ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [=================        ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [==================       ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [===================      ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [====================     ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [=====================    ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [======================   ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [=======================  ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86 [======================== ] 24/35  Installing       : lvm2-2.02.168-6.fc26.x86_64                          24/35 
+  Running scriptlet: lvm2-2.02.168-6.fc26.x86_64                          24/35 
+  Installing       : libaio-devel-0.3.110-7.f [                         ] 25/35  Installing       : libaio-devel-0.3.110-7.f [======================== ] 25/35  Installing       : libaio-devel-0.3.110-7.fc26.x86_64                   25/35 
+  Upgrading        : sed-4.4-2.fc26.x86_64 [                            ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [=                           ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [==                          ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [===                         ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [====                        ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [=====                       ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [======                      ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [=======                     ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [========                    ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [=========                   ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [==========                  ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [===========                 ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [============                ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [=============               ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [==============              ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [===============             ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [================            ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [=================           ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [==================          ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [===================         ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [====================        ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [=====================       ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [======================      ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [=======================     ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [========================    ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [=========================   ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [==========================  ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64 [=========================== ] 26/35  Upgrading        : sed-4.4-2.fc26.x86_64                                26/35 
+  Running scriptlet: sed-4.4-2.fc26.x86_64                                26/35 
+  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [                         ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [=                        ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [==                       ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [===                      ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [====                     ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [=====                    ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [======                   ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [=======                  ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [========                 ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [=========                ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [==========               ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [===========              ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [============             ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [=============            ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [==============           ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [===============          ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [================         ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [=================        ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [==================       ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [===================      ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [====================     ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [=====================    ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [======================   ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [=======================  ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64 [======================== ] 27/35  Upgrading        : gawk-4.1.4-6.fc26.x86_64                             27/35 
+  Running scriptlet: gawk-4.1.4-6.fc26.x86_64                             27/35 
+  Installing       : man-pages-4.09-4.fc26.no [                         ] 28/35  Installing       : man-pages-4.09-4.fc26.no [=                        ] 28/35  Installing       : man-pages-4.09-4.fc26.no [==                       ] 28/35  Installing       : man-pages-4.09-4.fc26.no [===                      ] 28/35  Installing       : man-pages-4.09-4.fc26.no [====                     ] 28/35  Installing       : man-pages-4.09-4.fc26.no [=====                    ] 28/35  Installing       : man-pages-4.09-4.fc26.no [======                   ] 28/35  Installing       : man-pages-4.09-4.fc26.no [=======                  ] 28/35  Installing       : man-pages-4.09-4.fc26.no [========                 ] 28/35  Installing       : man-pages-4.09-4.fc26.no [=========                ] 28/35  Installing       : man-pages-4.09-4.fc26.no [==========               ] 28/35  Installing       : man-pages-4.09-4.fc26.no [===========              ] 28/35  Installing       : man-pages-4.09-4.fc26.no [============             ] 28/35  Installing       : man-pages-4.09-4.fc26.no [=============            ] 28/35  Installing       : man-pages-4.09-4.fc26.no [==============           ] 28/35  Installing       : man-pages-4.09-4.fc26.no [===============          ] 28/35  Installing       : man-pages-4.09-4.fc26.no [================         ] 28/35  Installing       : man-pages-4.09-4.fc26.no [=================        ] 28/35  Installing       : man-pages-4.09-4.fc26.no [==================       ] 28/35  Installing       : man-pages-4.09-4.fc26.no [===================      ] 28/35  Installing       : man-pages-4.09-4.fc26.no [====================     ] 28/35  Installing       : man-pages-4.09-4.fc26.no [=====================    ] 28/35  Installing       : man-pages-4.09-4.fc26.no [======================   ] 28/35  Installing       : man-pages-4.09-4.fc26.no [=======================  ] 28/35  Installing       : man-pages-4.09-4.fc26.no [======================== ] 28/35  Installing       : man-pages-4.09-4.fc26.noarch                         28/35 
+  Installing       : xfsprogs-devel-4.10.0-1. [                         ] 29/35  Installing       : xfsprogs-devel-4.10.0-1. [=                        ] 29/35  Installing       : xfsprogs-devel-4.10.0-1. [==                       ] 29/35  Installing       : xfsprogs-devel-4.10.0-1. [======                   ] 29/35  Installing       : xfsprogs-devel-4.10.0-1. [===========              ] 29/35  Installing       : xfsprogs-devel-4.10.0-1. [==============           ] 29/35  Installing       : xfsprogs-devel-4.10.0-1. [=================        ] 29/35  Installing       : xfsprogs-devel-4.10.0-1. [=====================    ] 29/35  Installing       : xfsprogs-devel-4.10.0-1. [======================   ] 29/35  Installing       : xfsprogs-devel-4.10.0-1. [=======================  ] 29/35  Installing       : xfsprogs-devel-4.10.0-1. [======================== ] 29/35  Installing       : xfsprogs-devel-4.10.0-1.fc26.x86_64                  29/35 
+  Installing       : xfsdump-3.1.6-4.fc26.x86 [                         ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [=                        ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [==                       ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [===                      ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [====                     ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [=====                    ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [======                   ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [=======                  ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [========                 ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [=========                ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [==========               ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [===========              ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [============             ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [=============            ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [==============           ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [===============          ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [================         ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [=================        ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [==================       ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [===================      ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [====================     ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [======================   ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86 [======================== ] 30/35  Installing       : xfsdump-3.1.6-4.fc26.x86_64                          30/35 
+  Installing       : psmisc-22.21-9.fc26.x86_ [                         ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [=                        ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [==                       ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [===                      ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [=====                    ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [=======                  ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [========                 ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [=========                ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [==========               ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [===========              ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [============             ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [=============            ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [==============           ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [===============          ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [================         ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [=================        ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [==================       ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [===================      ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [====================     ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [=====================    ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [======================   ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [=======================  ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_ [======================== ] 31/35  Installing       : psmisc-22.21-9.fc26.x86_64                           31/35 
+  Installing       : indent-2.2.11-21.fc26.x8 [                         ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [==                       ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [====                     ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [======                   ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [=======                  ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [=========                ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [==========               ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [============             ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [==============           ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [===============          ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [=================        ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [==================       ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [===================      ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [====================     ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [=====================    ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [======================   ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [=======================  ] 32/35  Installing       : indent-2.2.11-21.fc26.x8 [======================== ] 32/35  Installing       : indent-2.2.11-21.fc26.x86_64                         32/35 
+  Running scriptlet: indent-2.2.11-21.fc26.x86_64                         32/35 
+  Installing       : dbench-4.0-14.fc26.x86_6 [                         ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [=                        ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [==                       ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [===                      ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [====                     ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [=====                    ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [======                   ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [=======                  ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [========                 ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [=========                ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [==========               ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [===========              ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [============             ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [=============            ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [==============           ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [===============          ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [================         ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [=================        ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [==================       ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [===================      ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [====================     ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [=====================    ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [======================   ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [=======================  ] 33/35  Installing       : dbench-4.0-14.fc26.x86_6 [======================== ] 33/35  Installing       : dbench-4.0-14.fc26.x86_64                            33/35 
+  Running scriptlet: sed-4.4-1.fc26.x86_64                                34/35 
+  Cleanup          : sed-4.4-1.fc26.x86_64 [                            ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [=                           ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [==                          ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [===                         ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [====                        ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [=====                       ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [======                      ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [=======                     ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [========                    ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [=========                   ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [==========                  ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [===========                 ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [============                ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [=============               ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [==============              ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [===============             ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [================            ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [=================           ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [==================          ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [===================         ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [====================        ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [=====================       ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [======================      ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [=======================     ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [========================    ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [=========================   ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [==========================  ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64 [=========================== ] 34/35  Cleanup          : sed-4.4-1.fc26.x86_64                                34/35 
+warning: file /usr/share/locale/zh_TW/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/zh_CN/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/vi/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/uk/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/tr/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/sv/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/sr/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/sl/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/sk/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/ru/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/ro/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/pt_BR/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/pt/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/pl/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/nl/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/nb/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/ko/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/ja/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/it/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/id/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/hu/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/hr/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/he/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/gl/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/ga/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/fr/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/fi/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/eu/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/et/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/es/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/eo/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/el/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/de/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/da/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/cs/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/ca/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/bg/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/ast/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/af/LC_MESSAGES/sed.mo: remove failed: No such file or directory
+  Running scriptlet: gawk-4.1.4-3.fc26.x86_64                             35/35 
+  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [                         ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [=                        ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [==                       ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [===                      ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [====                     ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [=====                    ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [======                   ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [=======                  ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [========                 ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [=========                ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [==========               ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [===========              ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [============             ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [=============            ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [==============           ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [===============          ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [================         ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [=================        ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [==================       ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [===================      ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [====================     ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [=====================    ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [======================   ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [=======================  ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64 [======================== ] 35/35  Cleanup          : gawk-4.1.4-3.fc26.x86_64                             35/35 
+warning: file /usr/share/locale/zh_CN/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/vi/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/sv/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/pl/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/nl/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/ms/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/ja/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/it/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/id/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/fr/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/fi/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/es/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/de/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/da/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+warning: file /usr/share/locale/ca/LC_MESSAGES/gawk.mo: remove failed: No such file or directory
+  Running scriptlet: gawk-4.1.4-3.fc26.x86_64                             35/35 
+  Verifying        : dbench-4.0-14.fc26.x86_64                             1/35 
+  Verifying        : fio-2.18-1.fc26.x86_64                                2/35 
+  Verifying        : indent-2.2.11-21.fc26.x86_64                          3/35 
+  Verifying        : lvm2-2.02.168-6.fc26.x86_64                           4/35 
+  Verifying        : psmisc-22.21-9.fc26.x86_64                            5/35 
+  Verifying        : xfsdump-3.1.6-4.fc26.x86_64                           6/35 
+  Verifying        : dump-1:0.4-0.32.b46.fc26.x86_64                       7/35 
+  Verifying        : quota-1:4.03-9.fc26.x86_64                            8/35 
+  Verifying        : libacl-devel-2.2.52-15.fc26.x86_64                    9/35 
+  Verifying        : libattr-devel-2.4.47-18.fc26.x86_64                  10/35 
+  Verifying        : libaio-devel-0.3.110-7.fc26.x86_64                   11/35 
+  Verifying        : xfsprogs-devel-4.10.0-1.fc26.x86_64                  12/35 
+  Verifying        : libaio-0.3.110-7.fc26.x86_64                         13/35 
+  Verifying        : libibverbs-1.2.1-4.fc26.x86_64                       14/35 
+  Verifying        : librados2-1:10.2.7-2.fc26.x86_64                     15/35 
+  Verifying        : librbd1-1:10.2.7-2.fc26.x86_64                       16/35 
+  Verifying        : librdmacm-1.1.0-4.fc26.x86_64                        17/35 
+  Verifying        : device-mapper-event-libs-1.02.137-6.fc26.x86_64      18/35 
+  Verifying        : device-mapper-persistent-data-0.6.3-5.fc26.x86_64    19/35 
+  Verifying        : lvm2-libs-2.02.168-6.fc26.x86_64                     20/35 
+  Verifying        : rmt-2:1.5.3-8.fc26.x86_64                            21/35 
+  Verifying        : quota-nls-1:4.03-9.fc26.noarch                       22/35 
+  Verifying        : tcp_wrappers-7.6-85.fc26.x86_64                      23/35 
+  Verifying        : lttng-ust-2.9.0-2.fc26.x86_64                        24/35 
+  Verifying        : device-mapper-event-1.02.137-6.fc26.x86_64           25/35 
+  Verifying        : userspace-rcu-0.9.3-2.fc26.x86_64                    26/35 
+  Verifying        : boost-iostreams-1.63.0-10.fc26.x86_64                27/35 
+  Verifying        : boost-random-1.63.0-10.fc26.x86_64                   28/35 
+  Verifying        : boost-system-1.63.0-10.fc26.x86_64                   29/35 
+  Verifying        : boost-thread-1.63.0-10.fc26.x86_64                   30/35 
+  Verifying        : man-pages-4.09-4.fc26.noarch                         31/35 
+  Verifying        : gawk-4.1.4-6.fc26.x86_64                             32/35 
+  Verifying        : sed-4.4-2.fc26.x86_64                                33/35 
+  Verifying        : sed-4.4-1.fc26.x86_64                                34/35 
+  Verifying        : gawk-4.1.4-3.fc26.x86_64                             35/35 
+
+Installed:
+  dbench.x86_64 4.0-14.fc26                                                     
+  fio.x86_64 2.18-1.fc26                                                        
+  indent.x86_64 2.2.11-21.fc26                                                  
+  lvm2.x86_64 2.02.168-6.fc26                                                   
+  psmisc.x86_64 22.21-9.fc26                                                    
+  xfsdump.x86_64 3.1.6-4.fc26                                                   
+  man-pages.noarch 4.09-4.fc26                                                  
+  boost-iostreams.x86_64 1.63.0-10.fc26                                         
+  boost-random.x86_64 1.63.0-10.fc26                                            
+  boost-system.x86_64 1.63.0-10.fc26                                            
+  boost-thread.x86_64 1.63.0-10.fc26                                            
+  device-mapper-event.x86_64 1.02.137-6.fc26                                    
+  device-mapper-event-libs.x86_64 1.02.137-6.fc26                               
+  device-mapper-persistent-data.x86_64 0.6.3-5.fc26                             
+  dump.x86_64 1:0.4-0.32.b46.fc26                                               
+  libacl-devel.x86_64 2.2.52-15.fc26                                            
+  libaio.x86_64 0.3.110-7.fc26                                                  
+  libaio-devel.x86_64 0.3.110-7.fc26                                            
+  libattr-devel.x86_64 2.4.47-18.fc26                                           
+  libibverbs.x86_64 1.2.1-4.fc26                                                
+  librados2.x86_64 1:10.2.7-2.fc26                                              
+  librbd1.x86_64 1:10.2.7-2.fc26                                                
+  librdmacm.x86_64 1.1.0-4.fc26                                                 
+  lttng-ust.x86_64 2.9.0-2.fc26                                                 
+  lvm2-libs.x86_64 2.02.168-6.fc26                                              
+  quota.x86_64 1:4.03-9.fc26                                                    
+  quota-nls.noarch 1:4.03-9.fc26                                                
+  rmt.x86_64 2:1.5.3-8.fc26                                                     
+  tcp_wrappers.x86_64 7.6-85.fc26                                               
+  userspace-rcu.x86_64 0.9.3-2.fc26                                             
+  xfsprogs-devel.x86_64 4.10.0-1.fc26                                           
+
+Upgraded:
+  gawk.x86_64 4.1.4-6.fc26                 sed.x86_64 4.4-2.fc26                
+
+Complete!
++ echo 'Installing dependencies..done'
+Installing dependencies..done
++ sudo useradd fsgqa
++ sudo useradd 123456-fsgqa
++ git clone https://github.com/kdave/xfstests.git
+Cloning into 'xfstests'...
+remote: Counting objects: 25366, done.[K
+remote: Compressing objects:   0% (1/154)   [Kremote: Compressing objects:   1% (2/154)   [Kremote: Compressing objects:   2% (4/154)   [Kremote: Compressing objects:   3% (5/154)   [Kremote: Compressing objects:   4% (7/154)   [Kremote: Compressing objects:   5% (8/154)   [Kremote: Compressing objects:   6% (10/154)   [Kremote: Compressing objects:   7% (11/154)   [Kremote: Compressing objects:   8% (13/154)   [Kremote: Compressing objects:   9% (14/154)   [Kremote: Compressing objects:  10% (16/154)   [Kremote: Compressing objects:  11% (17/154)   [Kremote: Compressing objects:  12% (19/154)   [Kremote: Compressing objects:  13% (21/154)   [Kremote: Compressing objects:  14% (22/154)   [Kremote: Compressing objects:  15% (24/154)   [Kremote: Compressing objects:  16% (25/154)   [Kremote: Compressing objects:  17% (27/154)   [Kremote: Compressing objects:  18% (28/154)   [Kremote: Compressing objects:  19% (30/154)   [Kremote: Compressing objects:  20% (31/154)   [Kremote: Compressing objects:  21% (33/154)   [Kremote: Compressing objects:  22% (34/154)   [Kremote: Compressing objects:  23% (36/154)   [Kremote: Compressing objects:  24% (37/154)   [Kremote: Compressing objects:  25% (39/154)   [Kremote: Compressing objects:  26% (41/154)   [Kremote: Compressing objects:  27% (42/154)   [Kremote: Compressing objects:  28% (44/154)   [Kremote: Compressing objects:  29% (45/154)   [Kremote: Compressing objects:  30% (47/154)   [Kremote: Compressing objects:  31% (48/154)   [Kremote: Compressing objects:  32% (50/154)   [Kremote: Compressing objects:  33% (51/154)   [Kremote: Compressing objects:  34% (53/154)   [Kremote: Compressing objects:  35% (54/154)   [Kremote: Compressing objects:  36% (56/154)   [Kremote: Compressing objects:  37% (57/154)   [Kremote: Compressing objects:  38% (59/154)   [Kremote: Compressing objects:  39% (61/154)   [Kremote: Compressing objects:  40% (62/154)   [Kremote: Compressing objects:  41% (64/154)   [Kremote: Compressing objects:  42% (65/154)   [Kremote: Compressing objects:  43% (67/154)   [Kremote: Compressing objects:  44% (68/154)   [Kremote: Compressing objects:  45% (70/154)   [Kremote: Compressing objects:  46% (71/154)   [Kremote: Compressing objects:  47% (73/154)   [Kremote: Compressing objects:  48% (74/154)   [Kremote: Compressing objects:  49% (76/154)   [Kremote: Compressing objects:  50% (77/154)   [Kremote: Compressing objects:  51% (79/154)   [Kremote: Compressing objects:  52% (81/154)   [Kremote: Compressing objects:  53% (82/154)   [Kremote: Compressing objects:  54% (84/154)   [Kremote: Compressing objects:  55% (85/154)   [Kremote: Compressing objects:  56% (87/154)   [Kremote: Compressing objects:  57% (88/154)   [Kremote: Compressing objects:  58% (90/154)   [Kremote: Compressing objects:  59% (91/154)   [Kremote: Compressing objects:  60% (93/154)   [Kremote: Compressing objects:  61% (94/154)   [Kremote: Compressing objects:  62% (96/154)   [Kremote: Compressing objects:  63% (98/154)   [Kremote: Compressing objects:  64% (99/154)   [Kremote: Compressing objects:  65% (101/154)   [Kremote: Compressing objects:  66% (102/154)   [Kremote: Compressing objects:  67% (104/154)   [Kremote: Compressing objects:  68% (105/154)   [Kremote: Compressing objects:  69% (107/154)   [Kremote: Compressing objects:  70% (108/154)   [Kremote: Compressing objects:  71% (110/154)   [Kremote: Compressing objects:  72% (111/154)   [Kremote: Compressing objects:  73% (113/154)   [Kremote: Compressing objects:  74% (114/154)   [Kremote: Compressing objects:  75% (116/154)   [Kremote: Compressing objects:  76% (118/154)   [Kremote: Compressing objects:  77% (119/154)   [Kremote: Compressing objects:  78% (121/154)   [Kremote: Compressing objects:  79% (122/154)   [Kremote: Compressing objects:  80% (124/154)   [Kremote: Compressing objects:  81% (125/154)   [Kremote: Compressing objects:  82% (127/154)   [Kremote: Compressing objects:  83% (128/154)   [Kremote: Compressing objects:  84% (130/154)   [Kremote: Compressing objects:  85% (131/154)   [Kremote: Compressing objects:  86% (133/154)   [Kremote: Compressing objects:  87% (134/154)   [Kremote: Compressing objects:  88% (136/154)   [Kremote: Compressing objects:  89% (138/154)   [Kremote: Compressing objects:  90% (139/154)   [Kremote: Compressing objects:  91% (141/154)   [Kremote: Compressing objects:  92% (142/154)   [Kremote: Compressing objects:  93% (144/154)   [Kremote: Compressing objects:  94% (145/154)   [Kremote: Compressing objects:  95% (147/154)   [Kremote: Compressing objects:  96% (148/154)   [Kremote: Compressing objects:  97% (150/154)   [Kremote: Compressing objects:  98% (151/154)   [Kremote: Compressing objects:  99% (153/154)   [Kremote: Compressing objects: 100% (154/154)   [Kremote: Compressing objects: 100% (154/154), done.[K
+Receiving objects:   0% (1/25366)   Receiving objects:   1% (254/25366)   Receiving objects:   2% (508/25366)   Receiving objects:   3% (761/25366)   Receiving objects:   4% (1015/25366)   Receiving objects:   5% (1269/25366)   Receiving objects:   6% (1522/25366)   Receiving objects:   7% (1776/25366)   Receiving objects:   8% (2030/25366)   Receiving objects:   9% (2283/25366)   Receiving objects:  10% (2537/25366)   Receiving objects:  11% (2791/25366)   Receiving objects:  12% (3044/25366)   Receiving objects:  13% (3298/25366)   Receiving objects:  14% (3552/25366)   Receiving objects:  15% (3805/25366)   Receiving objects:  16% (4059/25366)   Receiving objects:  17% (4313/25366)   Receiving objects:  18% (4566/25366)   Receiving objects:  19% (4820/25366)   Receiving objects:  20% (5074/25366)   Receiving objects:  21% (5327/25366)   Receiving objects:  22% (5581/25366)   Receiving objects:  23% (5835/25366)   Receiving objects:  24% (6088/25366)   Receiving objects:  25% (6342/25366)   Receiving objects:  26% (6596/25366)   Receiving objects:  27% (6849/25366)   Receiving objects:  28% (7103/25366)   Receiving objects:  29% (7357/25366)   Receiving objects:  30% (7610/25366)   Receiving objects:  31% (7864/25366)   Receiving objects:  32% (8118/25366)   Receiving objects:  33% (8371/25366)   Receiving objects:  34% (8625/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  35% (8879/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  36% (9132/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  37% (9386/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  38% (9640/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  39% (9893/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  40% (10147/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  41% (10401/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  42% (10654/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  43% (10908/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  44% (11162/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  45% (11415/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  46% (11669/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  47% (11923/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  48% (12176/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  49% (12430/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  50% (12683/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  51% (12937/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  52% (13191/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  53% (13444/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  54% (13698/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  55% (13952/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  56% (14205/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  57% (14459/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  58% (14713/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  59% (14966/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  60% (15220/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  61% (15474/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  62% (15727/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  63% (15981/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  64% (16235/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  65% (16488/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  66% (16742/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  67% (16996/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  68% (17249/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  69% (17503/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  70% (17757/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  71% (18010/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  72% (18264/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  73% (18518/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  74% (18771/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  75% (19025/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  76% (19279/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  77% (19532/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  78% (19786/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  79% (20040/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  80% (20293/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  81% (20547/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  82% (20801/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  83% (21054/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  84% (21308/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  85% (21562/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  86% (21815/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  87% (22069/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  88% (22323/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  89% (22576/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  90% (22830/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  91% (23084/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  92% (23337/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  93% (23591/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  94% (23845/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  95% (24098/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  96% (24352/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  97% (24606/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  98% (24859/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects:  99% (25113/25366), 3.57 MiB | 7.12 MiB/s   remote: Total 25366 (delta 163), reused 206 (delta 128), pack-reused 25079[K
+Receiving objects: 100% (25366/25366), 3.57 MiB | 7.12 MiB/s   Receiving objects: 100% (25366/25366), 7.11 MiB | 7.98 MiB/s, done.
+Resolving deltas:   0% (0/19563)   Resolving deltas:   1% (326/19563)   Resolving deltas:   2% (400/19563)   Resolving deltas:   3% (626/19563)   Resolving deltas:   4% (791/19563)   Resolving deltas:   5% (981/19563)   Resolving deltas:   6% (1367/19563)   Resolving deltas:   7% (1380/19563)   Resolving deltas:   8% (1571/19563)   Resolving deltas:   9% (1784/19563)   Resolving deltas:  10% (1961/19563)   Resolving deltas:  11% (2158/19563)   Resolving deltas:  12% (2387/19563)   Resolving deltas:  13% (2544/19563)   Resolving deltas:  14% (2741/19563)   Resolving deltas:  15% (2939/19563)   Resolving deltas:  16% (3217/19563)   Resolving deltas:  17% (3326/19563)   Resolving deltas:  18% (3540/19563)   Resolving deltas:  19% (3739/19563)   Resolving deltas:  20% (3913/19563)   Resolving deltas:  21% (4169/19563)   Resolving deltas:  22% (4332/19563)   Resolving deltas:  23% (4510/19563)   Resolving deltas:  24% (4708/19563)   Resolving deltas:  27% (5366/19563)   Resolving deltas:  28% (5486/19563)   Resolving deltas:  29% (5719/19563)   Resolving deltas:  30% (5870/19563)   Resolving deltas:  31% (6068/19563)   Resolving deltas:  32% (6261/19563)   Resolving deltas:  33% (6486/19563)   Resolving deltas:  34% (6659/19563)   Resolving deltas:  35% (6849/19563)   Resolving deltas:  36% (7088/19563)   Resolving deltas:  37% (7273/19563)   Resolving deltas:  38% (7436/19563)   Resolving deltas:  39% (7640/19563)   Resolving deltas:  40% (7830/19563)   Resolving deltas:  41% (8021/19563)   Resolving deltas:  42% (8384/19563)   Resolving deltas:  43% (8439/19563)   Resolving deltas:  45% (8968/19563)   Resolving deltas:  46% (9000/19563)   Resolving deltas:  46% (9149/19563)   Resolving deltas:  47% (9200/19563)   Resolving deltas:  48% (9398/19563)   Resolving deltas:  49% (9601/19563)   Resolving deltas:  50% (9823/19563)   Resolving deltas:  51% (9979/19563)   Resolving deltas:  52% (10187/19563)   Resolving deltas:  53% (10458/19563)   Resolving deltas:  54% (10614/19563)   Resolving deltas:  55% (10913/19563)   Resolving deltas:  63% (12470/19563)   Resolving deltas:  64% (12521/19563)   Resolving deltas:  65% (12761/19563)   Resolving deltas:  66% (12918/19563)   Resolving deltas:  68% (13314/19563)   Resolving deltas:  69% (13501/19563)   Resolving deltas:  70% (13713/19563)   Resolving deltas:  71% (14005/19563)   Resolving deltas:  72% (14099/19563)   Resolving deltas:  73% (14345/19563)   Resolving deltas:  74% (14478/19563)   Resolving deltas:  75% (14686/19563)   Resolving deltas:  76% (14922/19563)   Resolving deltas:  77% (15105/19563)   Resolving deltas:  78% (15356/19563)   Resolving deltas:  79% (15460/19563)   Resolving deltas:  80% (15659/19563)   Resolving deltas:  81% (15851/19563)   Resolving deltas:  82% (16059/19563)   Resolving deltas:  83% (16254/19563)   Resolving deltas:  84% (16443/19563)   Resolving deltas:  85% (16641/19563)   Resolving deltas:  86% (16825/19563)   Resolving deltas:  87% (17144/19563)   Resolving deltas:  88% (17285/19563)   Resolving deltas:  89% (17414/19563)   Resolving deltas:  90% (17631/19563)   Resolving deltas:  91% (17846/19563)   Resolving deltas:  92% (18046/19563)   Resolving deltas:  93% (18259/19563)   Resolving deltas:  94% (18425/19563)   Resolving deltas:  95% (18600/19563)   Resolving deltas:  96% (18792/19563)   Resolving deltas:  97% (18979/19563)   Resolving deltas:  98% (19190/19563)   Resolving deltas:  99% (19399/19563)   Resolving deltas: 100% (19563/19563)   Resolving deltas: 100% (19563/19563), done.
++ cd /home/fedora/xfstests
++ make
+libtoolize -cfi
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './config.guess'
+libtoolize: copying file './config.sub'
+libtoolize: copying file './install-sh'
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+libtoolize: Consider adding '-I m4' to ACLOCAL_AMFLAGS in Makefile.am.
+aclocal -I m4
+autoheader
+autoconf
+./configure \
+                --libexecdir=/usr/lib \
+                --exec_prefix=/var/lib
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking for gawk... gawk
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... no
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking for gmake... /usr/bin/gmake
+./configure: line 11954: test: $(SHELL): binary operator expected
+checking for tar... /bin/tar
+checking for gzip... /bin/gzip
+checking whether gcc -MM is supported... yes
+checking for sort... /bin/sort
+checking whether ln -s works... yes
+checking for rpm... /bin/rpm
+checking for rpmbuild... no
+checking for ANSI C header files... (cached) yes
+checking assert.h usability... yes
+checking assert.h presence... yes
+checking for assert.h... yes
+checking bstring.h usability... no
+checking bstring.h presence... no
+checking for bstring.h... no
+checking libgen.h usability... yes
+checking libgen.h presence... yes
+checking for libgen.h... yes
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking uuid.h usability... no
+checking uuid.h presence... no
+checking for uuid.h... no
+checking uuid/uuid.h usability... yes
+checking uuid/uuid.h presence... yes
+checking for uuid/uuid.h... yes
+checking sys/uuid.h usability... no
+checking sys/uuid.h presence... no
+checking for sys/uuid.h... no
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/fcntl.h usability... yes
+checking sys/fcntl.h presence... yes
+checking for sys/fcntl.h... yes
+checking sys/syssgi.h usability... no
+checking sys/syssgi.h presence... no
+checking for sys/syssgi.h... no
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for sys/stat.h... (cached) yes
+checking sys/statvfs.h usability... yes
+checking sys/statvfs.h presence... yes
+checking for sys/statvfs.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking for sys/types.h... (cached) yes
+checking for strings.h... (cached) yes
+checking err.h usability... yes
+checking err.h presence... yes
+checking for err.h... yes
+checking linux/falloc.h usability... yes
+checking linux/falloc.h presence... yes
+checking for linux/falloc.h... yes
+checking sys/fs/xfs_fsops.h usability... no
+checking sys/fs/xfs_fsops.h presence... no
+checking for sys/fs/xfs_fsops.h... no
+checking sys/fs/xfs_itable.h usability... no
+checking sys/fs/xfs_itable.h presence... no
+checking for sys/fs/xfs_itable.h... no
+checking xfs/platform_defs.h usability... no
+checking xfs/platform_defs.h presence... no
+checking for xfs/platform_defs.h... no
+checking btrfs/ioctl.h usability... yes
+checking btrfs/ioctl.h presence... yes
+checking for btrfs/ioctl.h... yes
+checking cifs/ioctl.h usability... no
+checking cifs/ioctl.h presence... no
+checking for cifs/ioctl.h... no
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking for xfs/xfs_log_format.h... no
+checking for uuid_compare... no
+checking for uuid_compare in -luuid... yes
+checking for xfs/xfs.h... yes
+checking for xfs/libxfs.h... no
+checking whether xlog_assign_lsn is declared... no
+checking for xfs/xqm.h... yes
+checking xfsctl from xfs/xfs.h... ok
+checking xfs/handle.h usability... yes
+checking xfs/handle.h presence... yes
+checking for xfs/handle.h... yes
+checking for attr_list_by_handle in -lhandle... yes
+checking attr/xattr.h usability... yes
+checking attr/xattr.h presence... yes
+checking for attr/xattr.h... yes
+checking attr/attributes.h usability... yes
+checking attr/attributes.h presence... yes
+checking for attr/attributes.h... yes
+checking sys/attributes.h usability... no
+checking sys/attributes.h presence... no
+checking for sys/attributes.h... no
+checking for attr_list in -lattr... yes
+checking for getxattr in -lattr... yes
+checking sys/acl.h usability... yes
+checking sys/acl.h presence... yes
+checking for sys/acl.h... yes
+checking acl/libacl.h usability... yes
+checking acl/libacl.h presence... yes
+checking for acl/libacl.h... yes
+checking for acl_init in -lacl... yes
+checking gdbm-ndbm.h usability... no
+checking gdbm-ndbm.h presence... no
+checking for gdbm-ndbm.h... no
+checking gdbm/ndbm.h usability... no
+checking gdbm/ndbm.h presence... no
+checking for gdbm/ndbm.h... no
+checking gdbm.h usability... no
+checking gdbm.h presence... no
+checking for gdbm.h... no
+checking ndbm.h usability... no
+checking ndbm.h presence... no
+checking for ndbm.h... no
+checking libaio.h usability... yes
+checking libaio.h presence... yes
+checking for libaio.h... yes
+checking for dm_make_handle in -ldm... no
+
+WARNING: could not find a valid DMAPI base library.
+If you want DMAPI support please install the data migration
+API (dmapi) library package. Alternatively, run "make install"
+from the dmapi source.
+
+checking linux/fiemap.h usability... yes
+checking linux/fiemap.h presence... yes
+checking for linux/fiemap.h... yes
+checking for fallocate... yes
+checking for open_by_handle_at... yes
+checking sys/prctl.h usability... yes
+checking sys/prctl.h presence... yes
+checking for sys/prctl.h... yes
+checking linux/fs.h usability... yes
+checking linux/fs.h presence... yes
+checking for linux/fs.h... yes
+checking for renameat2... no
+configure: creating ./config.status
+config.status: creating include/builddefs
+config.status: creating include/config.h
+config.status: executing libtool commands
+Building include
+Building lib
+    [LTDEP]
+    [CC] dataascii.lo
+    [CC] databin.lo
+    [CC] datapid.lo
+    [CC] file_lock.lo
+    [CC] forker.lo
+    [CC] pattern.lo
+    [CC] open_flags.lo
+    [CC] random_range.lo
+    [CC] string_to_tokens.lo
+    [CC] str_to_bytes.lo
+    [CC] tlibio.lo
+    [CC] write_log.lo
+    [CC] random.lo
+    [LD] 
+Building ltp
+    [DEP]
+    [CC]    doio
+    [CC]    fsstress
+    [CC]    fsx
+    [CC]    growfiles
+    [CC]    iogen
+    [CC]    aio-stress
+Building src
+    [DEP]
+    [DEP]
+    [DEP]
+    [DEP]
+    [CC]    dirstress
+    [CC]    fill
+    [CC]    fill2
+    [CC]    getpagesize
+    [CC]    holes
+    [CC]    lstat64
+    [CC]    nametest
+    [CC]    permname
+    [CC]    randholes
+    [CC]    runas
+    [CC]    truncfile
+    [CC]    usemem
+    [CC]    mmapcat
+    [CC]    append_reader
+    [CC]    append_writer
+    [CC]    dirperf
+    [CC]    metaperf
+    [CC]    devzero
+    [CC]    feature
+    [CC]    alloc
+    [CC]    fault
+    [CC]    fstest
+    [CC]    t_access_root
+    [CC]    godown
+    [CC]    resvtest
+    [CC]    writemod
+    [CC]    writev_on_pagefault
+    [CC]    makeextents
+    [CC]    itrash
+    [CC]    rename
+    [CC]    multi_open_unlink
+    [CC]    dmiperf
+    [CC]    unwritten_sync
+    [CC]    genhashnames
+    [CC]    t_holes
+    [CC]    t_mmap_writev
+    [CC]    t_truncate_cmtime
+    [CC]    dirhash_collide
+    [CC]    t_rename_overwrite
+    [CC]    holetest
+    [CC]    t_truncate_self
+    [CC]    t_mmap_dio
+    [CC]    af_unix
+    [CC]    t_mmap_stale_pmd
+    [CC]    t_mmap_cow_race
+    [CC]    t_mmap_fallocate
+    [CC]    fsync-err
+    [CC]    t_mmap_write_ro
+    [CC]    t_ext4_dax_journal_corruption
+    [CC]    t_ext4_dax_inline_corruption
+    [CC]    xfsctl
+    [CC]    bstat
+    [CC]    t_mtab
+    [CC]    getdevicesize
+    [CC]    preallo_rw_pattern_reader
+    [CC]    preallo_rw_pattern_writer
+    [CC]    ftrunc
+    [CC]    trunc
+    [CC]    fs_perms
+    [CC]    testx
+    [CC]    looptest
+    [CC]    locktest
+    [CC]    unwritten_mmap
+    [CC]    bulkstat_unlink_test
+    [CC]    t_stripealign
+    [CC]    bulkstat_unlink_test_modified
+    [CC]    t_dir_offset
+    [CC]    t_futimens
+    [CC]    t_immutable
+    [CC]    stale_handle
+    [CC]    pwrite_mmap_blocked
+    [CC]    t_dir_offset2
+    [CC]    seek_sanity_test
+    [CC]    seek_copy_test
+    [CC]    t_readdir_1
+    [CC]    t_readdir_2
+    [CC]    fsync-tester
+    [CC]    nsexec
+    [CC]    cloner
+    [CC]    renameat2
+    [CC]    t_getcwd
+    [CC]    e4compact
+    [CC]    test-nextquota
+    [CC]    punch-alternating
+    [CC]    attr-list-by-handle-cursor-test
+    [CC]    listxattr
+    [CC]    dio-interleaved
+    [CC]    t_dir_type
+    [CC]    dio-invalidate-cache
+    [CC]    stat_test
+    [CC]    t_encrypted_d_revalidate
+    [CC]    fiemap-tester
+    [CC]    open_by_handle
+    [CC]    fssum
+Building log-writes
+    [CC]    replay-log
+Building perf
+Building aio-dio-regress
+    [CC]    aio-dio-fcntl-race
+    [CC]    aio-dio-subblock-eof-read
+    [CC]    aio-dio-append-write-read-race
+    [CC]    aio-dio-invalidate-readahead
+    [CC]    aio-dio-hole-filling-race
+    [CC]    aio-free-ring-with-bogus-nr-pages
+    [CC]    aio-dio-cycle-write
+    [CC]    aio-dio-extend-stat
+    [CC]    aio-io-setup-with-nonwritable-context-pointer
+    [CC]    aiocp
+    [CC]    aio-dio-invalidate-failure
+    [CC]    aiodio_sparse2
+    [CC]    aio-last-ref-held-by-io
+    [CC]    aio-dio-eof-race
+    [CC]    aio-dio-cow-race
+Building m4
+Building common
+Building tests
++ sudo make install
+Building include
+Building lib
+Building ltp
+Building src
+Building log-writes
+Building perf
+Building aio-dio-regress
+Building m4
+Building common
+Building tests
+/usr/bin/gmake --no-print-directory Q=@ -C include install
+gmake[1]: Nothing to be done for 'install'.
+/usr/bin/gmake --no-print-directory Q=@ -C lib install
+gmake[1]: Nothing to be done for 'install'.
+/usr/bin/gmake --no-print-directory Q=@ -C ltp install
+../install-sh -o fedora -g fedora -m 755 -d /var/lib/xfstests/ltp
+/bin/sh ../libtool --quiet --mode=install ../install-sh -o fedora -g fedora -m 755 doio fsstress fsx growfiles iogen aio-stress /var/lib/xfstests/ltp
+../install-sh -o fedora -g fedora -m 755 rwtest.sh /var/lib/xfstests/ltp
+/usr/bin/gmake --no-print-directory Q=@ -C src install
+Building log-writes
+Building perf
+Building aio-dio-regress
+/usr/bin/gmake -C log-writes install
+../../install-sh -o fedora -g fedora -m 755 -d /var/lib/xfstests/src/log-writes
+../../install-sh -o fedora -g fedora -m 755 replay-log /var/lib/xfstests/src/log-writes
+/usr/bin/gmake -C perf install
+../../install-sh -o fedora -g fedora -m 755 -d /var/lib/xfstests/src/perf
+../../install-sh -o fedora -g fedora -m 755 ResultData.py fio-insert-and-compare.py FioResultDecoder.py FioCompare.py generate-schema.py fio-results.sql /var/lib/xfstests/src/perf
+/usr/bin/gmake -C aio-dio-regress install
+../../install-sh -o fedora -g fedora -m 755 -d /var/lib/xfstests/src/aio-dio-regress
+../../install-sh -o fedora -g fedora -m 755 aio-dio-fcntl-race aio-dio-subblock-eof-read aio-dio-append-write-read-race aio-dio-invalidate-readahead aio-dio-hole-filling-race aio-free-ring-with-bogus-nr-pages aio-dio-cycle-write aio-dio-extend-stat aio-io-setup-with-nonwritable-context-pointer aiocp aio-dio-invalidate-failure aiodio_sparse2 aio-last-ref-held-by-io aio-dio-eof-race aio-dio-cow-race /var/lib/xfstests/src/aio-dio-regress
+../install-sh -o fedora -g fedora -m 755 -d /var/lib/xfstests/src
+/bin/sh ../libtool --quiet --mode=install ../install-sh -o fedora -g fedora -m 755 dirstress fill fill2 getpagesize holes lstat64 nametest permname randholes runas truncfile usemem mmapcat append_reader append_writer dirperf metaperf devzero feature alloc fault fstest t_access_root godown resvtest writemod writev_on_pagefault makeextents itrash rename multi_open_unlink dmiperf unwritten_sync genhashnames t_holes t_mmap_writev t_truncate_cmtime dirhash_collide t_rename_overwrite holetest t_truncate_self t_mmap_dio af_unix t_mmap_stale_pmd t_mmap_cow_race t_mmap_fallocate fsync-err t_mmap_write_ro t_ext4_dax_journal_corruption t_ext4_dax_inline_corruption xfsctl bstat t_mtab getdevicesize preallo_rw_pattern_reader preallo_rw_pattern_writer ftrunc trunc fs_perms testx looptest locktest unwritten_mmap bulkstat_unlink_test t_stripealign bulkstat_unlink_test_modified t_dir_offset t_futimens t_immutable stale_handle pwrite_mmap_blocked t_dir_offset2 seek_sanity_test seek_copy_test t_readdir_1 t_readdir_2 fsync-tester nsexec cloner renameat2 t_getcwd e4compact test-nextquota punch-alternating attr-list-by-handle-cursor-test listxattr dio-interleaved t_dir_type dio-invalidate-cache stat_test t_encrypted_d_revalidate fiemap-tester open_by_handle fssum /var/lib/xfstests/src
+/bin/sh ../libtool --quiet --mode=install ../install-sh -o fedora -g fedora -m 755 dmerror fill2attr fill2fs fill2fs_check scaleread.sh /var/lib/xfstests/src
+/bin/sh ../libtool --quiet --mode=install ../install-sh -o fedora -g fedora -m 644 dumpfile /var/lib/xfstests/src
+/usr/bin/gmake --no-print-directory Q=@ -C m4 install
+gmake[1]: Nothing to be done for 'install'.
+/usr/bin/gmake --no-print-directory Q=@ -C common install
+../install-sh -o fedora -g fedora -m 755 -d /var/lib/xfstests/common
+../install-sh -o fedora -g fedora -m 644 * /var/lib/xfstests/common
+/usr/bin/gmake --no-print-directory Q=@ -C tests install
+../install-sh -o fedora -g fedora -m 755 -d /var/lib/xfstests/tests
+./install-sh -o fedora -g fedora -m 755 -d /var/lib/xfstests
+./install-sh -o fedora -g fedora -m 755 check /var/lib/xfstests
+./install-sh -o fedora -g fedora -m 644 randomize.awk /var/lib/xfstests
++ sudo mkdir -p /mnt/test
++ sudo mkdir -p /mnt/scratch
++ sudo mkfs.btrfs -f /dev/xvdb
+btrfs-progs v4.14.1
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               4c8f9947-dec3-47ce-8725-bdaa78b0d4f4
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdb
+
++ cp -v /home/fedora/btrfsqe/local.config /home/fedora/xfstests
+'/home/fedora/btrfsqe/local.config' -> '/home/fedora/xfstests/local.config'
++ sed -i s/fssize=2048/fssize=64/ /home/fedora/xfstests/tests/btrfs/011
++ sed -i s/bs=1M/bs=512K/ /home/fedora/xfstests/tests/btrfs/011
++ cd /home/fedora/xfstests
++ sudo ./check -g qgroup 'tests/btrfs/*'
+tests/btrfs/001.out - unknown test, ignored
+tests/btrfs/002.out - unknown test, ignored
+tests/btrfs/003.out - unknown test, ignored
+tests/btrfs/004.out - unknown test, ignored
+tests/btrfs/005.out - unknown test, ignored
+tests/btrfs/006.out - unknown test, ignored
+tests/btrfs/007.out - unknown test, ignored
+tests/btrfs/008.out - unknown test, ignored
+tests/btrfs/009.out - unknown test, ignored
+tests/btrfs/010.out - unknown test, ignored
+tests/btrfs/011.out - unknown test, ignored
+tests/btrfs/012.out - unknown test, ignored
+tests/btrfs/013.out - unknown test, ignored
+tests/btrfs/014.out - unknown test, ignored
+tests/btrfs/015.out - unknown test, ignored
+tests/btrfs/016.out - unknown test, ignored
+tests/btrfs/017.out - unknown test, ignored
+tests/btrfs/018.out - unknown test, ignored
+tests/btrfs/019.out - unknown test, ignored
+tests/btrfs/020.out - unknown test, ignored
+tests/btrfs/021.out - unknown test, ignored
+tests/btrfs/022.out - unknown test, ignored
+tests/btrfs/023.out - unknown test, ignored
+tests/btrfs/024.out - unknown test, ignored
+tests/btrfs/025.out - unknown test, ignored
+tests/btrfs/026.out - unknown test, ignored
+tests/btrfs/027.out - unknown test, ignored
+tests/btrfs/028.out - unknown test, ignored
+tests/btrfs/029.out - unknown test, ignored
+tests/btrfs/030.out - unknown test, ignored
+tests/btrfs/031.out - unknown test, ignored
+tests/btrfs/032.out - unknown test, ignored
+tests/btrfs/033.out - unknown test, ignored
+tests/btrfs/034.out - unknown test, ignored
+tests/btrfs/035.out - unknown test, ignored
+tests/btrfs/036.out - unknown test, ignored
+tests/btrfs/037.out - unknown test, ignored
+tests/btrfs/038.out - unknown test, ignored
+tests/btrfs/039.out - unknown test, ignored
+tests/btrfs/040.out - unknown test, ignored
+tests/btrfs/041.out - unknown test, ignored
+tests/btrfs/042.out - unknown test, ignored
+tests/btrfs/043.out - unknown test, ignored
+tests/btrfs/044.out - unknown test, ignored
+tests/btrfs/045.out - unknown test, ignored
+tests/btrfs/046.out - unknown test, ignored
+tests/btrfs/047.out - unknown test, ignored
+tests/btrfs/048.out - unknown test, ignored
+tests/btrfs/049.out - unknown test, ignored
+tests/btrfs/050.out - unknown test, ignored
+tests/btrfs/051.out - unknown test, ignored
+tests/btrfs/052.out - unknown test, ignored
+tests/btrfs/053.out - unknown test, ignored
+tests/btrfs/054.out - unknown test, ignored
+tests/btrfs/055.out - unknown test, ignored
+tests/btrfs/056.out - unknown test, ignored
+tests/btrfs/057.out - unknown test, ignored
+tests/btrfs/058.out - unknown test, ignored
+tests/btrfs/059.out - unknown test, ignored
+tests/btrfs/060.out - unknown test, ignored
+tests/btrfs/061.out - unknown test, ignored
+tests/btrfs/062.out - unknown test, ignored
+tests/btrfs/063.out - unknown test, ignored
+tests/btrfs/064.out - unknown test, ignored
+tests/btrfs/065.out - unknown test, ignored
+tests/btrfs/066.out - unknown test, ignored
+tests/btrfs/067.out - unknown test, ignored
+tests/btrfs/068.out - unknown test, ignored
+tests/btrfs/069.out - unknown test, ignored
+tests/btrfs/070.out - unknown test, ignored
+tests/btrfs/071.out - unknown test, ignored
+tests/btrfs/072.out - unknown test, ignored
+tests/btrfs/073.out - unknown test, ignored
+tests/btrfs/074.out - unknown test, ignored
+tests/btrfs/075.out - unknown test, ignored
+tests/btrfs/076.out - unknown test, ignored
+tests/btrfs/077.out - unknown test, ignored
+tests/btrfs/078.out - unknown test, ignored
+tests/btrfs/079.out - unknown test, ignored
+tests/btrfs/080.out - unknown test, ignored
+tests/btrfs/081.out - unknown test, ignored
+tests/btrfs/082.out - unknown test, ignored
+tests/btrfs/083.out - unknown test, ignored
+tests/btrfs/084.out - unknown test, ignored
+tests/btrfs/085.out - unknown test, ignored
+tests/btrfs/086.out - unknown test, ignored
+tests/btrfs/087.out - unknown test, ignored
+tests/btrfs/088.out - unknown test, ignored
+tests/btrfs/089.out - unknown test, ignored
+tests/btrfs/090.out - unknown test, ignored
+tests/btrfs/091.out - unknown test, ignored
+tests/btrfs/092.out - unknown test, ignored
+tests/btrfs/093.out - unknown test, ignored
+tests/btrfs/094.out - unknown test, ignored
+tests/btrfs/095.out - unknown test, ignored
+tests/btrfs/096.out - unknown test, ignored
+tests/btrfs/097.out - unknown test, ignored
+tests/btrfs/098.out - unknown test, ignored
+tests/btrfs/099.out - unknown test, ignored
+tests/btrfs/100.out - unknown test, ignored
+tests/btrfs/101.out - unknown test, ignored
+tests/btrfs/102.out - unknown test, ignored
+tests/btrfs/103.out - unknown test, ignored
+tests/btrfs/104.out - unknown test, ignored
+tests/btrfs/105.out - unknown test, ignored
+tests/btrfs/106.out - unknown test, ignored
+tests/btrfs/107.out - unknown test, ignored
+tests/btrfs/108.out - unknown test, ignored
+tests/btrfs/109.out - unknown test, ignored
+tests/btrfs/110.out - unknown test, ignored
+tests/btrfs/111.out - unknown test, ignored
+tests/btrfs/112.out - unknown test, ignored
+tests/btrfs/113.out - unknown test, ignored
+tests/btrfs/114.out - unknown test, ignored
+tests/btrfs/115.out - unknown test, ignored
+tests/btrfs/116.out - unknown test, ignored
+tests/btrfs/117.out - unknown test, ignored
+tests/btrfs/118.out - unknown test, ignored
+tests/btrfs/119.out - unknown test, ignored
+tests/btrfs/120.out - unknown test, ignored
+tests/btrfs/121.out - unknown test, ignored
+tests/btrfs/122.out - unknown test, ignored
+tests/btrfs/123.out - unknown test, ignored
+tests/btrfs/124.out - unknown test, ignored
+tests/btrfs/125.out - unknown test, ignored
+tests/btrfs/126.out - unknown test, ignored
+tests/btrfs/127.out - unknown test, ignored
+tests/btrfs/128.out - unknown test, ignored
+tests/btrfs/129.out - unknown test, ignored
+tests/btrfs/130.out - unknown test, ignored
+tests/btrfs/131.out - unknown test, ignored
+tests/btrfs/132.out - unknown test, ignored
+tests/btrfs/133.out - unknown test, ignored
+tests/btrfs/134.out - unknown test, ignored
+tests/btrfs/135.out - unknown test, ignored
+tests/btrfs/136.out - unknown test, ignored
+tests/btrfs/137.out - unknown test, ignored
+tests/btrfs/138.out - unknown test, ignored
+tests/btrfs/139.out - unknown test, ignored
+tests/btrfs/140.out - unknown test, ignored
+tests/btrfs/141.out - unknown test, ignored
+tests/btrfs/142.out - unknown test, ignored
+tests/btrfs/143.out - unknown test, ignored
+tests/btrfs/144.out - unknown test, ignored
+tests/btrfs/145.out - unknown test, ignored
+tests/btrfs/146.out - unknown test, ignored
+tests/btrfs/147.out - unknown test, ignored
+tests/btrfs/148.out - unknown test, ignored
+tests/btrfs/149.out - unknown test, ignored
+tests/btrfs/150.out - unknown test, ignored
+tests/btrfs/151.out - unknown test, ignored
+tests/btrfs/152.out - unknown test, ignored
+tests/btrfs/153.out - unknown test, ignored
+tests/btrfs/154.out - unknown test, ignored
+tests/btrfs/155.out - unknown test, ignored
+tests/btrfs/156.out - unknown test, ignored
+tests/btrfs/157.out - unknown test, ignored
+tests/btrfs/158.out - unknown test, ignored
+tests/btrfs/Makefile - unknown test, ignored
+tests/btrfs/group - unknown test, ignored
+FSTYP         -- btrfs
+PLATFORM      -- Linux/x86_64 ip-172-31-37-227 4.11.8-300.fc26.x86_64
+MKFS_OPTIONS  -- /dev/xvdc
+MOUNT_OPTIONS -- -o context=system_u:object_r:root_t:s0 /dev/xvdc /mnt/scratch
+
+btrfs/001	 1s
+btrfs/002	 25s
+btrfs/003	 [not run] /dev/xvdc is a device which is not deletable
+btrfs/004	 [failed, exit status 1] - output mismatch (see /home/fedora/xfstests/results//btrfs/004.out.bad)
+    --- tests/btrfs/004.out	2018-02-01 20:37:25.006080539 +0000
+    +++ /home/fedora/xfstests/results//btrfs/004.out.bad	2018-02-01 20:40:37.635313015 +0000
+    @@ -1,3 +1,62803 @@
+     QA output created by 004
+     *** test backref walking
+    -*** done
+    +unexpected output from
+    +	/bin/btrfs inspect-internal logical-resolve -P 275832832 /mnt/scratch
+    +expected inum: 423, expected address: 57344, file: /mnt/scratch/snap1/p0/d0/d2b/d96/dbb/de6/f197, got:
+    +inode 324 offset 1658880 root 258
+    ...
+    (Run 'diff -u tests/btrfs/004.out /home/fedora/xfstests/results//btrfs/004.out.bad'  to see the entire diff)
+btrfs/005	 12s
+btrfs/006	 3s
+btrfs/007	 [failed, exit status 1] - output mismatch (see /home/fedora/xfstests/results//btrfs/007.out.bad)
+    --- tests/btrfs/007.out	2018-02-01 20:37:25.006080539 +0000
+    +++ /home/fedora/xfstests/results//btrfs/007.out.bad	2018-02-01 20:40:55.202969419 +0000
+    @@ -1,4 +1,5 @@
+     QA output created by 007
+     *** test send / receive
+    -*** done
+    +failed: '/home/fedora/xfstests/src/fssum -r /tmp/tmp.mPsBfQVUZK/incr.fssum /mnt/scratch/incr'
+    +(see /home/fedora/xfstests/results//btrfs/007.full for details)
+     *** unmount
+    ...
+    (Run 'diff -u tests/btrfs/007.out /home/fedora/xfstests/results//btrfs/007.out.bad'  to see the entire diff)
+btrfs/008	 0s
+btrfs/009	 1s
+btrfs/010	 175s
+btrfs/011	 287s
+btrfs/012	 76s
+btrfs/013	 11s
+btrfs/014	 208s
+btrfs/015	 1s
+btrfs/016	 2s
+btrfs/017	 1s
+btrfs/018	 0s
+btrfs/019	 0s
+btrfs/020	 1s
+btrfs/021	 18s
+btrfs/022	 12s
+btrfs/023	 5s
+btrfs/024	 2s
+btrfs/025	 1s
+btrfs/026	 18s
+btrfs/027	 13s
+btrfs/028	 32s
+btrfs/029	 1s
+btrfs/030	 2s
+btrfs/031	 1s
+btrfs/032	 1s
+btrfs/033	 35s
+btrfs/034	 13s
+btrfs/035	 1s
+btrfs/036	 66s
+btrfs/037	 3s
+btrfs/038	 1s
+btrfs/039	 1s
+btrfs/040	 1s
+btrfs/041	 1s
+btrfs/042	 0s
+btrfs/043	 1s
+btrfs/044	 1s
+btrfs/045	 1s
+btrfs/046	 9s
+btrfs/047	 1s
+btrfs/048	 3s
+btrfs/049	 6s
+btrfs/050	 13s
+btrfs/051	 1s
+btrfs/052	 5s
+btrfs/053	 1s
+btrfs/054	 1s
+btrfs/055	 2s
+btrfs/056	 16s
+btrfs/057	 7s
+btrfs/058	 3s
+btrfs/059	 0s
+btrfs/060	 123s
+btrfs/061	 141s
+btrfs/062	 244s
+btrfs/063	 120s
+btrfs/064	 115s
+btrfs/065	 41s
+btrfs/066	 49s
+btrfs/067	 94s
+btrfs/068	 45s
+btrfs/069	 70s
+btrfs/070	 92s
+btrfs/071	 123s
+btrfs/072	 112s
+btrfs/073	 67s
+btrfs/074	 108s
+btrfs/075	 0s
+btrfs/076	 0s
+btrfs/077	 1s
+btrfs/078	 125s
+btrfs/079	 270s
+btrfs/080	 95s
+btrfs/081	 - output mismatch (see /home/fedora/xfstests/results//btrfs/081.out.bad)
+    --- tests/btrfs/081.out	2018-02-01 20:37:25.025080168 +0000
+    +++ /home/fedora/xfstests/results//btrfs/081.out.bad	2018-02-01 21:34:45.955416208 +0000
+    @@ -206,5 +206,169 @@
+     Verifying file digests after cloning
+     14968c092c68e32fa35e776392d14523  SCRATCH_MNT/foo
+     14968c092c68e32fa35e776392d14523  SCRATCH_MNT/bar
+    +cat: /mnt/scratch/bar: No such file or directory
+    +cat: /mnt/scratch/bar: No such file or directory
+    +cat: /mnt/scratch/bar: No such file or directory
+    +cat: /mnt/scratch/bar: No such file or directory
+    ...
+    (Run 'diff -u tests/btrfs/081.out /home/fedora/xfstests/results//btrfs/081.out.bad'  to see the entire diff)
+btrfs/082	 1s
+btrfs/083	 2s
+btrfs/084	 2s
+btrfs/085	 8s
+btrfs/086	 1s
+btrfs/087	 2s
+btrfs/088	 [not run] /sys/kernel/debug/fail_make_request  not found. Seems that CONFIG_FAIL_MAKE_REQUEST kernel config option not enabled
+btrfs/089	 1s
+btrfs/090	 3s
+btrfs/091	 2s
+btrfs/092	 1s
+btrfs/093	 3s
+btrfs/094	 2s
+btrfs/095	 4s
+btrfs/096	 1s
+btrfs/097	 2s
+btrfs/098	 3s
+btrfs/099	 1s
+btrfs/100	 - output mismatch (see /home/fedora/xfstests/results//btrfs/100.out.bad)
+    --- tests/btrfs/100.out	2018-02-01 20:37:25.028080109 +0000
+    +++ /home/fedora/xfstests/results//btrfs/100.out.bad	2018-02-01 21:36:44.005108469 +0000
+    @@ -7,5 +7,6 @@
+     Label: none  uuid: <UUID>
+     	Total devices <NUM> FS bytes used <SIZE>
+     	devid <DEVID> size <SIZE> used <SIZE> path SCRATCH_DEV
+    +	devid <DEVID> size <SIZE> used <SIZE> path /dev/mapper/error-test
+     
+     === device replace completed
+    ...
+    (Run 'diff -u tests/btrfs/100.out /home/fedora/xfstests/results//btrfs/100.out.bad'  to see the entire diff)
+btrfs/101	 40s
+btrfs/102	 3s
+btrfs/103	 2s
+btrfs/104	 2s
+btrfs/105	 2s
+btrfs/106	 2s
+btrfs/107	 1s
+btrfs/108	 2s
+btrfs/109	 2s
+btrfs/110	 2s
+btrfs/111	 3s
+btrfs/112	 3s
+btrfs/113	 1s
+btrfs/114	 76s
+btrfs/115	 72s
+btrfs/116	 [not run] FITRIM not supported on /mnt/scratch
+btrfs/117	 4s
+btrfs/118	 4s
+btrfs/119	 4s
+btrfs/120	 2s
+btrfs/121	 1s
+btrfs/122	 20s
+btrfs/123	 3s
+btrfs/124	 185s
+btrfs/125	 32s
+btrfs/126	 2s
+btrfs/127	 2s
+btrfs/128	 1s
+btrfs/129	 1s
+btrfs/130	 [failed, exit status 1]
+_check_dmesg: something found in dmesg (see /home/fedora/xfstests/results//btrfs/130.dmesg)
+btrfs/131	 6s
+btrfs/132	 31s
+btrfs/133	 1s
+btrfs/134	 2s
+btrfs/135	 2s
+btrfs/136	 75s
+btrfs/137	 3s
+btrfs/138	 329s
+btrfs/139	 - output mismatch (see /home/fedora/xfstests/results//btrfs/139.out.bad)
+    --- tests/btrfs/139.out	2018-02-01 20:37:25.037079933 +0000
+    +++ /home/fedora/xfstests/results//btrfs/139.out.bad	2018-02-01 22:05:22.372846695 +0000
+    @@ -1,16 +1,712 @@
+     QA output created by 139
+    -wrote 134217728/134217728 bytes at offset 0
+    -XXX Bytes, X ops; XX:XX:XX.X (XXX YYY/sec and XXX ops/sec)
+    -wrote 134217728/134217728 bytes at offset 0
+    -XXX Bytes, X ops; XX:XX:XX.X (XXX YYY/sec and XXX ops/sec)
+    -wrote 134217728/134217728 bytes at offset 0
+    -XXX Bytes, X ops; XX:XX:XX.X (XXX YYY/sec and XXX ops/sec)
+    ...
+    (Run 'diff -u tests/btrfs/139.out /home/fedora/xfstests/results//btrfs/139.out.bad'  to see the entire diff)
+btrfs/140	 3s
+btrfs/141	 4s
+btrfs/142	 [not run] /sys/kernel/debug/fail_make_request  not found. Seems that CONFIG_FAIL_MAKE_REQUEST kernel config option not enabled
+btrfs/143	 [not run] /sys/kernel/debug/fail_make_request  not found. Seems that CONFIG_FAIL_MAKE_REQUEST kernel config option not enabled
+btrfs/144	 - output mismatch (see /home/fedora/xfstests/results//btrfs/144.out.bad)
+    --- tests/btrfs/144.out	2018-02-01 20:37:25.042079835 +0000
+    +++ /home/fedora/xfstests/results//btrfs/144.out.bad	2018-02-01 22:05:42.617458341 +0000
+    @@ -2,5 +2,10 @@
+     At subvol SCRATCH_MNT/mysnap1
+     At subvol SCRATCH_MNT/mysnap2
+     At subvol mysnap1
+    +ERROR: link f3 -> o258-8-0 failed: No such file or directory
+     OK
+    -OK
+    +only in remote fs: /f3
+    ...
+    (Run 'diff -u tests/btrfs/144.out /home/fedora/xfstests/results//btrfs/144.out.bad'  to see the entire diff)
+btrfs/145	 - output mismatch (see /home/fedora/xfstests/results//btrfs/145.out.bad)
+    --- tests/btrfs/145.out	2018-02-01 20:37:25.042079835 +0000
+    +++ /home/fedora/xfstests/results//btrfs/145.out.bad	2018-02-01 22:05:45.394405070 +0000
+    @@ -2,5 +2,18 @@
+     At subvol SCRATCH_MNT/mysnap1
+     At subvol SCRATCH_MNT/mysnap2
+     At subvol mysnap1
+    +ERROR: unlink dir1/dir3/file22 failed. Not a directory
+     OK
+    -OK
+    +only in local fs: /dir1/dir2/file3
+    ...
+    (Run 'diff -u tests/btrfs/145.out /home/fedora/xfstests/results//btrfs/145.out.bad'  to see the entire diff)
+btrfs/146	 - output mismatch (see /home/fedora/xfstests/results//btrfs/146.out.bad)
+    --- tests/btrfs/146.out	2018-02-01 20:37:25.043079816 +0000
+    +++ /home/fedora/xfstests/results//btrfs/146.out.bad	2018-02-01 22:05:49.990316907 +0000
+    @@ -1,3 +1,3 @@
+     QA output created by 146
+     Format and mount
+    -Test passed!
+    +Success on second fsync on fd[1]!
+    ...
+    (Run 'diff -u tests/btrfs/146.out /home/fedora/xfstests/results//btrfs/146.out.bad'  to see the entire diff)
+btrfs/147	 - output mismatch (see /home/fedora/xfstests/results//btrfs/147.out.bad)
+    --- tests/btrfs/147.out	2018-02-01 20:37:25.043079816 +0000
+    +++ /home/fedora/xfstests/results//btrfs/147.out.bad	2018-02-01 22:05:52.358269924 +0000
+    @@ -2,5 +2,16 @@
+     At subvol SCRATCH_MNT/mysnap1
+     At subvol SCRATCH_MNT/mysnap2
+     At subvol mysnap1
+    +ERROR: link dir1/dir2/dir3/dir4/file11 -> dir1/dir2/dir3/file1 failed: Not a directory
+     OK
+    -OK
+    +only in local fs: /dir1/dir2/dir3/file1
+    ...
+    (Run 'diff -u tests/btrfs/147.out /home/fedora/xfstests/results//btrfs/147.out.bad'  to see the entire diff)
+btrfs/148	 8s
+btrfs/149	 - output mismatch (see /home/fedora/xfstests/results//btrfs/149.out.bad)
+    --- tests/btrfs/149.out	2018-02-01 20:37:25.043079816 +0000
+    +++ /home/fedora/xfstests/results//btrfs/149.out.bad	2018-02-01 22:06:06.172978285 +0000
+    @@ -9,6 +9,8 @@
+     1696b8fe138e867797eb6683cf13d99c  SCRATCH_MNT/mysnap1/foobar
+     28feb14349a6f6c67a11967278ed7359  SCRATCH_MNT/mysnap2/foobar
+     At subvol mysnap1
+    +ERROR: failed to clone extents to foobar
+    +Operation not supported
+     File digests in the new filesystem:
+     1696b8fe138e867797eb6683cf13d99c  SCRATCH_MNT/mysnap1/foobar
+    ...
+    (Run 'diff -u tests/btrfs/149.out /home/fedora/xfstests/results//btrfs/149.out.bad'  to see the entire diff)
+btrfs/150	 [not run] /sys/kernel/debug/fail_make_request  not found. Seems that CONFIG_FAIL_MAKE_REQUEST kernel config option not enabled
+btrfs/151	 - output mismatch (see /home/fedora/xfstests/results//btrfs/151.out.bad)
+    --- tests/btrfs/151.out	2018-02-01 20:37:25.043079816 +0000
+    +++ /home/fedora/xfstests/results//btrfs/151.out.bad	2018-02-01 22:06:10.704882614 +0000
+    @@ -1,2 +1 @@
+     QA output created by 151
+    -Data, RAID1
+    ...
+    (Run 'diff -u tests/btrfs/151.out /home/fedora/xfstests/results//btrfs/151.out.bad'  to see the entire diff)
+btrfs/152	
+Script done on 2018-02-01 22:06:29+0000

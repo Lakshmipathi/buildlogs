@@ -1,0 +1,74 @@
+btrfs-progs v4.14.1
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               b970e8e4-1f2b-41d9-8d1a-2f9009804754
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# dd if=/dev/zero of=/mnt/scratch/testdir/testfile bs=1048576 count=1
+1+0 records in
+1+0 records out
+btrfs-progs v4.14.1
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               3c5747ab-97a6-45ec-adad-cb7e11589152
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# /bin/btrfs subvolume create /mnt/scratch/testdir
+Create subvolume '/mnt/scratch/testdir'
+# /bin/btrfs subvolume set-default 257 /mnt/scratch
+# dd if=/dev/zero of=/mnt/scratch/testdir/testfile bs=1048576 count=1
+1+0 records in
+1+0 records out
+btrfs-progs v4.14.1
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               621e5303-e6cb-4928-8a8d-5feeb5c6ed5d
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# /bin/btrfs subvolume create /mnt/scratch/testdir
+Create subvolume '/mnt/scratch/testdir'
+# dd if=/dev/zero of=/mnt/scratch/testdir/testfile bs=1048576 count=1
+1+0 records in
+1+0 records out
