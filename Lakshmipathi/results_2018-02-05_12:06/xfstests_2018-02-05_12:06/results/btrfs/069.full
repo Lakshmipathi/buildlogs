@@ -1,0 +1,94 @@
+Test -m single -d single
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 9896
+Start scrub worker: 9897
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Replacing /dev/xvde with /dev/xvdd
+Scrub the filesystem
+scrub done for 168c0347-191b-4a6f-97bc-0137725b327b
+	scrub started at Mon Feb  5 14:05:55 2018 and finished after 00:00:00
+	total bytes scrubbed: 30.20MiB with 0 errors
+Test -m raid0 -d raid0
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 10108
+Start scrub worker: 10109
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 0a39bcc6-91dd-4d3a-b70b-aaaf887e8758
+	scrub started at Mon Feb  5 14:06:00 2018 and finished after 00:00:01
+	total bytes scrubbed: 37.14MiB with 0 errors
+Test -m raid1 -d raid0
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 10238
+Start scrub worker: 10239
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 203c40ef-5083-41bf-8197-0f9d7bc2502c
+	scrub started at Mon Feb  5 14:06:06 2018 and finished after 00:00:00
+	total bytes scrubbed: 36.91MiB with 0 errors
+Test -m raid1 -d raid1
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 10588
+Start scrub worker: 10589
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for 64ed84e6-36b2-48f0-a0c3-f0cf2d96083f
+	scrub started at Mon Feb  5 14:06:10 2018 and finished after 00:00:00
+	total bytes scrubbed: 63.98MiB with 0 errors
+Test -m raid10 -d raid10
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 10714
+Start scrub worker: 10715
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for bf97b67d-34ef-412e-b6ed-8d5c987016d1
+	scrub started at Mon Feb  5 14:06:16 2018 and finished after 00:00:00
+	total bytes scrubbed: 55.93MiB with 0 errors
+Test -m raid5 -d raid5
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 10990
+Start scrub worker: 10991
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+Scrub the filesystem
+scrub done for dfad60cb-9e0d-4217-b7a9-28ba6ce58d1f
+	scrub started at Mon Feb  5 14:06:21 2018 and finished after 00:00:01
+	total bytes scrubbed: 29.75MiB with 0 errors
+Test -m raid6 -d raid6
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start replace worker: 11637
+Start scrub worker: 11638
+Wait for fsstress to exit and kill all background workers
+dev_pool=/dev/xvdd /dev/xvde /dev/xvdf
+free_dev=/dev/xvdg, src_dev=/dev/xvdd
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Replacing /dev/xvdd with /dev/xvdg
+ERROR: ioctl(DEV_REPLACE_START) on '/mnt/scratch' returns error: scrub is in progress
+Scrub the filesystem
+scrub done for 850b27e6-ad15-48f8-a302-e0b75c91e173
+	scrub started at Mon Feb  5 14:06:32 2018 and finished after 00:00:05
+	total bytes scrubbed: 33.64MiB with 0 errors

@@ -1,0 +1,46 @@
+# _scratch_mkfs
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               78287e8b-8d3f-4411-a496-4ec0cc2002e3
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# _scratch_mount
+# /bin/btrfs quota enable /mnt/scratch
+# /bin/btrfs qgroup create 1/1 /mnt/scratch
+# /bin/btrfs qgroup limit 10485760 1/1 /mnt/scratch
+# /bin/btrfs subvolume create -i 1/1 /mnt/scratch/subv_10
+Create subvolume '/mnt/scratch/subv_10'
+# /bin/btrfs subvolume create -i 1/1 /mnt/scratch/subv_9
+Create subvolume '/mnt/scratch/subv_9'
+# /bin/btrfs subvolume create -i 1/1 /mnt/scratch/subv_8
+Create subvolume '/mnt/scratch/subv_8'
+# /bin/btrfs subvolume create -i 1/1 /mnt/scratch/subv_7
+Create subvolume '/mnt/scratch/subv_7'
+# /bin/btrfs subvolume create -i 1/1 /mnt/scratch/subv_6
+Create subvolume '/mnt/scratch/subv_6'
+# /bin/btrfs subvolume create -i 1/1 /mnt/scratch/subv_5
+Create subvolume '/mnt/scratch/subv_5'
+# /bin/btrfs subvolume create -i 1/1 /mnt/scratch/subv_4
+Create subvolume '/mnt/scratch/subv_4'
+# /bin/btrfs subvolume create -i 1/1 /mnt/scratch/subv_3
+Create subvolume '/mnt/scratch/subv_3'
+# /bin/btrfs subvolume create -i 1/1 /mnt/scratch/subv_2
+Create subvolume '/mnt/scratch/subv_2'
+# /bin/btrfs subvolume create -i 1/1 /mnt/scratch/subv_1
+Create subvolume '/mnt/scratch/subv_1'
+# /bin/btrfs filesystem sync /mnt/scratch
