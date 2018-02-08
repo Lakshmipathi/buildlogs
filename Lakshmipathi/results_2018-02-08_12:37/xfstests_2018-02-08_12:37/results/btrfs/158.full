@@ -1,0 +1,11 @@
+step 1......mkfs.btrfs
+WARNING: metadata has lower redundancy than data!
+
+step 2......simulate bitrot at offset 9437184 of device_4(/dev/xvdf) and offset 9437184 of device_3(/dev/xvde)
+step 3......repair the bitrot
+ERROR: there are uncorrectable errors
+scrub done for 4592a393-39f5-41be-85cf-c307248a33ae
+	scrub started at Thu Feb  8 15:23:14 2018 and finished after 00:00:01
+	total bytes scrubbed: 384.00KiB with 128 errors
+	error details: read=32 csum=96
+	corrected errors: 0, uncorrectable errors: 128, unverified errors: 0

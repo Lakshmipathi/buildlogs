@@ -1,0 +1,14 @@
+Create subvolume '/mnt/scratch/subvol-031-1'
+Create subvolume '/mnt/scratch/subvol-031-2'
+wrote 10/10 bytes at offset 0
+10.000000 bytes, 1 ops; 0.0000 sec (488.281 KiB/sec and 50000.0000 ops/sec)
+wrote 13000/13000 bytes at offset 0
+13 KiB, 4 ops; 0.0000 sec (459.177 MiB/sec and 148148.1481 ops/sec)
+wrote 17000/17000 bytes at offset 0
+17 KiB, 5 ops; 0.0000 sec (559.050 MiB/sec and 172413.7931 ops/sec)
+wrote 20/20 bytes at offset 0
+20.000000 bytes, 1 ops; 0.0000 sec (1.362 MiB/sec and 71428.5714 ops/sec)
+wrote 21000/21000 bytes at offset 0
+21 KiB, 6 ops; 0.0000 sec (556.310 MiB/sec and 166666.6667 ops/sec)
+wrote 5000/5000 bytes at offset 5000
+5 KiB, 2 ops; 0.0000 sec (238.419 MiB/sec and 100000.0000 ops/sec)

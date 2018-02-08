@@ -1,0 +1,993 @@
+[ 8820.372359] run fstests btrfs/130 at 2018-02-08 15:05:02
+[ 8820.882396] BTRFS: device fsid f638e271-8a7d-4ec7-a8b1-ed24dc967c38 devid 1 transid 5 /dev/xvdc
+[ 8820.914992] BTRFS info (device xvdc): disk space caching is enabled
+[ 8820.920225] BTRFS info (device xvdc): has skinny extents
+[ 8820.924378] BTRFS info (device xvdc): flagging fs with big metadata feature
+[ 8820.933893] BTRFS info (device xvdc): detected SSD devices, enabling SSD mode
+[ 8820.940157] BTRFS info (device xvdc): creating UUID tree
+[ 8821.329115] BTRFS: device fsid 4a555a4d-4fa4-4d11-bb56-3b49f2305f21 devid 1 transid 5 /dev/xvdc
+[ 8821.360573] BTRFS info (device xvdc): disk space caching is enabled
+[ 8821.364480] BTRFS info (device xvdc): has skinny extents
+[ 8821.367999] BTRFS info (device xvdc): flagging fs with big metadata feature
+[ 8821.376745] BTRFS info (device xvdc): detected SSD devices, enabling SSD mode
+[ 8821.383082] BTRFS info (device xvdc): creating UUID tree
+[ 8876.350210] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 8876.355557] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 8876.374903] CPU: 0 PID: 12423 Comm: btrfs Not tainted 4.11.8-300.fc26.x86_64 #1
+[ 8876.380300] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 8876.385016] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 8876.389365] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 8876.393045] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 8876.397655] RAX: ffff8c2045058e00 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 8876.402076] RDX: ffff8c2045058920 RSI: 0000000001598000 RDI: ffff8c20761622e0
+[ 8876.407413] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2397a0
+[ 8876.412707] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 8876.417777] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20418347d0
+[ 8876.422429] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 8876.427672] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 8876.432003] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 8876.437249] Call Trace:
+[ 8876.439784]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 8876.443678]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 8876.446871]  process_extent+0x628/0x1440 [btrfs]
+[ 8876.449708]  ? process_extent+0x628/0x1440 [btrfs]
+[ 8876.452577]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 8876.455236]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 8876.458190]  ? xen_clocksource_read+0x15/0x20
+[ 8876.460944]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 8876.463814]  ? update_cfs_shares+0xa9/0xe0
+[ 8876.466490]  ? enqueue_task_fair+0xc5/0xd10
+[ 8876.469155]  ? check_preempt_wakeup+0x10e/0x210
+[ 8876.471975]  do_vfs_ioctl+0xa5/0x600
+[ 8876.474426]  ? do_vfs_ioctl+0xa5/0x600
+[ 8876.476865]  SyS_ioctl+0x79/0x90
+[ 8876.479099]  ? SyS_clone+0x19/0x20
+[ 8876.481429]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 8876.484349] RIP: 0033:0x7ff51b00d5c7
+[ 8876.486823] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 8876.491006] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 8876.494920] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 8876.498751] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 8876.502569] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 8876.506405] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 8876.510276] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 8904.346326] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 8904.350514] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 8904.367031] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 8904.371596] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 8904.375228] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 8904.378722] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 8904.381915] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 8904.385852] RAX: ffff8c2112ae9920 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 8904.389799] RDX: ffff8c2112ae96e0 RSI: 0000000001584000 RDI: ffff8c20761622e0
+[ 8904.393672] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec239820
+[ 8904.397406] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 8904.401290] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20e77e0b90
+[ 8904.405122] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 8904.409215] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 8904.412443] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 8904.416329] Call Trace:
+[ 8904.418943]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 8904.422715]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 8904.426274]  process_extent+0x628/0x1440 [btrfs]
+[ 8904.429559]  ? process_extent+0x628/0x1440 [btrfs]
+[ 8904.432971]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 8904.436578]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 8904.440663]  ? xen_clocksource_read+0x15/0x20
+[ 8904.444307]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 8904.447957]  ? update_cfs_shares+0xa9/0xe0
+[ 8904.451348]  ? enqueue_task_fair+0xc5/0xd10
+[ 8904.454368]  ? check_preempt_wakeup+0x10e/0x210
+[ 8904.457630]  do_vfs_ioctl+0xa5/0x600
+[ 8904.460324]  ? do_vfs_ioctl+0xa5/0x600
+[ 8904.463144]  SyS_ioctl+0x79/0x90
+[ 8904.466142]  ? SyS_clone+0x19/0x20
+[ 8904.469141]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 8904.472843] RIP: 0033:0x7ff51b00d5c7
+[ 8904.475933] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 8904.481278] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 8904.485883] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 8904.490344] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 8904.495689] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 8904.501005] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 8904.506427] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 8912.427222] INFO: rcu_sched detected stalls on CPUs/tasks:
+[ 8912.431659] 	(detected by 0, t=60006 jiffies, g=1810920, c=1810919, q=0)
+[ 8912.436625] All QSes seen, last rcu_sched kthread activity 60006 (4303579630-4303519624), jiffies_till_next_fqs=3, root ->qsmask 0x0
+[ 8912.444376] btrfs           R  running task        0 12423   3971 0x0000000c
+[ 8912.449152] Call Trace:
+[ 8912.451425]  <IRQ>
+[ 8912.453686]  sched_show_task+0xd0/0x130
+[ 8912.456936]  rcu_check_callbacks+0x8d6/0x8e0
+[ 8912.460390]  ? tick_sched_do_timer+0x60/0x60
+[ 8912.463833]  update_process_times+0x2f/0x60
+[ 8912.467258]  tick_sched_handle.isra.19+0x23/0x60
+[ 8912.470490]  ? tick_sched_do_timer+0x44/0x60
+[ 8912.473409]  tick_sched_timer+0x3d/0x70
+[ 8912.476125]  __hrtimer_run_queues+0xe0/0x230
+[ 8912.479026]  hrtimer_interrupt+0xa0/0x1c0
+[ 8912.481892]  xen_timer_interrupt+0x1d/0x30
+[ 8912.485366]  __handle_irq_event_percpu+0x3f/0x1a0
+[ 8912.489108]  handle_irq_event_percpu+0x32/0x80
+[ 8912.492616]  handle_percpu_irq+0x3a/0x50
+[ 8912.495810]  generic_handle_irq+0x22/0x30
+[ 8912.498989]  evtchn_2l_handle_events+0x264/0x280
+[ 8912.502053]  ? xen_clocksource_read+0x15/0x20
+[ 8912.504995]  __xen_evtchn_do_upcall+0x43/0x80
+[ 8912.507898]  xen_evtchn_do_upcall+0x2b/0x40
+[ 8912.510782]  xen_hvm_callback_vector+0x93/0xa0
+[ 8912.513990] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 8912.518483] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 8912.523745] RAX: ffff8c21244c0980 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 8912.528803] RDX: ffff8c21244c0c00 RSI: 00000000015a8000 RDI: ffff8c20761622e0
+[ 8912.533251] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2394a0
+[ 8912.537531] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 8912.541733] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c21199429b0
+[ 8912.546073]  </IRQ>
+[ 8912.548528]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 8912.552167]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 8912.556103]  process_extent+0x628/0x1440 [btrfs]
+[ 8912.559723]  ? process_extent+0x628/0x1440 [btrfs]
+[ 8912.563190]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 8912.566140]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 8912.569359]  ? xen_clocksource_read+0x15/0x20
+[ 8912.572343]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 8912.575275]  ? update_cfs_shares+0xa9/0xe0
+[ 8912.578471]  ? enqueue_task_fair+0xc5/0xd10
+[ 8912.581813]  ? check_preempt_wakeup+0x10e/0x210
+[ 8912.585418]  do_vfs_ioctl+0xa5/0x600
+[ 8912.588860]  ? do_vfs_ioctl+0xa5/0x600
+[ 8912.591897]  SyS_ioctl+0x79/0x90
+[ 8912.594612]  ? SyS_clone+0x19/0x20
+[ 8912.597010]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 8912.599932] RIP: 0033:0x7ff51b00d5c7
+[ 8912.602368] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 8912.606763] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 8912.611336] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 8912.616299] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 8912.621211] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 8912.625945] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 8912.630077] rcu_sched kthread starved for 60006 jiffies! g1810920 c1810919 f0x2 RCU_GP_WAIT_FQS(3) ->state=0x0
+[ 8912.635641] rcu_sched       R  running task        0     8      2 0x00000000
+[ 8912.639978] Call Trace:
+[ 8912.642251]  __schedule+0x234/0x8d0
+[ 8912.645154]  schedule+0x36/0x80
+[ 8912.647786]  schedule_timeout+0x18f/0x300
+[ 8912.651373]  ? del_timer_sync+0x50/0x50
+[ 8912.654556]  rcu_gp_kthread+0x512/0x9b0
+[ 8912.657687]  ? rcu_gp_kthread+0x512/0x9b0
+[ 8912.660382]  kthread+0x125/0x140
+[ 8912.662798]  ? force_qs_rnp+0x1a0/0x1a0
+[ 8912.665456]  ? kthread_park+0x90/0x90
+[ 8912.667992]  ret_from_fork+0x2c/0x40
+[ 8940.348725] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 23s! [btrfs:12423]
+[ 8940.355947] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 8940.384779] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 8940.392012] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 8940.397721] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 8940.403785] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 8940.410433] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 8940.417555] RAX: ffff8c20554cbf20 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 8940.422210] RDX: ffff8c20554cb680 RSI: 0000000001578000 RDI: ffff8c20761622e0
+[ 8940.426963] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2392a0
+[ 8940.431486] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 8940.435928] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20d25815f0
+[ 8940.440946] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 8940.446444] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 8940.450249] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 8940.454827] Call Trace:
+[ 8940.457220]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 8940.460729]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 8940.464808]  process_extent+0x628/0x1440 [btrfs]
+[ 8940.468400]  ? process_extent+0x628/0x1440 [btrfs]
+[ 8940.472487]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 8940.476269]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 8940.480420]  ? xen_clocksource_read+0x15/0x20
+[ 8940.484212]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 8940.488025]  ? update_cfs_shares+0xa9/0xe0
+[ 8940.491588]  ? enqueue_task_fair+0xc5/0xd10
+[ 8940.495013]  ? check_preempt_wakeup+0x10e/0x210
+[ 8940.498634]  do_vfs_ioctl+0xa5/0x600
+[ 8940.501765]  ? do_vfs_ioctl+0xa5/0x600
+[ 8940.505252]  SyS_ioctl+0x79/0x90
+[ 8940.508222]  ? SyS_clone+0x19/0x20
+[ 8940.511450]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 8940.515963] RIP: 0033:0x7ff51b00d5c7
+[ 8940.519244] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 8940.524614] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 8940.529771] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 8940.534831] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 8940.539550] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 8940.544434] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 8940.549146] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 8968.348101] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 8968.352235] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 8968.368767] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 8968.373242] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 8968.376920] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 8968.380522] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 8968.383820] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 8968.387993] RAX: ffff8c20f3095d40 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 8968.392327] RDX: ffff8c20f3095600 RSI: 0000000001588000 RDI: ffff8c20761622e0
+[ 8968.396215] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2393a0
+[ 8968.400333] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 8968.404659] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20e8d36370
+[ 8968.408475] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 8968.413003] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 8968.416281] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 8968.420094] Call Trace:
+[ 8968.422138]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 8968.425042]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 8968.428108]  process_extent+0x628/0x1440 [btrfs]
+[ 8968.431026]  ? process_extent+0x628/0x1440 [btrfs]
+[ 8968.433873]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 8968.436568]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 8968.439466]  ? xen_clocksource_read+0x15/0x20
+[ 8968.442231]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 8968.444972]  ? update_cfs_shares+0xa9/0xe0
+[ 8968.447656]  ? enqueue_task_fair+0xc5/0xd10
+[ 8968.450369]  ? check_preempt_wakeup+0x10e/0x210
+[ 8968.453157]  do_vfs_ioctl+0xa5/0x600
+[ 8968.455604]  ? do_vfs_ioctl+0xa5/0x600
+[ 8968.458271]  SyS_ioctl+0x79/0x90
+[ 8968.460533]  ? SyS_clone+0x19/0x20
+[ 8968.462876]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 8968.465743] RIP: 0033:0x7ff51b00d5c7
+[ 8968.468174] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 8968.472146] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 8968.476045] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 8968.479952] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 8968.483754] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 8968.487582] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 8968.491510] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 8996.348878] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 8996.353966] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 8996.370677] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 8996.375354] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 8996.379161] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 8996.382747] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 8996.386104] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 8996.390134] RAX: ffff8c20ead9b4a0 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 8996.394155] RDX: ffff8c20ead9b1a0 RSI: 0000000001584000 RDI: ffff8c20761622e0
+[ 8996.398119] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec239820
+[ 8996.402042] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 8996.406023] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c21016aa6e0
+[ 8996.409759] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 8996.413959] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 8996.417195] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 8996.420952] Call Trace:
+[ 8996.423165]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 8996.426223]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 8996.429373]  process_extent+0x628/0x1440 [btrfs]
+[ 8996.432295]  ? process_extent+0x628/0x1440 [btrfs]
+[ 8996.435274]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 8996.437935]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 8996.441017]  ? xen_clocksource_read+0x15/0x20
+[ 8996.443904]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 8996.447495]  ? update_cfs_shares+0xa9/0xe0
+[ 8996.450306]  ? enqueue_task_fair+0xc5/0xd10
+[ 8996.453034]  ? check_preempt_wakeup+0x10e/0x210
+[ 8996.455917]  do_vfs_ioctl+0xa5/0x600
+[ 8996.458413]  ? do_vfs_ioctl+0xa5/0x600
+[ 8996.460869]  SyS_ioctl+0x79/0x90
+[ 8996.463102]  ? SyS_clone+0x19/0x20
+[ 8996.465513]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 8996.468437] RIP: 0033:0x7ff51b00d5c7
+[ 8996.470909] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 8996.475234] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 8996.479451] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 8996.483748] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 8996.487809] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 8996.491739] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 8996.495499] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9024.350272] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 9024.354490] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9024.371909] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9024.376389] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9024.380014] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9024.383626] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9024.387043] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 9024.390957] RAX: ffff8c20cc5c6c00 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9024.394774] RDX: ffff8c20cc5c69c0 RSI: 0000000001574000 RDI: ffff8c20761622e0
+[ 9024.398537] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec239760
+[ 9024.402648] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9024.406646] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20c4da4dc0
+[ 9024.410392] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9024.414637] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9024.418041] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9024.421852] Call Trace:
+[ 9024.424056]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9024.426985]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9024.430242]  process_extent+0x628/0x1440 [btrfs]
+[ 9024.433368]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9024.436195]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9024.438899]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9024.441752]  ? xen_clocksource_read+0x15/0x20
+[ 9024.444445]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9024.448435]  ? update_cfs_shares+0xa9/0xe0
+[ 9024.451991]  ? enqueue_task_fair+0xc5/0xd10
+[ 9024.455697]  ? check_preempt_wakeup+0x10e/0x210
+[ 9024.459413]  do_vfs_ioctl+0xa5/0x600
+[ 9024.462482]  ? do_vfs_ioctl+0xa5/0x600
+[ 9024.465736]  SyS_ioctl+0x79/0x90
+[ 9024.468673]  ? SyS_clone+0x19/0x20
+[ 9024.471829]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9024.475767] RIP: 0033:0x7ff51b00d5c7
+[ 9024.479147] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9024.484420] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9024.489086] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9024.493981] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9024.499321] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9024.504196] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9024.509048] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9052.350432] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 9052.354497] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9052.370864] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9052.375424] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9052.379066] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9052.382548] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9052.385935] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 9052.390002] RAX: ffff8c204a4a3980 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9052.393754] RDX: ffff8c204a4a3c00 RSI: 00000000015ac000 RDI: ffff8c20761622e0
+[ 9052.397659] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2395e0
+[ 9052.402181] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9052.405950] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20c6e55230
+[ 9052.409697] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9052.413803] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9052.417065] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9052.420955] Call Trace:
+[ 9052.422988]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9052.425846]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9052.428908]  process_extent+0x628/0x1440 [btrfs]
+[ 9052.431716]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9052.434549]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9052.437213]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9052.441757]  ? xen_clocksource_read+0x15/0x20
+[ 9052.444568]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9052.447320]  ? update_cfs_shares+0xa9/0xe0
+[ 9052.449927]  ? enqueue_task_fair+0xc5/0xd10
+[ 9052.453790]  ? check_preempt_wakeup+0x10e/0x210
+[ 9052.456564]  do_vfs_ioctl+0xa5/0x600
+[ 9052.458974]  ? do_vfs_ioctl+0xa5/0x600
+[ 9052.461402]  SyS_ioctl+0x79/0x90
+[ 9052.463650]  ? SyS_clone+0x19/0x20
+[ 9052.465973]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9052.468911] RIP: 0033:0x7ff51b00d5c7
+[ 9052.471289] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9052.475368] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9052.479424] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9052.483233] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9052.486996] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9052.490847] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9052.494654] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9080.351208] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 9080.355730] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9080.372413] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9080.377087] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9080.380890] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9080.384461] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9080.387758] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 9080.391974] RAX: ffff8c21024da320 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9080.395851] RDX: ffff8c21024da160 RSI: 0000000001584000 RDI: ffff8c20761622e0
+[ 9080.399722] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec239820
+[ 9080.403615] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9080.407681] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c21287a48c0
+[ 9080.411584] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9080.415816] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9080.419165] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9080.423102] Call Trace:
+[ 9080.425145]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9080.428117]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9080.431492]  process_extent+0x628/0x1440 [btrfs]
+[ 9080.434691]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9080.437640]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9080.440281]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9080.443202]  ? xen_clocksource_read+0x15/0x20
+[ 9080.445872]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9080.448593]  ? update_cfs_shares+0xa9/0xe0
+[ 9080.451262]  ? enqueue_task_fair+0xc5/0xd10
+[ 9080.453993]  ? check_preempt_wakeup+0x10e/0x210
+[ 9080.456935]  do_vfs_ioctl+0xa5/0x600
+[ 9080.459803]  ? do_vfs_ioctl+0xa5/0x600
+[ 9080.462270]  SyS_ioctl+0x79/0x90
+[ 9080.464498]  ? SyS_clone+0x19/0x20
+[ 9080.466837]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9080.469606] RIP: 0033:0x7ff51b00d5c7
+[ 9080.471995] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9080.476057] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9080.480001] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9080.483967] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9080.487693] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9080.491452] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9080.495220] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9092.443129] INFO: rcu_sched detected stalls on CPUs/tasks:
+[ 9092.446505] 	(detected by 0, t=240017 jiffies, g=1810920, c=1810919, q=0)
+[ 9092.450251] All QSes seen, last rcu_sched kthread activity 240017 (4303759641-4303519624), jiffies_till_next_fqs=3, root ->qsmask 0x0
+[ 9092.456964] btrfs           R  running task        0 12423   3971 0x0000000c
+[ 9092.461763] Call Trace:
+[ 9092.463799]  <IRQ>
+[ 9092.465657]  sched_show_task+0xd0/0x130
+[ 9092.468212]  rcu_check_callbacks+0x8d6/0x8e0
+[ 9092.471052]  ? tick_sched_do_timer+0x60/0x60
+[ 9092.473655]  update_process_times+0x2f/0x60
+[ 9092.476176]  tick_sched_handle.isra.19+0x23/0x60
+[ 9092.478861]  ? tick_sched_do_timer+0x44/0x60
+[ 9092.481438]  tick_sched_timer+0x3d/0x70
+[ 9092.483861]  __hrtimer_run_queues+0xe0/0x230
+[ 9092.486447]  hrtimer_interrupt+0xa0/0x1c0
+[ 9092.488961]  xen_timer_interrupt+0x1d/0x30
+[ 9092.491514]  __handle_irq_event_percpu+0x3f/0x1a0
+[ 9092.494386]  handle_irq_event_percpu+0x32/0x80
+[ 9092.497017]  handle_percpu_irq+0x3a/0x50
+[ 9092.499454]  generic_handle_irq+0x22/0x30
+[ 9092.501894]  evtchn_2l_handle_events+0x264/0x280
+[ 9092.504526]  ? xen_clocksource_read+0x15/0x20
+[ 9092.507094]  __xen_evtchn_do_upcall+0x43/0x80
+[ 9092.509900]  xen_evtchn_do_upcall+0x2b/0x40
+[ 9092.512508]  xen_hvm_callback_vector+0x93/0xa0
+[ 9092.515166] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9092.518209] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 9092.522087] RAX: ffff8c20df3d36e0 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9092.525657] RDX: ffff8c20df3d3c40 RSI: 0000000001578000 RDI: ffff8c20761622e0
+[ 9092.529365] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2392a0
+[ 9092.533321] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9092.537256] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c210a273d70
+[ 9092.540897]  </IRQ>
+[ 9092.542597]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9092.545324]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9092.548165]  process_extent+0x628/0x1440 [btrfs]
+[ 9092.550885]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9092.553747]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9092.556322]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9092.559232]  ? xen_clocksource_read+0x15/0x20
+[ 9092.561909]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9092.564435]  ? update_cfs_shares+0xa9/0xe0
+[ 9092.566889]  ? enqueue_task_fair+0xc5/0xd10
+[ 9092.577615]  ? check_preempt_wakeup+0x10e/0x210
+[ 9092.580475]  do_vfs_ioctl+0xa5/0x600
+[ 9092.582743]  ? do_vfs_ioctl+0xa5/0x600
+[ 9092.585048]  SyS_ioctl+0x79/0x90
+[ 9092.587156]  ? SyS_clone+0x19/0x20
+[ 9092.589378]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9092.592258] RIP: 0033:0x7ff51b00d5c7
+[ 9092.594381] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9092.598225] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9092.601795] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9092.605462] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9092.608987] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9092.612759] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9092.616794] rcu_sched kthread starved for 240017 jiffies! g1810920 c1810919 f0x2 RCU_GP_WAIT_FQS(3) ->state=0x0
+[ 9092.621832] rcu_sched       R  running task        0     8      2 0x00000000
+[ 9092.625576] Call Trace:
+[ 9092.627314]  __schedule+0x234/0x8d0
+[ 9092.629471]  schedule+0x36/0x80
+[ 9092.631604]  schedule_timeout+0x18f/0x300
+[ 9092.634095]  ? del_timer_sync+0x50/0x50
+[ 9092.636452]  rcu_gp_kthread+0x512/0x9b0
+[ 9092.638778]  ? rcu_gp_kthread+0x512/0x9b0
+[ 9092.641137]  kthread+0x125/0x140
+[ 9092.643228]  ? force_qs_rnp+0x1a0/0x1a0
+[ 9092.645591]  ? kthread_park+0x90/0x90
+[ 9092.647802]  ret_from_fork+0x2c/0x40
+[ 9120.352318] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 9120.358056] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9120.394935] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9120.405714] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9120.412779] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9120.420270] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9120.433943] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 9120.439052] RAX: ffff8c210c0fc8a0 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9120.448237] RDX: ffff8c210c0fc040 RSI: 0000000001598000 RDI: ffff8c20761622e0
+[ 9120.452801] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2397a0
+[ 9120.457344] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9120.470565] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20b877d280
+[ 9120.484419] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9120.490587] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9120.499291] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9120.506303] Call Trace:
+[ 9120.508919]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9120.512769]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9120.521413]  process_extent+0x628/0x1440 [btrfs]
+[ 9120.525602]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9120.529888]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9120.533964]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9120.537417]  ? xen_clocksource_read+0x15/0x20
+[ 9120.540693]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9120.552470]  ? update_cfs_shares+0xa9/0xe0
+[ 9120.556551]  ? enqueue_task_fair+0xc5/0xd10
+[ 9120.560109]  ? check_preempt_wakeup+0x10e/0x210
+[ 9120.568029]  do_vfs_ioctl+0xa5/0x600
+[ 9120.571971]  ? do_vfs_ioctl+0xa5/0x600
+[ 9120.575735]  SyS_ioctl+0x79/0x90
+[ 9120.578602]  ? SyS_clone+0x19/0x20
+[ 9120.581730]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9120.593990] RIP: 0033:0x7ff51b00d5c7
+[ 9120.597388] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9120.602922] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9120.612611] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9120.617159] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9120.630678] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9120.635960] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9120.648681] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9148.353490] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 23s! [btrfs:12423]
+[ 9148.357909] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9148.376687] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9148.381242] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9148.384915] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9148.388742] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9148.392311] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 9148.396318] RAX: ffff8c20c4323c60 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9148.400103] RDX: ffff8c20c43231e0 RSI: 00000000015a0000 RDI: ffff8c20761622e0
+[ 9148.404028] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec239ea0
+[ 9148.407886] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9148.411812] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c2113038500
+[ 9148.415590] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9148.419835] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9148.423235] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9148.427134] Call Trace:
+[ 9148.429161]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9148.432244]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9148.435317]  process_extent+0x628/0x1440 [btrfs]
+[ 9148.438196]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9148.441401]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9148.444071]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9148.446960]  ? xen_clocksource_read+0x15/0x20
+[ 9148.449772]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9148.452598]  ? update_cfs_shares+0xa9/0xe0
+[ 9148.455222]  ? enqueue_task_fair+0xc5/0xd10
+[ 9148.458111]  ? check_preempt_wakeup+0x10e/0x210
+[ 9148.461094]  do_vfs_ioctl+0xa5/0x600
+[ 9148.463552]  ? do_vfs_ioctl+0xa5/0x600
+[ 9148.466122]  SyS_ioctl+0x79/0x90
+[ 9148.468429]  ? SyS_clone+0x19/0x20
+[ 9148.470719]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9148.473488] RIP: 0033:0x7ff51b00d5c7
+[ 9148.475906] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9148.479830] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9148.483612] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9148.487434] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9148.491372] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9148.495166] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9148.498926] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9176.353873] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 23s! [btrfs:12423]
+[ 9176.359459] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9176.379973] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9176.386290] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9176.391225] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9176.395325] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9176.398624] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 9176.402739] RAX: ffff8c20d57a8ba0 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9176.406597] RDX: ffff8c20d57a8300 RSI: 00000000015a8000 RDI: ffff8c20761622e0
+[ 9176.410426] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2394a0
+[ 9176.414833] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9176.418701] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c211323ac80
+[ 9176.422610] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9176.426935] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9176.430222] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9176.434205] Call Trace:
+[ 9176.436246]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9176.439194]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9176.442333]  process_extent+0x628/0x1440 [btrfs]
+[ 9176.445267]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9176.448125]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9176.450728]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9176.454348]  ? xen_clocksource_read+0x15/0x20
+[ 9176.457267]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9176.460117]  ? update_cfs_shares+0xa9/0xe0
+[ 9176.462814]  ? enqueue_task_fair+0xc5/0xd10
+[ 9176.465553]  ? check_preempt_wakeup+0x10e/0x210
+[ 9176.468338]  do_vfs_ioctl+0xa5/0x600
+[ 9176.470804]  ? do_vfs_ioctl+0xa5/0x600
+[ 9176.473238]  SyS_ioctl+0x79/0x90
+[ 9176.475656]  ? SyS_clone+0x19/0x20
+[ 9176.477994]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9176.480808] RIP: 0033:0x7ff51b00d5c7
+[ 9176.483346] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9176.488053] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9176.494227] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9176.498419] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9176.502311] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9176.506695] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9176.510634] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9204.354649] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 23s! [btrfs:12423]
+[ 9204.360007] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9204.379709] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9204.386113] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9204.391285] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9204.395755] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9204.399389] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 9204.404066] RAX: ffff8c2118ccc420 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9204.409127] RDX: ffff8c2118ccc640 RSI: 00000000015b0000 RDI: ffff8c20761622e0
+[ 9204.414534] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec239a20
+[ 9204.419718] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9204.424918] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c2118051370
+[ 9204.429311] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9204.435119] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9204.439293] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9204.444882] Call Trace:
+[ 9204.447413]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9204.451233]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9204.455310]  process_extent+0x628/0x1440 [btrfs]
+[ 9204.458817]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9204.462152]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9204.465207]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9204.468526]  ? xen_clocksource_read+0x15/0x20
+[ 9204.471893]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9204.475459]  ? update_cfs_shares+0xa9/0xe0
+[ 9204.479037]  ? enqueue_task_fair+0xc5/0xd10
+[ 9204.483295]  ? check_preempt_wakeup+0x10e/0x210
+[ 9204.486946]  do_vfs_ioctl+0xa5/0x600
+[ 9204.489636]  ? do_vfs_ioctl+0xa5/0x600
+[ 9204.492447]  SyS_ioctl+0x79/0x90
+[ 9204.495007]  ? SyS_clone+0x19/0x20
+[ 9204.497708]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9204.500879] RIP: 0033:0x7ff51b00d5c7
+[ 9204.504074] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9204.509537] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9204.514927] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9204.519681] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9204.524131] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9204.528519] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9204.533593] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9232.355427] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 23s! [btrfs:12423]
+[ 9232.359624] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9232.376004] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9232.380728] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9232.384718] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9232.388272] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9232.391720] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 9232.395731] RAX: ffff8c20e6c1a8a0 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9232.399499] RDX: ffff8c20e6c1a040 RSI: 0000000001598000 RDI: ffff8c20761622e0
+[ 9232.403369] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2397a0
+[ 9232.407263] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9232.411134] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20b3301c80
+[ 9232.415583] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9232.419795] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9232.423045] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9232.426914] Call Trace:
+[ 9232.428925]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9232.431784]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9232.435012]  process_extent+0x628/0x1440 [btrfs]
+[ 9232.437998]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9232.440973]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9232.443832]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9232.446708]  ? xen_clocksource_read+0x15/0x20
+[ 9232.449459]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9232.452132]  ? update_cfs_shares+0xa9/0xe0
+[ 9232.454755]  ? enqueue_task_fair+0xc5/0xd10
+[ 9232.457473]  ? check_preempt_wakeup+0x10e/0x210
+[ 9232.460339]  do_vfs_ioctl+0xa5/0x600
+[ 9232.462860]  ? do_vfs_ioctl+0xa5/0x600
+[ 9232.468184]  SyS_ioctl+0x79/0x90
+[ 9232.470832]  ? SyS_clone+0x19/0x20
+[ 9232.473145]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9232.475945] RIP: 0033:0x7ff51b00d5c7
+[ 9232.478350] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9232.482352] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9232.486172] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9232.490108] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9232.494127] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9232.498111] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9232.502015] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9260.356202] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 9260.362093] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9260.385782] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9260.391909] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9260.396742] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9260.401275] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9260.405071] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 9260.409795] RAX: ffff8c204a675ce0 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9260.414228] RDX: ffff8c204a6753a0 RSI: 0000000001574000 RDI: ffff8c20761622e0
+[ 9260.419604] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec239760
+[ 9260.424977] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9260.430211] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20aa615820
+[ 9260.434752] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9260.439584] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9260.443361] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9260.448900] Call Trace:
+[ 9260.451435]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9260.455394]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9260.459435]  process_extent+0x628/0x1440 [btrfs]
+[ 9260.462952]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9260.466229]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9260.469924]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9260.473266]  ? xen_clocksource_read+0x15/0x20
+[ 9260.476748]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9260.480389]  ? update_cfs_shares+0xa9/0xe0
+[ 9260.483780]  ? enqueue_task_fair+0xc5/0xd10
+[ 9260.487190]  ? check_preempt_wakeup+0x10e/0x210
+[ 9260.490905]  do_vfs_ioctl+0xa5/0x600
+[ 9260.494527]  ? do_vfs_ioctl+0xa5/0x600
+[ 9260.497307]  SyS_ioctl+0x79/0x90
+[ 9260.499925]  ? SyS_clone+0x19/0x20
+[ 9260.502529]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9260.507091] RIP: 0033:0x7ff51b00d5c7
+[ 9260.510423] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9260.515933] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9260.521358] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9260.525810] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9260.530287] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9260.534800] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9260.540048] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9272.452538] INFO: rcu_sched detected stalls on CPUs/tasks:
+[ 9272.456561] 	(detected by 0, t=420022 jiffies, g=1810920, c=1810919, q=0)
+[ 9272.460834] All QSes seen, last rcu_sched kthread activity 420022 (4303939646-4303519624), jiffies_till_next_fqs=3, root ->qsmask 0x0
+[ 9272.467984] btrfs           R  running task        0 12423   3971 0x0000000c
+[ 9272.471869] Call Trace:
+[ 9272.474715]  <IRQ>
+[ 9272.476518]  sched_show_task+0xd0/0x130
+[ 9272.479082]  rcu_check_callbacks+0x8d6/0x8e0
+[ 9272.481677]  ? tick_sched_do_timer+0x60/0x60
+[ 9272.484361]  update_process_times+0x2f/0x60
+[ 9272.487036]  tick_sched_handle.isra.19+0x23/0x60
+[ 9272.489831]  ? tick_sched_do_timer+0x44/0x60
+[ 9272.492485]  tick_sched_timer+0x3d/0x70
+[ 9272.495108]  __hrtimer_run_queues+0xe0/0x230
+[ 9272.497949]  hrtimer_interrupt+0xa0/0x1c0
+[ 9272.500414]  xen_timer_interrupt+0x1d/0x30
+[ 9272.502912]  __handle_irq_event_percpu+0x3f/0x1a0
+[ 9272.505638]  handle_irq_event_percpu+0x32/0x80
+[ 9272.508296]  handle_percpu_irq+0x3a/0x50
+[ 9272.510788]  generic_handle_irq+0x22/0x30
+[ 9272.513250]  evtchn_2l_handle_events+0x264/0x280
+[ 9272.516088]  ? xen_clocksource_read+0x15/0x20
+[ 9272.518751]  __xen_evtchn_do_upcall+0x43/0x80
+[ 9272.521312]  xen_evtchn_do_upcall+0x2b/0x40
+[ 9272.523955]  xen_hvm_callback_vector+0x93/0xa0
+[ 9272.526750] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9272.530137] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 9272.533934] RAX: ffff8c20fe4a77e0 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9272.537824] RDX: ffff8c20fe4a7840 RSI: 000000000154c000 RDI: ffff8c20761622e0
+[ 9272.541605] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec239520
+[ 9272.545359] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9272.548932] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20e8caed70
+[ 9272.552506]  </IRQ>
+[ 9272.554260]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9272.556979]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9272.559954]  process_extent+0x628/0x1440 [btrfs]
+[ 9272.562842]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9272.565806]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9272.568464]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9272.571390]  ? xen_clocksource_read+0x15/0x20
+[ 9272.573967]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9272.576533]  ? update_cfs_shares+0xa9/0xe0
+[ 9272.579129]  ? enqueue_task_fair+0xc5/0xd10
+[ 9272.581826]  ? check_preempt_wakeup+0x10e/0x210
+[ 9272.584582]  do_vfs_ioctl+0xa5/0x600
+[ 9272.586899]  ? do_vfs_ioctl+0xa5/0x600
+[ 9272.589305]  SyS_ioctl+0x79/0x90
+[ 9272.591516]  ? SyS_clone+0x19/0x20
+[ 9272.593898]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9272.596868] RIP: 0033:0x7ff51b00d5c7
+[ 9272.599209] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9272.603068] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9272.606731] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9272.610432] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9272.614410] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9272.618414] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9272.622388] rcu_sched kthread starved for 420022 jiffies! g1810920 c1810919 f0x2 RCU_GP_WAIT_FQS(3) ->state=0x0
+[ 9272.627409] rcu_sched       R  running task        0     8      2 0x00000000
+[ 9272.630874] Call Trace:
+[ 9272.632627]  __schedule+0x234/0x8d0
+[ 9272.634872]  schedule+0x36/0x80
+[ 9272.636962]  schedule_timeout+0x18f/0x300
+[ 9272.639352]  ? del_timer_sync+0x50/0x50
+[ 9272.641653]  rcu_gp_kthread+0x512/0x9b0
+[ 9272.644276]  ? rcu_gp_kthread+0x512/0x9b0
+[ 9272.646680]  kthread+0x125/0x140
+[ 9272.648691]  ? force_qs_rnp+0x1a0/0x1a0
+[ 9272.651090]  ? kthread_park+0x90/0x90
+[ 9272.653271]  ret_from_fork+0x2c/0x40
+[ 9300.357313] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 9300.373372] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9300.410718] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9300.421127] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9300.425861] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9300.430077] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9300.441011] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 9300.446601] RAX: ffff8c2101658420 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9300.459689] RDX: ffff8c2101658640 RSI: 00000000015ac000 RDI: ffff8c20761622e0
+[ 9300.472996] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2395e0
+[ 9300.479158] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9300.483900] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20eb5b3780
+[ 9300.497764] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9300.503366] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9300.513134] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9300.518695] Call Trace:
+[ 9300.525706]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9300.530397]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9300.535375]  process_extent+0x628/0x1440 [btrfs]
+[ 9300.539621]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9300.552231]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9300.555209]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9300.558485]  ? xen_clocksource_read+0x15/0x20
+[ 9300.565968]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9300.569942]  ? update_cfs_shares+0xa9/0xe0
+[ 9300.574244]  ? enqueue_task_fair+0xc5/0xd10
+[ 9300.578439]  ? check_preempt_wakeup+0x10e/0x210
+[ 9300.582320]  do_vfs_ioctl+0xa5/0x600
+[ 9300.585411]  ? do_vfs_ioctl+0xa5/0x600
+[ 9300.597467]  SyS_ioctl+0x79/0x90
+[ 9300.600515]  ? SyS_clone+0x19/0x20
+[ 9300.604285]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9300.612450] RIP: 0033:0x7ff51b00d5c7
+[ 9300.615758] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9300.621666] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9300.626769] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9300.640358] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9300.645872] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9300.652912] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9300.662920] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9328.365745] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 9328.370252] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9328.389353] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9328.394003] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9328.397799] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9328.401689] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9328.405185] RSP: 0018:ffffba8342877920 EFLAGS: 00000282 ORIG_RAX: ffffffffffffff0c
+[ 9328.409350] RAX: ffff8c20f1bb4420 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9328.413623] RDX: ffff8c20f1bb4640 RSI: 0000000001570000 RDI: ffff8c20761622e0
+[ 9328.418273] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2398a0
+[ 9328.422383] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9328.426359] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c2111c11af0
+[ 9328.430343] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9328.434676] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9328.439131] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9328.443457] Call Trace:
+[ 9328.445644]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9328.448682]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9328.451888]  process_extent+0x628/0x1440 [btrfs]
+[ 9328.454777]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9328.457990]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9328.460748]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9328.463874]  ? xen_clocksource_read+0x15/0x20
+[ 9328.466721]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9328.470203]  ? update_cfs_shares+0xa9/0xe0
+[ 9328.472937]  ? enqueue_task_fair+0xc5/0xd10
+[ 9328.475826]  ? check_preempt_wakeup+0x10e/0x210
+[ 9328.478686]  do_vfs_ioctl+0xa5/0x600
+[ 9328.481079]  ? do_vfs_ioctl+0xa5/0x600
+[ 9328.483948]  SyS_ioctl+0x79/0x90
+[ 9328.486270]  ? SyS_clone+0x19/0x20
+[ 9328.488742]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9328.491778] RIP: 0033:0x7ff51b00d5c7
+[ 9328.495309] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9328.500275] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9328.505525] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9328.509373] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9328.513360] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9328.517251] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9328.521168] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9356.362358] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 9356.367209] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9356.387237] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9356.393401] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9356.397823] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9356.401343] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9356.404499] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 9356.408441] RAX: ffff8c20aa697e60 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9356.412169] RDX: ffff8c20aa697700 RSI: 0000000001598000 RDI: ffff8c20761622e0
+[ 9356.416038] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2397a0
+[ 9356.419939] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9356.423788] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20dcebad20
+[ 9356.427601] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9356.431811] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9356.435003] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9356.438951] Call Trace:
+[ 9356.441021]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9356.443974]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9356.447315]  process_extent+0x628/0x1440 [btrfs]
+[ 9356.450356]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9356.453283]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9356.455896]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9356.458770]  ? xen_clocksource_read+0x15/0x20
+[ 9356.461469]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9356.464251]  ? update_cfs_shares+0xa9/0xe0
+[ 9356.467076]  ? enqueue_task_fair+0xc5/0xd10
+[ 9356.469852]  ? check_preempt_wakeup+0x10e/0x210
+[ 9356.472676]  do_vfs_ioctl+0xa5/0x600
+[ 9356.475068]  ? do_vfs_ioctl+0xa5/0x600
+[ 9356.477558]  SyS_ioctl+0x79/0x90
+[ 9356.479823]  ? SyS_clone+0x19/0x20
+[ 9356.482199]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9356.485170] RIP: 0033:0x7ff51b00d5c7
+[ 9356.487659] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9356.491741] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9356.495715] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9356.499563] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9356.503409] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9356.507225] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9356.511435] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9384.359643] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 9384.364084] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9384.381181] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9384.385768] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9384.389427] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9384.392879] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9384.396112] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 9384.400671] RAX: ffff8c211a6634a0 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9384.405093] RDX: ffff8c211a6631a0 RSI: 00000000015b0000 RDI: ffff8c20761622e0
+[ 9384.409088] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec239a20
+[ 9384.413258] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9384.417199] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c2042f26780
+[ 9384.421127] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9384.425740] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9384.429179] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9384.433607] Call Trace:
+[ 9384.435956]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9384.439170]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9384.442370]  process_extent+0x628/0x1440 [btrfs]
+[ 9384.445297]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9384.448337]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9384.451038]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9384.453979]  ? xen_clocksource_read+0x15/0x20
+[ 9384.456719]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9384.459385]  ? update_cfs_shares+0xa9/0xe0
+[ 9384.462110]  ? enqueue_task_fair+0xc5/0xd10
+[ 9384.464864]  ? check_preempt_wakeup+0x10e/0x210
+[ 9384.467810]  do_vfs_ioctl+0xa5/0x600
+[ 9384.470320]  ? do_vfs_ioctl+0xa5/0x600
+[ 9384.472791]  SyS_ioctl+0x79/0x90
+[ 9384.475097]  ? SyS_clone+0x19/0x20
+[ 9384.477400]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9384.480252] RIP: 0033:0x7ff51b00d5c7
+[ 9384.482916] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9384.487344] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9384.491575] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9384.495499] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9384.499340] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9384.503138] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9384.506990] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9412.360419] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [btrfs:12423]
+[ 9412.365266] Modules linked in: btrfs xor raid6_pq dm_flakey loop fuse vfat msdos fat xfs libcrc32c isofs intel_rapl sb_edac edac_core crct10dif_pclmul crc32_pclmul ghash_clmulni_intel ppdev intel_rapl_perf xen_netfront parport_pc parport cirrus ttm drm_kms_helper drm tpm_tis tpm_tis_core tpm i2c_piix4 xen_blkfront crc32c_intel serio_raw ata_generic pata_acpi [last unloaded: xor]
+[ 9412.383060] CPU: 0 PID: 12423 Comm: btrfs Tainted: G             L  4.11.8-300.fc26.x86_64 #1
+[ 9412.387617] Hardware name: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+[ 9412.391196] task: ffff8c212983cb00 task.stack: ffffba8342874000
+[ 9412.394853] RIP: 0010:find_parent_nodes+0x7eb/0x950 [btrfs]
+[ 9412.398340] RSP: 0018:ffffba8342877920 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff0c
+[ 9412.402447] RAX: ffff8c20cc494a60 RBX: 0000000000000000 RCX: ffffba8342877968
+[ 9412.406267] RDX: ffff8c20cc4945c0 RSI: 00000000015ac000 RDI: ffff8c20761622e0
+[ 9412.410226] RBP: ffffba83428779f0 R08: 0000000001400040 R09: ffff8c20ec2395e0
+[ 9412.414148] R10: ffffba83428778f8 R11: 000000000001d600 R12: dead000000000100
+[ 9412.418338] R13: dead000000000200 R14: 0000000000000000 R15: ffff8c20fc71c9b0
+[ 9412.422335] FS:  00007ff51c2138c0(0000) GS:ffff8c212b600000(0000) knlGS:0000000000000000
+[ 9412.426598] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[ 9412.429887] CR2: 00007ff51afdb7f0 CR3: 00000000e9137000 CR4: 00000000001406f0
+[ 9412.433727] Call Trace:
+[ 9412.435774]  ? orphanize_inode+0x80/0x80 [btrfs]
+[ 9412.438693]  iterate_extent_inodes+0x18d/0x390 [btrfs]
+[ 9412.441982]  process_extent+0x628/0x1440 [btrfs]
+[ 9412.444869]  ? process_extent+0x628/0x1440 [btrfs]
+[ 9412.447811]  changed_cb+0xa6f/0xd80 [btrfs]
+[ 9412.450580]  btrfs_ioctl_send+0x1198/0x1240 [btrfs]
+[ 9412.453617]  ? xen_clocksource_read+0x15/0x20
+[ 9412.456432]  btrfs_ioctl+0x818/0x2490 [btrfs]
+[ 9412.459354]  ? update_cfs_shares+0xa9/0xe0
+[ 9412.462213]  ? enqueue_task_fair+0xc5/0xd10
+[ 9412.464971]  ? check_preempt_wakeup+0x10e/0x210
+[ 9412.467891]  do_vfs_ioctl+0xa5/0x600
+[ 9412.470612]  ? do_vfs_ioctl+0xa5/0x600
+[ 9412.473125]  SyS_ioctl+0x79/0x90
+[ 9412.475591]  ? SyS_clone+0x19/0x20
+[ 9412.480719]  entry_SYSCALL_64_fastpath+0x1a/0xa9
+[ 9412.483598] RIP: 0033:0x7ff51b00d5c7
+[ 9412.486188] RSP: 002b:00007ffca2b47af8 EFLAGS: 00000202 ORIG_RAX: 0000000000000010
+[ 9412.490671] RAX: ffffffffffffffda RBX: 00007ff51af06700 RCX: 00007ff51b00d5c7
+[ 9412.494594] RDX: 00007ffca2b47b40 RSI: 0000000040489426 RDI: 0000000000000004
+[ 9412.498626] RBP: 00007ffca2b47af0 R08: 0000000000000000 R09: 00007ff51af06700
+[ 9412.502565] R10: 00007ff51af069d0 R11: 0000000000000202 R12: 0000000000000000
+[ 9412.506426] R13: 00007ffca2b47a80 R14: 00007ff51af069c0 R15: 0000000000000000
+[ 9412.510415] Code: 47 fb ff ff 0f 0b 48 8b 85 78 ff ff ff 48 85 c0 0f 84 4e 01 00 00 48 8b 50 10 48 85 d2 75 08 e9 38 01 00 00 48 89 c2 48 8b 42 10 <48> 85 c0 75 f4 49 8b 47 38 48 89 42 10 e9 0a fe ff ff be 6d 05 
+[ 9447.009743] systemd-journald[12457]: File /var/log/journal/756b7611370d48b8b487bea96b3fdf53/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[ 9447.092389] BTRFS info (device xvdc): disk space caching is enabled
+[ 9447.096403] BTRFS info (device xvdc): has skinny extents
+[ 9447.101721] systemd-coredump[12427]: Process 315 (systemd-journal) of user 0 dumped core.
+[ 9447.111424] systemd-coredump[12427]: Coredump diverted to /var/lib/systemd/coredump/core.systemd-journal.0.d5e41ea94b8f41b7a906e7d43c7de667.315.1518102925000000.lz4
+[ 9447.148121] systemd-coredump[12427]: Stack trace of thread 315:
+[ 9447.151768] systemd-coredump[12427]: #0  0x00007f41b6b5183d pthread_join (libpthread.so.0)
+[ 9447.158472] systemd-coredump[12427]: #1  0x00007f41b747c85e journal_file_set_offline_thread_join (libsystemd-shared-233.so)
+[ 9447.170406] systemd-coredump[12427]: #2  0x00007f41b747c91d journal_file_set_online (libsystemd-shared-233.so)
+[ 9447.176402] BTRFS info (device xvdc): detected SSD devices, enabling SSD mode
+[ 9447.199416] systemd-coredump[12427]: #3  0x00007f41b747ca36 journal_file_append_object (libsystemd-shared-233.so)
+[ 9447.228084] systemd-coredump[12427]: #4  0x00007f41b747ff2b journal_file_append_data (libsystemd-shared-233.so)
+[ 9447.239406] systemd-coredump[12427]: #5  0x00007f41b7480a81 journal_file_append_entry (libsystemd-shared-233.so)

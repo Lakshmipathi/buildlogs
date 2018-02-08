@@ -1,0 +1,114 @@
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               fb5ecdcc-33b7-43da-8285-c1d416e132ae
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# /bin/btrfs subvolume snapshot -r /mnt/scratch /mnt/scratch/snap1
+Create a readonly snapshot of '/mnt/scratch' in '/mnt/scratch/snap1'
+# /bin/btrfs subvolume snapshot -r /mnt/scratch /mnt/scratch/snap2
+Create a readonly snapshot of '/mnt/scratch' in '/mnt/scratch/snap2'
+# /bin/btrfs send -f /mnt/test/btrfs-test-111/1.snap /mnt/scratch/snap1
+At subvol /mnt/scratch/snap1
+# /bin/btrfs send -p /mnt/scratch/snap1 -f /mnt/test/btrfs-test-111/2.snap /mnt/scratch/snap2
+At subvol /mnt/scratch/snap2
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               ee325546-de74-4334-b4a1-c3781379be8a
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# /bin/btrfs receive -vv -f /mnt/test/btrfs-test-111/1.snap /mnt/scratch
+At subvol snap1
+receiving subvol snap1 uuid=5d1e74bb-a2ce-a54e-b9d6-faccde50e9b6, stransid=8
+chown  - uid=0, gid=0
+chmod  - mode=0755
+utimes 
+mkfile o257-8-0
+rename o257-8-0 -> foo
+utimes 
+truncate foo size=32768
+chown foo - uid=0, gid=0
+chmod foo - mode=0600
+utimes foo
+BTRFS_IOC_SET_RECEIVED_SUBVOL uuid=5d1e74bb-a2ce-a54e-b9d6-faccde50e9b6, stransid=8
+# /bin/btrfs receive -vv -f /mnt/test/btrfs-test-111/2.snap /mnt/scratch
+receiving snapshot snap2 uuid=6afa3970-d4db-5240-8260-741f6f30334e, ctransid=9 parent_uuid=5d1e74bb-a2ce-a54e-b9d6-faccde50e9b6, parent_ctransid=8
+utimes 
+truncate foo size=32768
+utimes foo
+BTRFS_IOC_SET_RECEIVED_SUBVOL uuid=6afa3970-d4db-5240-8260-741f6f30334e, stransid=9
+At snapshot snap2
+# /bin/btrfs send -f /mnt/test/btrfs-test-111/1_2.snap /mnt/scratch/snap1
+At subvol /mnt/scratch/snap1
+# /bin/btrfs send -p /mnt/scratch/snap1 -f /mnt/test/btrfs-test-111/2_2.snap /mnt/scratch/snap2
+At subvol /mnt/scratch/snap2
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               e126b7b5-4a3a-44b5-87b7-2d7ecf9ff545
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# /bin/btrfs receive -vv -f /mnt/test/btrfs-test-111/1_2.snap /mnt/scratch
+At subvol snap1
+receiving subvol snap1 uuid=5d1e74bb-a2ce-a54e-b9d6-faccde50e9b6, stransid=11
+chown  - uid=0, gid=0
+chmod  - mode=0755
+utimes 
+mkfile o257-9-0
+rename o257-9-0 -> foo
+utimes 
+truncate foo size=32768
+chown foo - uid=0, gid=0
+chmod foo - mode=0600
+utimes foo
+BTRFS_IOC_SET_RECEIVED_SUBVOL uuid=5d1e74bb-a2ce-a54e-b9d6-faccde50e9b6, stransid=11
+# /bin/btrfs receive -vv -f /mnt/test/btrfs-test-111/2_2.snap /mnt/scratch
+receiving snapshot snap2 uuid=6afa3970-d4db-5240-8260-741f6f30334e, ctransid=14 parent_uuid=5d1e74bb-a2ce-a54e-b9d6-faccde50e9b6, parent_ctransid=11
+utimes 
+truncate foo size=32768
+utimes foo
+BTRFS_IOC_SET_RECEIVED_SUBVOL uuid=6afa3970-d4db-5240-8260-741f6f30334e, stransid=14
+At snapshot snap2
