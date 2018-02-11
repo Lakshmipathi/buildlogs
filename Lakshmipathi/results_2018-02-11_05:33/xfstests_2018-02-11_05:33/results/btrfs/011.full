@@ -1,0 +1,940 @@
+
+---------workout "-m single -d single" 1 no quick-----------
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               6236a49f-8580-47ea-9abf-efa6856aeaae
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               1f8d86e1-5dca-47c7-bbd0-f8ae9227e3e9
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdg
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 6236a49f-8580-47ea-9abf-efa6856aeaae
+	Total devices 1 FS bytes used 192.00KiB
+	devid    1 size 20.00GiB used 276.00MiB path /dev/xvdc
+
+Label: none  uuid: 1f8d86e1-5dca-47c7-bbd0-f8ae9227e3e9
+	Total devices 1 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 20.00MiB path /dev/xvdg
+
+/bin/btrfs replace start -Bf  /dev/xvdc /dev/xvdg /mnt/scratch
+Started on 11.Feb 07:10:39, finished on 11.Feb 07:10:39, 0 write errs, 0 uncorr. read errs
+scrub done for 6236a49f-8580-47ea-9abf-efa6856aeaae
+	scrub started at Sun Feb 11 07:10:39 2018 and finished after 00:00:01
+	total bytes scrubbed: 55.05MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: 6236a49f-8580-47ea-9abf-efa6856aeaae
+	Total devices 1 FS bytes used 55.05MiB
+	devid    1 size 20.00GiB used 2.55GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 6236a49f-8580-47ea-9abf-efa6856aeaae
+	Total devices 1 FS bytes used 55.05MiB
+	devid    1 size 20.00GiB used 2.55GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdg
+
+---------workout "-m single -d single -M" 1 no quick-----------
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               29a5ff47-b0f5-4efa-bbe5-3b9d6a962851
+Node size:          4096
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data+Metadata:    single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  mixed-bg, extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               650b8749-47d5-4f3b-9577-c0f3072100c5
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdg
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 29a5ff47-b0f5-4efa-bbe5-3b9d6a962851
+	Total devices 1 FS bytes used 288.00KiB
+	devid    1 size 20.00GiB used 1.01GiB path /dev/xvdc
+
+Label: none  uuid: 650b8749-47d5-4f3b-9577-c0f3072100c5
+	Total devices 1 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 20.00MiB path /dev/xvdg
+
+/bin/btrfs replace start -Bf  /dev/xvdc /dev/xvdg /mnt/scratch
+Started on 11.Feb 07:10:54, finished on 11.Feb 07:10:55, 0 write errs, 0 uncorr. read errs
+scrub done for 29a5ff47-b0f5-4efa-bbe5-3b9d6a962851
+	scrub started at Sun Feb 11 07:10:55 2018 and finished after 00:00:00
+	total bytes scrubbed: 53.22MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: 29a5ff47-b0f5-4efa-bbe5-3b9d6a962851
+	Total devices 1 FS bytes used 53.22MiB
+	devid    1 size 20.00GiB used 2.04GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 29a5ff47-b0f5-4efa-bbe5-3b9d6a962851
+	Total devices 1 FS bytes used 53.22MiB
+	devid    1 size 20.00GiB used 2.04GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdg
+
+---------workout "-m dup -d single" 1 no quick-----------
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               42084df8-bb0e-4d6b-a019-63d66c33a3f3
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP               1.00GiB
+  System:           DUP               8.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               b3055ce4-5646-4c6d-9f7a-b46bc189abde
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdg
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 42084df8-bb0e-4d6b-a019-63d66c33a3f3
+	Total devices 1 FS bytes used 384.00KiB
+	devid    1 size 20.00GiB used 2.02GiB path /dev/xvdc
+
+Label: none  uuid: b3055ce4-5646-4c6d-9f7a-b46bc189abde
+	Total devices 1 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 20.00MiB path /dev/xvdg
+
+/bin/btrfs replace start -Bf  /dev/xvdc /dev/xvdg /mnt/scratch
+Started on 11.Feb 07:11:10, finished on 11.Feb 07:11:11, 0 write errs, 0 uncorr. read errs
+scrub done for 42084df8-bb0e-4d6b-a019-63d66c33a3f3
+	scrub started at Sun Feb 11 07:11:11 2018 and finished after 00:00:00
+	total bytes scrubbed: 57.23MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: 42084df8-bb0e-4d6b-a019-63d66c33a3f3
+	Total devices 1 FS bytes used 56.39MiB
+	devid    1 size 20.00GiB used 4.34GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 42084df8-bb0e-4d6b-a019-63d66c33a3f3
+	Total devices 1 FS bytes used 56.39MiB
+	devid    1 size 20.00GiB used 4.34GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdg
+
+---------workout "-m dup -d single" 1 cancel quick-----------
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               23e622a7-1e21-4286-960d-5d809546c677
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP               1.00GiB
+  System:           DUP               8.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               d2fc1c9b-5282-4d31-9246-8727d335d615
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdg
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 23e622a7-1e21-4286-960d-5d809546c677
+	Total devices 1 FS bytes used 384.00KiB
+	devid    1 size 20.00GiB used 2.02GiB path /dev/xvdc
+
+Label: none  uuid: d2fc1c9b-5282-4d31-9246-8727d335d615
+	Total devices 1 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 20.00MiB path /dev/xvdg
+
+/bin/btrfs replace start -f  /dev/xvdc /dev/xvdg /mnt/scratch
+/bin/btrfs replace cancel /mnt/scratch
+Started on 11.Feb 07:11:39, canceled on 11.Feb 07:11:40 at 0.0%, 0 write errs, 0 uncorr. read errs
+scrub done for 23e622a7-1e21-4286-960d-5d809546c677
+	scrub started at Sun Feb 11 07:11:59 2018 and finished after 00:00:17
+	total bytes scrubbed: 712.26MiB with 0 errors
+
+---------workout "-m dup -d dup -M" 1 no quick-----------
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               5248e593-9533-4bc9-9d15-367217d169ac
+Node size:          4096
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data+Metadata:    DUP               1.00GiB
+  System:           DUP               8.00MiB
+SSD detected:       yes
+Incompat features:  mixed-bg, extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               78dba090-7dad-4b00-bb38-d45a61ec098f
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdg
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 5248e593-9533-4bc9-9d15-367217d169ac
+	Total devices 1 FS bytes used 288.00KiB
+	devid    1 size 20.00GiB used 2.02GiB path /dev/xvdc
+
+Label: none  uuid: 78dba090-7dad-4b00-bb38-d45a61ec098f
+	Total devices 1 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 20.00MiB path /dev/xvdg
+
+/bin/btrfs replace start -Bf  /dev/xvdc /dev/xvdg /mnt/scratch
+Started on 11.Feb 07:12:31, finished on 11.Feb 07:12:35, 0 write errs, 0 uncorr. read errs
+scrub done for 5248e593-9533-4bc9-9d15-367217d169ac
+	scrub started at Sun Feb 11 07:12:36 2018 and finished after 00:00:01
+	total bytes scrubbed: 178.20MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: 5248e593-9533-4bc9-9d15-367217d169ac
+	Total devices 1 FS bytes used 89.10MiB
+	devid    1 size 20.00GiB used 4.08GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 5248e593-9533-4bc9-9d15-367217d169ac
+	Total devices 1 FS bytes used 89.10MiB
+	devid    1 size 20.00GiB used 4.08GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdg
+
+---------workout "-m raid0 -d raid0" 2 no quick-----------
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               abe3044c-ffd1-4b4d-b5cf-45c16cc420a9
+Node size:          16384
+Sector size:        4096
+Filesystem size:    40.00GiB
+Block group profiles:
+  Data:             RAID0             2.00GiB
+  Metadata:         RAID0             2.00GiB
+  System:           RAID0            16.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  2
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdd
+    2    20.00GiB  /dev/xvdc
+
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               9ed749d0-b2d2-4e10-81cd-ebcea73e7a9e
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdg
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: abe3044c-ffd1-4b4d-b5cf-45c16cc420a9
+	Total devices 2 FS bytes used 1.12MiB
+	devid    1 size 20.00GiB used 2.01GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 2.01GiB path /dev/xvdc
+
+Label: none  uuid: 9ed749d0-b2d2-4e10-81cd-ebcea73e7a9e
+	Total devices 1 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 20.00MiB path /dev/xvdg
+
+/bin/btrfs replace start -Bf  /dev/xvdc /dev/xvdg /mnt/scratch
+Started on 11.Feb 07:12:53, finished on 11.Feb 07:12:54, 0 write errs, 0 uncorr. read errs
+scrub done for abe3044c-ffd1-4b4d-b5cf-45c16cc420a9
+	scrub started at Sun Feb 11 07:12:54 2018 and finished after 00:00:00
+	total bytes scrubbed: 53.99MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: abe3044c-ffd1-4b4d-b5cf-45c16cc420a9
+	Total devices 2 FS bytes used 53.99MiB
+	devid    1 size 20.00GiB used 3.16GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 3.16GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: abe3044c-ffd1-4b4d-b5cf-45c16cc420a9
+	Total devices 2 FS bytes used 53.99MiB
+	devid    1 size 20.00GiB used 3.16GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 3.16GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdg
+
+---------workout "-m raid1 -d raid1" 2 no thorough-----------
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+Node size:          16384
+Sector size:        4096
+Filesystem size:    40.00GiB
+Block group profiles:
+  Data:             RAID1             1.00GiB
+  Metadata:         RAID1             1.00GiB
+  System:           RAID1             8.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  2
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdd
+    2    20.00GiB  /dev/xvdc
+
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               e09e693e-111e-4cd2-a83e-ed9957546a52
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdg
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+	Total devices 2 FS bytes used 640.00KiB
+	devid    1 size 20.00GiB used 2.01GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 2.01GiB path /dev/xvdc
+
+Label: none  uuid: e09e693e-111e-4cd2-a83e-ed9957546a52
+	Total devices 1 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 20.00MiB path /dev/xvdg
+
+/bin/btrfs replace start -Bf  /dev/xvdc /dev/xvdg /mnt/scratch
+Started on 11.Feb 07:13:10, finished on 11.Feb 07:13:11, 0 write errs, 0 uncorr. read errs
+scrub done for ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+	scrub started at Sun Feb 11 07:13:11 2018 and finished after 00:00:00
+	total bytes scrubbed: 109.82MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+	Total devices 2 FS bytes used 54.91MiB
+	devid    1 size 20.00GiB used 3.29GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 3.29GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+	Total devices 2 FS bytes used 54.91MiB
+	devid    1 size 20.00GiB used 3.29GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 3.29GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdg
+/bin/btrfs replace start -Bf -r /dev/xvdd /dev/xvdf /mnt/scratch
+Started on 11.Feb 07:13:12, finished on 11.Feb 07:13:14, 0 write errs, 0 uncorr. read errs
+scrub done for ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+	scrub started at Sun Feb 11 07:13:14 2018 and finished after 00:00:02
+	total bytes scrubbed: 136.75MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+	Total devices 2 FS bytes used 68.38MiB
+	devid    1 size 20.00GiB used 3.31GiB path /dev/xvdf
+	devid    2 size 20.00GiB used 3.31GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+	Total devices 2 FS bytes used 68.38MiB
+	devid    1 size 20.00GiB used 3.31GiB path /dev/xvdf
+	devid    2 size 20.00GiB used 3.31GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdf
+
+---------workout "-m raid5 -d raid5" 2 no quick-----------
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               509dec55-8cf0-47aa-9840-90be828276a2
+Node size:          16384
+Sector size:        4096
+Filesystem size:    40.00GiB
+Block group profiles:
+  Data:             RAID5             1.00GiB
+  Metadata:         RAID5             1.00GiB
+  System:           RAID5             8.00MiB
+SSD detected:       yes
+Incompat features:  extref, raid56, skinny-metadata
+Number of devices:  2
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdd
+    2    20.00GiB  /dev/xvdc
+
+WARNING: RAID5 is not recommended on filesystem with 2 devices only
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               b0a6c67d-1a1e-4157-b2cb-2228687bd7b6
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdg
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 509dec55-8cf0-47aa-9840-90be828276a2
+	Total devices 2 FS bytes used 640.00KiB
+	devid    1 size 20.00GiB used 2.01GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 2.01GiB path /dev/xvdc
+
+warning, device 2 is missing
+Label: none  uuid: b0a6c67d-1a1e-4157-b2cb-2228687bd7b6
+	Total devices 1 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 20.00MiB path /dev/xvdg
+
+Label: none  uuid: ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+	Total devices 2 FS bytes used 68.38MiB
+	devid    1 size 20.00GiB used 2.28GiB path /dev/xvdf
+	*** Some devices missing
+
+/bin/btrfs replace start -Bf  /dev/xvdc /dev/xvdg /mnt/scratch
+Started on 11.Feb 07:13:32, finished on 11.Feb 07:13:41, 0 write errs, 0 uncorr. read errs
+scrub done for 509dec55-8cf0-47aa-9840-90be828276a2
+	scrub started at Sun Feb 11 07:13:49 2018 and finished after 00:00:09
+	total bytes scrubbed: 155.37MiB with 0 errors
+/bin/btrfs filesystem show -d
+warning, device 2 is missing
+Label: none  uuid: 509dec55-8cf0-47aa-9840-90be828276a2
+	Total devices 2 FS bytes used 155.37MiB
+	devid    1 size 20.00GiB used 3.31GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 3.31GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+Label: none  uuid: ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+	Total devices 2 FS bytes used 68.38MiB
+	devid    1 size 20.00GiB used 2.28GiB path /dev/xvdf
+	*** Some devices missing
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+warning, device 2 is missing
+Label: none  uuid: 509dec55-8cf0-47aa-9840-90be828276a2
+	Total devices 2 FS bytes used 155.37MiB
+	devid    1 size 20.00GiB used 3.31GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 3.31GiB path /dev/xvdg
+
+Label: none  uuid: ea72bb3b-fdf6-47e2-b334-f5d75e83a614
+	Total devices 2 FS bytes used 68.38MiB
+	devid    1 size 20.00GiB used 2.28GiB path /dev/xvdf
+	*** Some devices missing
+
+_check_btrfs_filesystem /dev/xvdg
+/bin/btrfs replace start -Bf -r /dev/xvdd /dev/xvdf /mnt/scratch
+Started on 11.Feb 07:13:59, finished on 11.Feb 07:14:02, 0 write errs, 0 uncorr. read errs
+scrub done for 509dec55-8cf0-47aa-9840-90be828276a2
+	scrub started at Sun Feb 11 07:14:06 2018 and finished after 00:00:03
+	total bytes scrubbed: 85.36MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: 509dec55-8cf0-47aa-9840-90be828276a2
+	Total devices 2 FS bytes used 85.36MiB
+	devid    1 size 20.00GiB used 3.31GiB path /dev/xvdf
+	devid    2 size 20.00GiB used 3.31GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 509dec55-8cf0-47aa-9840-90be828276a2
+	Total devices 2 FS bytes used 85.36MiB
+	devid    1 size 20.00GiB used 3.31GiB path /dev/xvdf
+	devid    2 size 20.00GiB used 3.31GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdf
+
+---------workout "-m raid6 -d raid6" 3 no quick-----------
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               72455167-21ea-41b0-b65c-7ab0c39938a9
+Node size:          16384
+Sector size:        4096
+Filesystem size:    60.00GiB
+Block group profiles:
+  Data:             RAID6             1.00GiB
+  Metadata:         RAID6             1.00GiB
+  System:           RAID6             8.00MiB
+SSD detected:       yes
+Incompat features:  extref, raid56, skinny-metadata
+Number of devices:  3
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdd
+    2    20.00GiB  /dev/xvde
+    3    20.00GiB  /dev/xvdc
+
+WARNING: RAID6 is not recommended on filesystem with 3 devices only
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               78efb5a6-b8cc-440c-b23b-55fffda7fd90
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdg
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 72455167-21ea-41b0-b65c-7ab0c39938a9
+	Total devices 3 FS bytes used 640.00KiB
+	devid    1 size 20.00GiB used 2.01GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 2.01GiB path /dev/xvde
+	devid    3 size 20.00GiB used 2.01GiB path /dev/xvdc
+
+warning, device 2 is missing
+Label: none  uuid: 78efb5a6-b8cc-440c-b23b-55fffda7fd90
+	Total devices 1 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 20.00MiB path /dev/xvdg
+
+Label: none  uuid: 509dec55-8cf0-47aa-9840-90be828276a2
+	Total devices 2 FS bytes used 85.36MiB
+	devid    1 size 20.00GiB used 2.28GiB path /dev/xvdf
+	*** Some devices missing
+
+/bin/btrfs replace start -Bf  /dev/xvdc /dev/xvdg /mnt/scratch
+Started on 11.Feb 07:14:26, finished on 11.Feb 07:14:29, 0 write errs, 0 uncorr. read errs
+scrub done for 72455167-21ea-41b0-b65c-7ab0c39938a9
+	scrub started at Sun Feb 11 07:14:31 2018 and finished after 00:00:14
+	total bytes scrubbed: 87.50MiB with 0 errors
+/bin/btrfs filesystem show -d
+warning, device 2 is missing
+Label: none  uuid: 72455167-21ea-41b0-b65c-7ab0c39938a9
+	Total devices 3 FS bytes used 87.50MiB
+	devid    1 size 20.00GiB used 4.06GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 4.06GiB path /dev/xvde
+	devid    3 size 20.00GiB used 4.06GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+Label: none  uuid: 509dec55-8cf0-47aa-9840-90be828276a2
+	Total devices 2 FS bytes used 85.36MiB
+	devid    1 size 20.00GiB used 2.28GiB path /dev/xvdf
+	*** Some devices missing
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+warning, device 2 is missing
+Label: none  uuid: 72455167-21ea-41b0-b65c-7ab0c39938a9
+	Total devices 3 FS bytes used 87.50MiB
+	devid    1 size 20.00GiB used 4.06GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 4.06GiB path /dev/xvde
+	devid    3 size 20.00GiB used 4.06GiB path /dev/xvdg
+
+Label: none  uuid: 509dec55-8cf0-47aa-9840-90be828276a2
+	Total devices 2 FS bytes used 85.36MiB
+	devid    1 size 20.00GiB used 2.28GiB path /dev/xvdf
+	*** Some devices missing
+
+_check_btrfs_filesystem /dev/xvdg
+/bin/btrfs replace start -Bf -r /dev/xvdd /dev/xvdf /mnt/scratch
+Started on 11.Feb 07:14:46, finished on 11.Feb 07:14:49, 0 write errs, 0 uncorr. read errs
+scrub done for 72455167-21ea-41b0-b65c-7ab0c39938a9
+	scrub started at Sun Feb 11 07:14:51 2018 and finished after 00:00:16
+	total bytes scrubbed: 91.10MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: 72455167-21ea-41b0-b65c-7ab0c39938a9
+	Total devices 3 FS bytes used 91.10MiB
+	devid    1 size 20.00GiB used 4.09GiB path /dev/xvdf
+	devid    2 size 20.00GiB used 4.09GiB path /dev/xvde
+	devid    3 size 20.00GiB used 4.09GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: 72455167-21ea-41b0-b65c-7ab0c39938a9
+	Total devices 3 FS bytes used 91.10MiB
+	devid    1 size 20.00GiB used 4.09GiB path /dev/xvdf
+	devid    2 size 20.00GiB used 4.09GiB path /dev/xvde
+	devid    3 size 20.00GiB used 4.09GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdf
+
+---------workout "-m raid10 -d raid10" 4 no quick-----------
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               f7f1d1bb-ca64-442b-a510-8e84d542c99e
+Node size:          16384
+Sector size:        4096
+Filesystem size:    80.00GiB
+Block group profiles:
+  Data:             RAID10            2.00GiB
+  Metadata:         RAID10            2.00GiB
+  System:           RAID10           16.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  4
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdd
+    2    20.00GiB  /dev/xvde
+    3    20.00GiB  /dev/xvdf
+    4    20.00GiB  /dev/xvdc
+
+btrfs-progs v4.15
+See http://btrfs.wiki.kernel.org for more information.
+
+Detected a SSD, turning off metadata duplication.  Mkfs with -m dup if you want to force metadata duplication.
+Label:              (null)
+UUID:               8d053908-b09c-4ce8-a4f3-7d36f3843b7e
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdg
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: f7f1d1bb-ca64-442b-a510-8e84d542c99e
+	Total devices 4 FS bytes used 1.12MiB
+	devid    1 size 20.00GiB used 2.01GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 2.01GiB path /dev/xvde
+	devid    3 size 20.00GiB used 2.01GiB path /dev/xvdf
+	devid    4 size 20.00GiB used 2.01GiB path /dev/xvdc
+
+Label: none  uuid: 8d053908-b09c-4ce8-a4f3-7d36f3843b7e
+	Total devices 1 FS bytes used 112.00KiB
+	devid    1 size 20.00GiB used 20.00MiB path /dev/xvdg
+
+/bin/btrfs replace start -Bf  /dev/xvdc /dev/xvdg /mnt/scratch
+Started on 11.Feb 07:15:23, finished on 11.Feb 07:15:23, 0 write errs, 0 uncorr. read errs
+scrub done for f7f1d1bb-ca64-442b-a510-8e84d542c99e
+	scrub started at Sun Feb 11 07:15:23 2018 and finished after 00:00:01
+	total bytes scrubbed: 112.68MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: f7f1d1bb-ca64-442b-a510-8e84d542c99e
+	Total devices 4 FS bytes used 56.34MiB
+	devid    1 size 20.00GiB used 3.54GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 3.54GiB path /dev/xvde
+	devid    3 size 20.00GiB used 3.54GiB path /dev/xvdf
+	devid    4 size 20.00GiB used 3.54GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: f7f1d1bb-ca64-442b-a510-8e84d542c99e
+	Total devices 4 FS bytes used 56.34MiB
+	devid    1 size 20.00GiB used 3.54GiB path /dev/xvdd
+	devid    2 size 20.00GiB used 3.54GiB path /dev/xvde
+	devid    3 size 20.00GiB used 3.54GiB path /dev/xvdf
+	devid    4 size 20.00GiB used 3.54GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdg
+/bin/btrfs replace start -Bf -r /dev/xvdd /dev/xvdc /mnt/scratch
+Started on 11.Feb 07:15:24, finished on 11.Feb 07:15:26, 0 write errs, 0 uncorr. read errs
+scrub done for f7f1d1bb-ca64-442b-a510-8e84d542c99e
+	scrub started at Sun Feb 11 07:15:26 2018 and finished after 00:00:01
+	total bytes scrubbed: 129.84MiB with 0 errors
+/bin/btrfs filesystem show -d
+Label: none  uuid: f7f1d1bb-ca64-442b-a510-8e84d542c99e
+	Total devices 4 FS bytes used 64.92MiB
+	devid    1 size 20.00GiB used 3.56GiB path /dev/xvdc
+	devid    2 size 20.00GiB used 3.56GiB path /dev/xvde
+	devid    3 size 20.00GiB used 3.56GiB path /dev/xvdf
+	devid    4 size 20.00GiB used 3.56GiB path /dev/xvdg
+
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdb
+
+/bin/btrfs filesystem show
+Label: none  uuid: 4105fe48-6c29-4cbb-b2bd-ddb5a01a47d4
+	Total devices 1 FS bytes used 448.00KiB
+	devid    1 size 20.00GiB used 1.26GiB path /dev/xvdb
+
+Label: none  uuid: f7f1d1bb-ca64-442b-a510-8e84d542c99e
+	Total devices 4 FS bytes used 64.92MiB
+	devid    1 size 20.00GiB used 3.56GiB path /dev/xvdc
+	devid    2 size 20.00GiB used 3.56GiB path /dev/xvde
+	devid    3 size 20.00GiB used 3.56GiB path /dev/xvdf
+	devid    4 size 20.00GiB used 3.56GiB path /dev/xvdg
+
+_check_btrfs_filesystem /dev/xvdc
