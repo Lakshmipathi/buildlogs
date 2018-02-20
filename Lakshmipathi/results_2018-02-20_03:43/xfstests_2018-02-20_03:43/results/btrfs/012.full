@@ -1,0 +1,46 @@
+mke2fs 1.43.4 (31-Jan-2017)
+Creating filesystem with 5242880 4k blocks and 1310720 inodes
+Filesystem UUID: 2ac8e540-4040-447f-a897-53b06c30a869
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000
+
+Allocating group tables:   0/160       done                            
+Writing inode tables:   0/160       done                            
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information:   0/160       done
+
+create btrfs filesystem:
+	blocksize: 4096
+	nodesize:  16384
+	features:  extref, skinny-metadata (default)
+creating ext2 image file
+creating btrfs metadata
+copy inodes [o] [         0/      2277]
+conversion complete
+e2fsck 1.43.4 (31-Jan-2017)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/mnt/scratch/ext2_saved/image: 2277/1310720 files (0.0% non-contiguous), 134044/5242880 blocks
+rollback succeeded
+e2fsck 1.43.4 (31-Jan-2017)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/xvdc: 2277/1310720 files (0.0% non-contiguous), 134044/5242880 blocks
+create btrfs filesystem:
+	blocksize: 4096
+	nodesize:  16384
+	features:  extref, skinny-metadata (default)
+creating ext2 image file
+creating btrfs metadata
+copy inodes [o] [        25/      2277]
+conversion complete
+Delete subvolume (no-commit): '/mnt/scratch/ext2_saved'
+ERROR: unable to find source fs image subvolume, is it deleted?
+ERROR: rollback failed
