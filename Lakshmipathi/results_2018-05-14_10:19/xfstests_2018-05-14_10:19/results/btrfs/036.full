@@ -1,0 +1,4 @@
+Create a readonly snapshot of '/mnt/scratch' in '/mnt/scratch/snap_1'
+Create a readonly snapshot of '/mnt/scratch/snap_1' in '/mnt/scratch/snap_2'
+Create a readonly snapshot of '/mnt/scratch/snap_1' in '/mnt/scratch/snap_3'
+Create a readonly snapshot of '/mnt/scratch/snap_1' in '/mnt/scratch/snap_4'

@@ -1,0 +1,312 @@
+
+---------workout "-m single -d single" 1 no 64-----------
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: cfe836ad-f412-46b8-8ff0-c58524df81e6
+	Total devices 1 FS bytes used 45.39MiB
+	devid    1 size 20.00GiB used 1.27GiB path /dev/xvdc
+
+Replace from /dev/xvdc to /dev/xvdd
+
+# /bin/btrfs replace start -Bf /dev/xvdc /dev/xvdd /mnt/scratch
+Started on 14.May 11:50:06, finished on 14.May 11:50:06, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for cfe836ad-f412-46b8-8ff0-c58524df81e6
+	scrub started at Mon May 14 11:50:06 2018 and finished after 00:00:01
+	total bytes scrubbed: 55.49MiB with 0 errors
+_check_btrfs_filesystem /dev/xvdd
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: cfe836ad-f412-46b8-8ff0-c58524df81e6
+	Total devices 1 FS bytes used 55.49MiB
+	devid    1 size 20.00GiB used 1.30GiB path /dev/xvdd
+
+
+---------workout "-m single -d single -M" 1 no 64-----------
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: bad04929-44b9-4b19-a709-c75ea84d5d7e
+	Total devices 1 FS bytes used 45.15MiB
+	devid    1 size 20.00GiB used 1.01GiB path /dev/xvdc
+
+Replace from /dev/xvdc to /dev/xvdd
+
+# /bin/btrfs replace start -Bf /dev/xvdc /dev/xvdd /mnt/scratch
+Started on 14.May 11:50:20, finished on 14.May 11:50:21, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for bad04929-44b9-4b19-a709-c75ea84d5d7e
+	scrub started at Mon May 14 11:50:21 2018 and finished after 00:00:01
+	total bytes scrubbed: 55.04MiB with 0 errors
+_check_btrfs_filesystem /dev/xvdd
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: bad04929-44b9-4b19-a709-c75ea84d5d7e
+	Total devices 1 FS bytes used 55.04MiB
+	devid    1 size 20.00GiB used 2.04GiB path /dev/xvdd
+
+
+---------workout "-m dup -d single" 1 no 64-----------
+btrfs-progs v4.16.1 
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               93c7cd61-5114-4b0e-9ad1-a51d9ab134dd
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP               1.00GiB
+  System:           DUP               8.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: 93c7cd61-5114-4b0e-9ad1-a51d9ab134dd
+	Total devices 1 FS bytes used 45.56MiB
+	devid    1 size 20.00GiB used 3.02GiB path /dev/xvdc
+
+Replace from /dev/xvdc to /dev/xvdd
+
+# /bin/btrfs replace start -Bf /dev/xvdc /dev/xvdd /mnt/scratch
+Started on 14.May 11:50:35, finished on 14.May 11:50:38, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for 93c7cd61-5114-4b0e-9ad1-a51d9ab134dd
+	scrub started at Mon May 14 11:50:38 2018 and finished after 00:00:00
+	total bytes scrubbed: 79.01MiB with 0 errors
+_check_btrfs_filesystem /dev/xvdd
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: 93c7cd61-5114-4b0e-9ad1-a51d9ab134dd
+	Total devices 1 FS bytes used 78.13MiB
+	devid    1 size 20.00GiB used 3.07GiB path /dev/xvdd
+
+
+---------workout "-m dup -d single" 1 cancel 1024-----------
+btrfs-progs v4.16.1 
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               d642c62f-837a-4391-8d29-d3c974a4ca6a
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP               1.00GiB
+  System:           DUP               8.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: d642c62f-837a-4391-8d29-d3c974a4ca6a
+	Total devices 1 FS bytes used 526.69MiB
+	devid    1 size 20.00GiB used 3.02GiB path /dev/xvdc
+
+Replace from /dev/xvdc to /dev/xvdd
+
+# /bin/btrfs replace start -f /dev/xvdc /dev/xvdd /mnt/scratch
+# /bin/btrfs replace cancel /mnt/scratch
+Started on 14.May 11:51:06, canceled on 14.May 11:51:07 at 0.0%, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for d642c62f-837a-4391-8d29-d3c974a4ca6a
+	scrub started at Mon May 14 11:51:26 2018 and finished after 00:00:17
+	total bytes scrubbed: 716.00MiB with 0 errors
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: d642c62f-837a-4391-8d29-d3c974a4ca6a
+	Total devices 1 FS bytes used 713.81MiB
+	devid    1 size 20.00GiB used 3.07GiB path /dev/xvdc
+
+
+---------workout "-m dup -d dup -M" 1 no 64-----------
+btrfs-progs v4.16.1 
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               d1a6a60a-3575-4091-92db-02da6351e0c5
+Node size:          4096
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data+Metadata:    DUP               1.00GiB
+  System:           DUP               8.00MiB
+SSD detected:       yes
+Incompat features:  mixed-bg, extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: d1a6a60a-3575-4091-92db-02da6351e0c5
+	Total devices 1 FS bytes used 45.16MiB
+	devid    1 size 20.00GiB used 2.02GiB path /dev/xvdc
+
+Replace from /dev/xvdc to /dev/xvdd
+
+# /bin/btrfs replace start -Bf /dev/xvdc /dev/xvdd /mnt/scratch
+Started on 14.May 11:51:57, finished on 14.May 11:52:01, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for d1a6a60a-3575-4091-92db-02da6351e0c5
+	scrub started at Mon May 14 11:52:03 2018 and finished after 00:00:02
+	total bytes scrubbed: 184.77MiB with 0 errors
+_check_btrfs_filesystem /dev/xvdd
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: d1a6a60a-3575-4091-92db-02da6351e0c5
+	Total devices 1 FS bytes used 92.38MiB
+	devid    1 size 20.00GiB used 4.06GiB path /dev/xvdd
+
+
+---------workout "-m raid0 -d raid0" 2 no 64-----------
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: 2ba67edc-f011-43a5-a86a-f147f9c07e2e
+	Total devices 2 FS bytes used 46.03MiB
+	devid    1 size 20.00GiB used 2.01GiB path /dev/xvdc
+	devid    2 size 20.00GiB used 2.01GiB path /dev/xvdd
+
+Replace from /dev/xvdc to /dev/xvde
+
+# /bin/btrfs replace start -Bf /dev/xvdc /dev/xvde /mnt/scratch
+Started on 14.May 11:52:19, finished on 14.May 11:52:19, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for 2ba67edc-f011-43a5-a86a-f147f9c07e2e
+	scrub started at Mon May 14 11:52:20 2018 and finished after 00:00:00
+	total bytes scrubbed: 53.84MiB with 0 errors
+_check_btrfs_filesystem /dev/xvde
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: 2ba67edc-f011-43a5-a86a-f147f9c07e2e
+	Total devices 2 FS bytes used 53.84MiB
+	devid    1 size 20.00GiB used 2.03GiB path /dev/xvde
+	devid    2 size 20.00GiB used 2.03GiB path /dev/xvdd
+
+
+---------workout "-m raid1 -d raid1" 2 no 2048-----------
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: a13da3ae-8d61-484b-ae3f-62dd05d75d66
+	Total devices 2 FS bytes used 1.02GiB
+	devid    1 size 20.00GiB used 3.01GiB path /dev/xvdc
+	devid    2 size 20.00GiB used 3.01GiB path /dev/xvdd
+
+Replace from /dev/xvdc to /dev/xvde
+
+# /bin/btrfs replace start -Bf /dev/xvdc /dev/xvde /mnt/scratch
+Started on 14.May 11:53:33, finished on 14.May 12:28:05, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for a13da3ae-8d61-484b-ae3f-62dd05d75d66
+	scrub started at Mon May 14 12:28:05 2018 and finished after 00:18:23
+	total bytes scrubbed: 37.98GiB with 0 errors
+_check_btrfs_filesystem /dev/xvde
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: a13da3ae-8d61-484b-ae3f-62dd05d75d66
+	Total devices 2 FS bytes used 18.99GiB
+	devid    1 size 20.00GiB used 20.00GiB path /dev/xvde
+	devid    2 size 20.00GiB used 20.00GiB path /dev/xvdd
+
+# /bin/btrfs replace start -Bf -r /dev/xvde /dev/xvdc /mnt/scratch
+Started on 14.May 12:46:32, finished on 14.May 12:48:40, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for a13da3ae-8d61-484b-ae3f-62dd05d75d66
+	scrub started at Mon May 14 12:48:51 2018 and finished after 00:01:44
+	total bytes scrubbed: 3.70GiB with 0 errors
+_check_btrfs_filesystem /dev/xvdc
+
+---------workout "-m raid5 -d raid5" 2 no 64-----------
+WARNING: RAID5 is not recommended on filesystem with 2 devices only
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: b91c1abb-5033-4a9c-a81b-66e4c405c41c
+	Total devices 2 FS bytes used 45.55MiB
+	devid    1 size 20.00GiB used 2.01GiB path /dev/xvdc
+	devid    2 size 20.00GiB used 2.01GiB path /dev/xvdd
+
+Replace from /dev/xvdc to /dev/xvde
+
+# /bin/btrfs replace start -Bf /dev/xvdc /dev/xvde /mnt/scratch
+Started on 14.May 12:50:50, finished on 14.May 12:50:51, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for b91c1abb-5033-4a9c-a81b-66e4c405c41c
+	scrub started at Mon May 14 12:50:52 2018 and finished after 00:00:01
+	total bytes scrubbed: 57.08MiB with 0 errors
+_check_btrfs_filesystem /dev/xvde
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: b91c1abb-5033-4a9c-a81b-66e4c405c41c
+	Total devices 2 FS bytes used 57.08MiB
+	devid    1 size 20.00GiB used 2.03GiB path /dev/xvde
+	devid    2 size 20.00GiB used 2.03GiB path /dev/xvdd
+
+# /bin/btrfs replace start -Bf -r /dev/xvde /dev/xvdc /mnt/scratch
+Started on 14.May 12:50:54, finished on 14.May 12:50:56, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for b91c1abb-5033-4a9c-a81b-66e4c405c41c
+	scrub started at Mon May 14 12:50:56 2018 and finished after 00:00:05
+	total bytes scrubbed: 63.62MiB with 0 errors
+_check_btrfs_filesystem /dev/xvdc
+
+---------workout "-m raid6 -d raid6" 3 no 64-----------
+WARNING: RAID6 is not recommended on filesystem with 3 devices only
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: ec41acb4-29d9-465c-98e5-c8b6d45ccd0e
+	Total devices 3 FS bytes used 45.53MiB
+	devid    1 size 20.00GiB used 2.01GiB path /dev/xvdc
+	devid    2 size 20.00GiB used 2.01GiB path /dev/xvdd
+	devid    3 size 20.00GiB used 2.01GiB path /dev/xvde
+
+Replace from /dev/xvdc to /dev/xvdf
+
+# /bin/btrfs replace start -Bf /dev/xvdc /dev/xvdf /mnt/scratch
+Started on 14.May 12:51:18, finished on 14.May 12:51:20, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for ec41acb4-29d9-465c-98e5-c8b6d45ccd0e
+	scrub started at Mon May 14 12:51:22 2018 and finished after 00:00:11
+	total bytes scrubbed: 76.09MiB with 0 errors
+_check_btrfs_filesystem /dev/xvdf
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: ec41acb4-29d9-465c-98e5-c8b6d45ccd0e
+	Total devices 3 FS bytes used 76.09MiB
+	devid    1 size 20.00GiB used 2.03GiB path /dev/xvdf
+	devid    2 size 20.00GiB used 2.03GiB path /dev/xvdd
+	devid    3 size 20.00GiB used 2.03GiB path /dev/xvde
+
+# /bin/btrfs replace start -Bf -r /dev/xvdf /dev/xvdc /mnt/scratch
+Started on 14.May 12:51:35, finished on 14.May 12:51:37, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for ec41acb4-29d9-465c-98e5-c8b6d45ccd0e
+	scrub started at Mon May 14 12:51:38 2018 and finished after 00:00:15
+	total bytes scrubbed: 79.93MiB with 0 errors
+_check_btrfs_filesystem /dev/xvdc
+
+---------workout "-m raid10 -d raid10" 4 no 64-----------
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: cd42e187-4f03-4747-b6d2-93270f126374
+	Total devices 4 FS bytes used 46.03MiB
+	devid    1 size 20.00GiB used 2.01GiB path /dev/xvdc
+	devid    2 size 20.00GiB used 2.01GiB path /dev/xvdd
+	devid    3 size 20.00GiB used 2.01GiB path /dev/xvde
+	devid    4 size 20.00GiB used 2.01GiB path /dev/xvdf
+
+Replace from /dev/xvdc to /dev/xvdg
+
+# /bin/btrfs replace start -Bf /dev/xvdc /dev/xvdg /mnt/scratch
+Started on 14.May 12:52:09, finished on 14.May 12:52:10, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for cd42e187-4f03-4747-b6d2-93270f126374
+	scrub started at Mon May 14 12:52:10 2018 and finished after 00:00:01
+	total bytes scrubbed: 111.48MiB with 0 errors
+_check_btrfs_filesystem /dev/xvdg
+# /bin/btrfs filesystem show -m /mnt/scratch
+Label: none  uuid: cd42e187-4f03-4747-b6d2-93270f126374
+	Total devices 4 FS bytes used 55.74MiB
+	devid    1 size 20.00GiB used 2.03GiB path /dev/xvdg
+	devid    2 size 20.00GiB used 2.03GiB path /dev/xvdd
+	devid    3 size 20.00GiB used 2.03GiB path /dev/xvde
+	devid    4 size 20.00GiB used 2.03GiB path /dev/xvdf
+
+# /bin/btrfs replace start -Bf -r /dev/xvdg /dev/xvdc /mnt/scratch
+Started on 14.May 12:52:12, finished on 14.May 12:52:13, 0 write errs, 0 uncorr. read errs
+# /bin/btrfs scrub start -B /mnt/scratch
+scrub done for cd42e187-4f03-4747-b6d2-93270f126374
+	scrub started at Mon May 14 12:52:13 2018 and finished after 00:00:00
+	total bytes scrubbed: 110.08MiB with 0 errors
+_check_btrfs_filesystem /dev/xvdc

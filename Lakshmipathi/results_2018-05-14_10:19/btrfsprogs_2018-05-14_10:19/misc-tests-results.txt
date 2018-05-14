@@ -1,0 +1,87 @@
+=== START TEST /home/fedora/btrfs-progs/tests//misc-tests/020-fix-superblock-corruption
+$TEST_DEV not given, using /home/fedora/btrfs-progs/tests//test.img as fallback
+====== RUN CHECK /home/fedora/btrfs-progs/mkfs.btrfs -f /home/fedora/btrfs-progs/tests//test.img
+btrfs-progs v4.16.1 
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               54201f3a-c82d-437d-85a9-a0e64557cafa
+Node size:          16384
+Sector size:        4096
+Filesystem size:    2.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP             102.38MiB
+  System:           DUP               8.00MiB
+SSD detected:       no
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1     2.00GiB  /home/fedora/btrfs-progs/tests//test.img
+
+====== RUN CHECK dd if=/dev/zero of=/home/fedora/btrfs-progs/tests//test.img seek=65536 bs=1 count=4 conv=notrunc
+4+0 records in
+4+0 records out
+4 bytes copied, 0.000344847 s, 11.6 kB/s
+====== RUN MAYFAIL /home/fedora/btrfs-progs/btrfs check /home/fedora/btrfs-progs/tests//test.img
+ERROR: superblock checksum mismatch
+ERROR: superblock checksum mismatch
+No valid Btrfs found on /home/fedora/btrfs-progs/tests//test.img
+ERROR: cannot open file system
+failed (ignored, ret=1): /home/fedora/btrfs-progs/btrfs check /home/fedora/btrfs-progs/tests//test.img
+====== RUN CHECK /home/fedora/btrfs-progs/btrfs-select-super -s 1 /home/fedora/btrfs-progs/tests//test.img
+ERROR: superblock checksum mismatch
+using SB copy 1, bytenr 67108864
+====== RUN CHECK /home/fedora/btrfs-progs/btrfs check /home/fedora/btrfs-progs/tests//test.img
+checking extents
+checking free space cache
+checking fs roots
+checking only csum items (without verifying data)
+checking root refs
+Checking filesystem on /home/fedora/btrfs-progs/tests//test.img
+UUID: 54201f3a-c82d-437d-85a9-a0e64557cafa
+found 131072 bytes used, no error found
+total csum bytes: 0
+total tree bytes: 131072
+total fs tree bytes: 32768
+total extent tree bytes: 16384
+btree space waste bytes: 125010
+file data blocks allocated: 0
+ referenced 0
+=== START TEST /home/fedora/btrfs-progs/tests//misc-tests/020-raid5-datastripe-corruption-parity-check
+$TEST_DEV not given, using /home/fedora/btrfs-progs/tests//test.img as fallback
+------------------RAID5 Corruption------------------
+Filename=file128k.txt Total Stripes=2 	      Data Stripe to be corrupted=1
+====== RUN CHECK losetup --find --show img1
+/dev/loop2
+====== RUN CHECK losetup --find --show img2
+/dev/loop3
+====== RUN CHECK losetup --find --show img3
+/dev/loop4
+====== RUN CHECK /home/fedora/btrfs-progs/mkfs.btrfs -f -d raid5 -m raid5 /dev/loop2 /dev/loop3 /dev/loop4
+btrfs-progs v4.16.1 
+See http://btrfs.wiki.kernel.org for more information.
+
+Performing full device TRIM /dev/loop2 (512.00MiB) ...
+Performing full device TRIM /dev/loop3 (512.00MiB) ...
+Performing full device TRIM /dev/loop4 (512.00MiB) ...
+Label:              (null)
+UUID:               87e54e5f-ce85-4553-8d8b-c40a16a1b66d
+Node size:          16384
+Sector size:        4096
+Filesystem size:    1.50GiB
+Block group profiles:
+  Data:             RAID5           128.00MiB
+  Metadata:         RAID5           102.38MiB
+  System:           RAID5            16.00MiB
+SSD detected:       no
+Incompat features:  extref, raid56, skinny-metadata
+Number of devices:  3
+Devices:
+   ID        SIZE  PATH
+    1   512.00MiB  /dev/loop2
+    2   512.00MiB  /dev/loop3
+    3   512.00MiB  /dev/loop4
+
+====== RUN CHECK mount /dev/loop2 /home/fedora/btrfs-progs/tests//mnt
