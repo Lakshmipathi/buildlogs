@@ -1,0 +1,28 @@
+# /bin/btrfs subvolume snapshot -r /mnt/scratch /mnt/scratch/mysnap1
+Create a readonly snapshot of '/mnt/scratch' in '/mnt/scratch/mysnap1'
+# /bin/btrfs filesystem sync /mnt/scratch
+# /bin/btrfs subvolume snapshot -r /mnt/scratch /mnt/scratch/clones_snap
+Create a readonly snapshot of '/mnt/scratch' in '/mnt/scratch/clones_snap'
+# /bin/btrfs subvolume snapshot -r /mnt/scratch /mnt/scratch/mysnap2
+Create a readonly snapshot of '/mnt/scratch' in '/mnt/scratch/mysnap2'
+# /home/fedora/xfstests/src/fssum -A -f -w /tmp/tmp.9GDGHdJ6nV/1.fssum /mnt/scratch/mysnap1
+# /home/fedora/xfstests/src/fssum -A -f -w /tmp/tmp.9GDGHdJ6nV/2.fssum -x /mnt/scratch/mysnap2/mysnap1 -x /mnt/scratch/mysnap2/clones_snap /mnt/scratch/mysnap2
+# /home/fedora/xfstests/src/fssum -A -f -w /tmp/tmp.9GDGHdJ6nV/clones.fssum /mnt/scratch/clones_snap -x /mnt/scratch/clones_snap/mysnap1 -x /mnt/scratch/clones_snap/mysnap2
+# /bin/btrfs send -f /tmp/tmp.9GDGHdJ6nV/1.snap /mnt/scratch/mysnap1
+At subvol /mnt/scratch/mysnap1
+# /bin/btrfs send -f /tmp/tmp.9GDGHdJ6nV/clones.snap /mnt/scratch/clones_snap
+At subvol /mnt/scratch/clones_snap
+# /bin/btrfs send -p /mnt/scratch/mysnap1 -c /mnt/scratch/clones_snap -f /tmp/tmp.9GDGHdJ6nV/2.snap /mnt/scratch/mysnap2
+At subvol /mnt/scratch/mysnap2
+# /bin/btrfs receive -f /tmp/tmp.9GDGHdJ6nV/1.snap /mnt/scratch
+At subvol mysnap1
+# /home/fedora/xfstests/src/fssum -r /tmp/tmp.9GDGHdJ6nV/1.fssum /mnt/scratch/mysnap1
+OK
+# /bin/btrfs receive -f /tmp/tmp.9GDGHdJ6nV/clones.snap /mnt/scratch
+At subvol clones_snap
+# /home/fedora/xfstests/src/fssum -r /tmp/tmp.9GDGHdJ6nV/clones.fssum /mnt/scratch/clones_snap
+OK
+# /bin/btrfs receive -f /tmp/tmp.9GDGHdJ6nV/2.snap /mnt/scratch
+At snapshot mysnap2
+# /home/fedora/xfstests/src/fssum -r /tmp/tmp.9GDGHdJ6nV/2.fssum /mnt/scratch/mysnap2
+OK

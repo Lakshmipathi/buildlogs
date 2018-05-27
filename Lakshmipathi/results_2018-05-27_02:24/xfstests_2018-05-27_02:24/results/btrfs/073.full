@@ -1,0 +1,91 @@
+Test -m single -d single
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start scrub worker: 30468
+Start remount worker: 30469
+Wait for fsstress to exit and kill all background workers
+Scrub the filesystem
+scrub done for 2e96fac0-634d-4945-8b68-573008baa83d
+	scrub started at Sun May 27 04:33:36 2018 and finished after 00:00:00
+	total bytes scrubbed: 21.44MiB with 0 errors
+Test -m dup -d single
+btrfs-progs v4.16.1 
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               14fb698e-6125-46f0-9c77-865d2455182e
+Node size:          16384
+Sector size:        4096
+Filesystem size:    20.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP               1.00GiB
+  System:           DUP               8.00MiB
+SSD detected:       yes
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1    20.00GiB  /dev/xvdc
+
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start scrub worker: 30594
+Start remount worker: 30595
+Wait for fsstress to exit and kill all background workers
+Scrub the filesystem
+scrub done for 14fb698e-6125-46f0-9c77-865d2455182e
+	scrub started at Sun May 27 04:33:39 2018 and finished after 00:00:01
+	total bytes scrubbed: 31.27MiB with 0 errors
+Test -m raid0 -d raid0
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start scrub worker: 30705
+Start remount worker: 30706
+Wait for fsstress to exit and kill all background workers
+Scrub the filesystem
+scrub done for 1d6d2c0a-98d3-4cac-85fd-04d0280a0bae
+	scrub started at Sun May 27 04:33:44 2018 and finished after 00:00:00
+	total bytes scrubbed: 39.16MiB with 0 errors
+Test -m raid1 -d raid0
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start scrub worker: 30827
+Start remount worker: 30828
+Wait for fsstress to exit and kill all background workers
+Scrub the filesystem
+scrub done for 682d5193-78ab-4a4b-90d3-9bee48f81198
+	scrub started at Sun May 27 04:33:50 2018 and finished after 00:00:00
+	total bytes scrubbed: 32.00MiB with 0 errors
+Test -m raid1 -d raid1
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start scrub worker: 30961
+Start remount worker: 30962
+Wait for fsstress to exit and kill all background workers
+Scrub the filesystem
+scrub done for 2ece2c9d-a4d0-44d9-89b0-9f3ff583ebdf
+	scrub started at Sun May 27 04:33:57 2018 and finished after 00:00:02
+	total bytes scrubbed: 64.23MiB with 0 errors
+Test -m raid10 -d raid10
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start scrub worker: 31114
+Start remount worker: 31115
+Wait for fsstress to exit and kill all background workers
+Scrub the filesystem
+scrub done for a91304a4-ad6e-43eb-9949-8c39358a41c2
+	scrub started at Sun May 27 04:34:07 2018 and finished after 00:00:01
+	total bytes scrubbed: 64.91MiB with 0 errors
+Test -m raid5 -d raid5
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start scrub worker: 31264
+Start remount worker: 31265
+Wait for fsstress to exit and kill all background workers
+Scrub the filesystem
+scrub done for c755d45a-1bc7-46ae-8cda-191e00e8299a
+	scrub started at Sun May 27 04:34:17 2018 and finished after 00:00:01
+	total bytes scrubbed: 29.54MiB with 0 errors
+Test -m raid6 -d raid6
+Run fsstress -p 20 -n 100 -d /mnt/scratch/stressdir
+Start scrub worker: 31396
+Start remount worker: 31397
+Wait for fsstress to exit and kill all background workers
+Scrub the filesystem
+scrub done for a77b56e9-5e89-4eb3-816f-9dca1bc88c18
+	scrub started at Sun May 27 04:34:30 2018 and finished after 00:00:05
+	total bytes scrubbed: 31.59MiB with 0 errors

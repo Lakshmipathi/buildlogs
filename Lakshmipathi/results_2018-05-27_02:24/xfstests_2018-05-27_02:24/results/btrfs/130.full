@@ -1,0 +1,515 @@
+LOAD_FACTOR=1 nr_extents=256 blocksize=131072
+linked 131072/131072 bytes at offset 131072
+128 KiB, 1 ops; 0.0000 sec (51.653 MiB/sec and 413.2231 ops/sec)
+linked 131072/131072 bytes at offset 262144
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 393216
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 524288
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 655360
+128 KiB, 1 ops; 0.0000 sec (5.549 GiB/sec and 45454.5455 ops/sec)
+linked 131072/131072 bytes at offset 786432
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 917504
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 1048576
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 1179648
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 1310720
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 1441792
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 1572864
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 1703936
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 1835008
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 1966080
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 2097152
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 2228224
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 2359296
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 2490368
+128 KiB, 1 ops; 0.0000 sec (5.549 GiB/sec and 45454.5455 ops/sec)
+linked 131072/131072 bytes at offset 2621440
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 2752512
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 2883584
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 3014656
+128 KiB, 1 ops; 0.0000 sec (6.425 GiB/sec and 52631.5789 ops/sec)
+linked 131072/131072 bytes at offset 3145728
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 3276800
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 3407872
+128 KiB, 1 ops; 0.0000 sec (6.425 GiB/sec and 52631.5789 ops/sec)
+linked 131072/131072 bytes at offset 3538944
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 3670016
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 3801088
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 3932160
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 4063232
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 4194304
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 4325376
+128 KiB, 1 ops; 0.0000 sec (5.307 GiB/sec and 43478.2609 ops/sec)
+linked 131072/131072 bytes at offset 4456448
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 4587520
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 4718592
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 4849664
+128 KiB, 1 ops; 0.0000 sec (2.713 GiB/sec and 22222.2222 ops/sec)
+linked 131072/131072 bytes at offset 4980736
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 5111808
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 5242880
+128 KiB, 1 ops; 0.0000 sec (4.695 GiB/sec and 38461.5385 ops/sec)
+linked 131072/131072 bytes at offset 5373952
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 5505024
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 5636096
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 5767168
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 5898240
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 6029312
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 6160384
+128 KiB, 1 ops; 0.0000 sec (4.360 GiB/sec and 35714.2857 ops/sec)
+linked 131072/131072 bytes at offset 6291456
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 6422528
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 6553600
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 6684672
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 6815744
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 6946816
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 7077888
+128 KiB, 1 ops; 0.0000 sec (5.086 GiB/sec and 41666.6667 ops/sec)
+linked 131072/131072 bytes at offset 7208960
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 7340032
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 7471104
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 7602176
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 7733248
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 7864320
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 7995392
+128 KiB, 1 ops; 0.0000 sec (3.938 GiB/sec and 32258.0645 ops/sec)
+linked 131072/131072 bytes at offset 8126464
+128 KiB, 1 ops; 0.0000 sec (438.596 MiB/sec and 3508.7719 ops/sec)
+linked 131072/131072 bytes at offset 8257536
+128 KiB, 1 ops; 0.0000 sec (6.425 GiB/sec and 52631.5789 ops/sec)
+linked 131072/131072 bytes at offset 8388608
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 8519680
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 8650752
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 8781824
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 8912896
+128 KiB, 1 ops; 0.0000 sec (3.815 GiB/sec and 31250.0000 ops/sec)
+linked 131072/131072 bytes at offset 9043968
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 9175040
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 9306112
+128 KiB, 1 ops; 0.0000 sec (6.425 GiB/sec and 52631.5789 ops/sec)
+linked 131072/131072 bytes at offset 9437184
+128 KiB, 1 ops; 0.0000 sec (6.425 GiB/sec and 52631.5789 ops/sec)
+linked 131072/131072 bytes at offset 9568256
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 9699328
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 9830400
+128 KiB, 1 ops; 0.0000 sec (3.130 GiB/sec and 25641.0256 ops/sec)
+linked 131072/131072 bytes at offset 9961472
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 10092544
+128 KiB, 1 ops; 0.0000 sec (6.425 GiB/sec and 52631.5789 ops/sec)
+linked 131072/131072 bytes at offset 10223616
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 10354688
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 10485760
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 10616832
+128 KiB, 1 ops; 0.0000 sec (3.488 GiB/sec and 28571.4286 ops/sec)
+linked 131072/131072 bytes at offset 10747904
+128 KiB, 1 ops; 0.0000 sec (5.549 GiB/sec and 45454.5455 ops/sec)
+linked 131072/131072 bytes at offset 10878976
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 11010048
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 11141120
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 11272192
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 11403264
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 11534336
+128 KiB, 1 ops; 0.0000 sec (4.521 GiB/sec and 37037.0370 ops/sec)
+linked 131072/131072 bytes at offset 11665408
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 11796480
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 11927552
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 12058624
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 12189696
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 12320768
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 12451840
+128 KiB, 1 ops; 0.0000 sec (3.391 GiB/sec and 27777.7778 ops/sec)
+linked 131072/131072 bytes at offset 12582912
+128 KiB, 1 ops; 0.0000 sec (6.425 GiB/sec and 52631.5789 ops/sec)
+linked 131072/131072 bytes at offset 12713984
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 12845056
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 12976128
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 13107200
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 13238272
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 13369344
+128 KiB, 1 ops; 0.0000 sec (3.590 GiB/sec and 29411.7647 ops/sec)
+linked 131072/131072 bytes at offset 13500416
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 13631488
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 13762560
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 13893632
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 14024704
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 14155776
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 14286848
+128 KiB, 1 ops; 0.0000 sec (3.488 GiB/sec and 28571.4286 ops/sec)
+linked 131072/131072 bytes at offset 14417920
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 14548992
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 14680064
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 14811136
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 14942208
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 15073280
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 15204352
+128 KiB, 1 ops; 0.0000 sec (5.307 GiB/sec and 43478.2609 ops/sec)
+linked 131072/131072 bytes at offset 15335424
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 15466496
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 15597568
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 15728640
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 15859712
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 15990784
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 16121856
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 16252928
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 16384000
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 16515072
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 16646144
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 16777216
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 16908288
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 17039360
+128 KiB, 1 ops; 0.0000 sec (5.086 GiB/sec and 41666.6667 ops/sec)
+linked 131072/131072 bytes at offset 17170432
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 17301504
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 17432576
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 17563648
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 17694720
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 17825792
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 17956864
+128 KiB, 1 ops; 0.0000 sec (4.883 GiB/sec and 40000.0000 ops/sec)
+linked 131072/131072 bytes at offset 18087936
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 18219008
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 18350080
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 18481152
+128 KiB, 1 ops; 0.0000 sec (2.713 GiB/sec and 22222.2222 ops/sec)
+linked 131072/131072 bytes at offset 18612224
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 18743296
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 18874368
+128 KiB, 1 ops; 0.0000 sec (5.307 GiB/sec and 43478.2609 ops/sec)
+linked 131072/131072 bytes at offset 19005440
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 19136512
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 19267584
+128 KiB, 1 ops; 0.0000 sec (2.713 GiB/sec and 22222.2222 ops/sec)
+linked 131072/131072 bytes at offset 19398656
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 19529728
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 19660800
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 19791872
+128 KiB, 1 ops; 0.0000 sec (239.923 MiB/sec and 1919.3858 ops/sec)
+linked 131072/131072 bytes at offset 19922944
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 20054016
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 20185088
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 20316160
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 20447232
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 20578304
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 20709376
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 20840448
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 20971520
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 21102592
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 21233664
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 21364736
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 21495808
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 21626880
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 21757952
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 21889024
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 22020096
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 22151168
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 22282240
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 22413312
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 22544384
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 22675456
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 22806528
+128 KiB, 1 ops; 0.0000 sec (6.425 GiB/sec and 52631.5789 ops/sec)
+linked 131072/131072 bytes at offset 22937600
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 23068672
+128 KiB, 1 ops; 0.0000 sec (4.209 GiB/sec and 34482.7586 ops/sec)
+linked 131072/131072 bytes at offset 23199744
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 23330816
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 23461888
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 23592960
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 23724032
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 23855104
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 23986176
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 24117248
+128 KiB, 1 ops; 0.0000 sec (6.425 GiB/sec and 52631.5789 ops/sec)
+linked 131072/131072 bytes at offset 24248320
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 24379392
+128 KiB, 1 ops; 0.0000 sec (3.699 GiB/sec and 30303.0303 ops/sec)
+linked 131072/131072 bytes at offset 24510464
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 24641536
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 24772608
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 24903680
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 25034752
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 25165824
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 25296896
+128 KiB, 1 ops; 0.0000 sec (4.069 GiB/sec and 33333.3333 ops/sec)
+linked 131072/131072 bytes at offset 25427968
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 25559040
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 25690112
+128 KiB, 1 ops; 0.0000 sec (2.977 GiB/sec and 24390.2439 ops/sec)
+linked 131072/131072 bytes at offset 25821184
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 25952256
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 26083328
+128 KiB, 1 ops; 0.0000 sec (7.181 GiB/sec and 58823.5294 ops/sec)
+linked 131072/131072 bytes at offset 26214400
+128 KiB, 1 ops; 0.0000 sec (4.209 GiB/sec and 34482.7586 ops/sec)
+linked 131072/131072 bytes at offset 26345472
+128 KiB, 1 ops; 0.0000 sec (6.782 GiB/sec and 55555.5556 ops/sec)
+linked 131072/131072 bytes at offset 26476544
+128 KiB, 1 ops; 0.0000 sec (2.543 GiB/sec and 20833.3333 ops/sec)
+linked 131072/131072 bytes at offset 26607616
+128 KiB, 1 ops; 0.0000 sec (5.549 GiB/sec and 45454.5455 ops/sec)
+linked 131072/131072 bytes at offset 26738688
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 26869760
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 27000832
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 27131904
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 27262976
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 27394048
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 27525120
+128 KiB, 1 ops; 0.0000 sec (3.590 GiB/sec and 29411.7647 ops/sec)
+linked 131072/131072 bytes at offset 27656192
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 27787264
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 27918336
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 28049408
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 28180480
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 28311552
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 28442624
+128 KiB, 1 ops; 0.0000 sec (5.549 GiB/sec and 45454.5455 ops/sec)
+linked 131072/131072 bytes at offset 28573696
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 28704768
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 28835840
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 28966912
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 29097984
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 29229056
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 29360128
+128 KiB, 1 ops; 0.0000 sec (4.695 GiB/sec and 38461.5385 ops/sec)
+linked 131072/131072 bytes at offset 29491200
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 29622272
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 29753344
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 29884416
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 30015488
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 30146560
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 30277632
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 30408704
+128 KiB, 1 ops; 0.0000 sec (5.307 GiB/sec and 43478.2609 ops/sec)
+linked 131072/131072 bytes at offset 30539776
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 30670848
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 30801920
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 30932992
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 31064064
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 31195136
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 31326208
+128 KiB, 1 ops; 0.0000 sec (4.695 GiB/sec and 38461.5385 ops/sec)
+linked 131072/131072 bytes at offset 31457280
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 31588352
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 31719424
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 31850496
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 31981568
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 32112640
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 32243712
+128 KiB, 1 ops; 0.0000 sec (5.086 GiB/sec and 41666.6667 ops/sec)
+linked 131072/131072 bytes at offset 32374784
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 32505856
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 32636928
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 32768000
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 32899072
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 33030144
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 33161216
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+linked 131072/131072 bytes at offset 33292288
+128 KiB, 1 ops; 0.0000 sec (5.813 GiB/sec and 47619.0476 ops/sec)
+linked 131072/131072 bytes at offset 33423360
+128 KiB, 1 ops; 0.0000 sec (6.104 GiB/sec and 50000.0000 ops/sec)
+# /bin/btrfs subvolume snapshot -r /mnt/scratch /mnt/scratch/ro_snap
+Create a readonly snapshot of '/mnt/scratch' in '/mnt/scratch/ro_snap'
+# /bin/btrfs send /mnt/scratch/ro_snap > /dev/null
+At subvol /mnt/scratch/ro_snap

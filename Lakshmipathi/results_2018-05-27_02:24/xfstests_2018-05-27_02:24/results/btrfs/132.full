@@ -1,0 +1,18 @@
+btrfs-progs v4.16.1 
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               722d0cca-d7b0-4a77-9726-5900da976916
+Node size:          4096
+Sector size:        4096
+Filesystem size:    512.00MiB
+Block group profiles:
+  Data+Metadata:    single            8.00MiB
+  System:           single            4.00MiB
+SSD detected:       yes
+Incompat features:  mixed-bg, extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1   512.00MiB  /dev/xvdc
+

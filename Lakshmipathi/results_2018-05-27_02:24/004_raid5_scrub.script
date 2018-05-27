@@ -1,0 +1,69 @@
+Script started on 2018-05-27 05:07:07+0000
++ sudo yum install patch -y
+Last metadata expiration check: 2:40:38 ago on Sun 27 May 2018 02:26:42 AM UTC.
+Dependencies resolved.
+================================================================================
+ Package        Arch            Version                  Repository        Size
+================================================================================
+Installing dependencies:
+ patch          x86_64          2.7.6-4.fc26             updates          132 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 132 k
+Installed size: 251 k
+Downloading Packages:
+patch-2.7.6-4.fc26.x  0% [                    ] ---  B/s |   0  B     --:-- ETApatch-2.7.6-4.fc26.x 31% [======              ] 131 kB/s |  41 kB     00:00 ETApatch-2.7.6-4.fc26.x86_64.rpm                   268 kB/s | 132 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            98 kB/s | 132 kB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : patch-2.7.6-4.fc26.x86_64 [                          ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64 [===                       ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64 [======                    ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64 [=========                 ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64 [=============             ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64 [================          ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64 [===================       ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64 [====================      ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64 [=====================     ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64 [========================  ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64 [========================= ] 1/1  Installing       : patch-2.7.6-4.fc26.x86_64                              1/1 
+  Running scriptlet: patch-2.7.6-4.fc26.x86_64                              1/1 
+  Verifying        : patch-2.7.6-4.fc26.x86_64                              1/1 
+
+Installed:
+  patch.x86_64 2.7.6-4.fc26                                                     
+
+Complete!
++ cd /home/fedora/btrfs-progs
++ wget https://patchwork.kernel.org/patch/9583455/raw/
+--2018-05-27 05:07:28--  https://patchwork.kernel.org/patch/9583455/raw/
+Resolving patchwork.kernel.org (patchwork.kernel.org)... 198.145.29.83
+Connecting to patchwork.kernel.org (patchwork.kernel.org)|198.145.29.83|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/x-patch]
+Saving to: ‘index.html’
+
+index.html              [<=>                 ]       0  --.-KB/s               index.html              [ <=>                ]  13.47K  --.-KB/s    in 0s      
+
+2018-05-27 05:07:28 (231 MB/s) - ‘index.html’ saved [13794]
+
++ mv index.html /tmp/raid5_scrub_test.diff
++ patch -p1
+patching file tests/misc-tests/020-raid5-datastripe-corruption-parity-check/test.sh
++ chmod +x /home/fedora/btrfs-progs/tests/misc-tests/020-raid5-datastripe-corruption-parity-check/test.sh
++ mkdir -p /tmp/logs
++ cp /home/fedora/btrfs-progs/tests/misc-tests-results.txt /home/fedora/btrfs-progs/tests/Misc-tests-results.txt
++ echo 'Kernel info:'
+Kernel info:
++ uname -a
+Linux ip-172-31-43-255.us-west-2.compute.internal 4.11.8-300.fc26.x86_64 #1 SMP Thu Jun 29 20:09:48 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
++ sudo make 'TEST=020*' test-misc
+    [TEST]   misc-tests.sh
+    [TEST/misc]   020-fix-superblock-corruption
+    [TEST/misc]   020-raid5-datastripe-corruption-parity-check
+./test.sh: line 160: warning: command substitution: ignored null byte in input
+./test.sh: line 160: warning: command substitution: ignored null byte in input
+./test.sh: line 303: warning: command substitution: ignored null byte in input
+Scrub corrupted parity stripe.
+test failed for case 020-raid5-datastripe-corruption-parity-check
+make: *** [Makefile:325: test-misc] Error 1
+
+Script done on 2018-05-27 05:07:54+0000
